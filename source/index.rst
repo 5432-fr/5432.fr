@@ -14,6 +14,7 @@ Contenus:
    :maxdepth: 2
 
    commun.rst
+   outils.rst
 
 
 
