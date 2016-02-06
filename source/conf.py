@@ -46,7 +46,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Ressources PostgreSQL Francophones'
-copyright = u'2016, Christophe CHAUVET'
+copyright = u'2016, Christophe CHAUVET, CC BY-SA 4.0'
 author = u'Christophe CHAUVET'
 
 # The version info for the project you're documenting, acts as replacement for
