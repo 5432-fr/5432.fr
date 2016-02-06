@@ -11,7 +11,7 @@ Gestionnaires de base de données
 Modelisation
 ------------
 
-* `pgModeler <http://www.pgmodeler.com.br/>`_ 
+* `pgModeler <http://www.pgmodeler.com.br/>`_ |linux| |macosx| |windows|
 
 
 .. |windows| image:: windows.png
