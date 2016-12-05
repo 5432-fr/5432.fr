@@ -4,7 +4,8 @@ Outils
 Gestionnaires de base de données
 --------------------------------
 
-* `pgAdmin III <http://pgadmin.org>`_ |linux| |macosx| |windows|
+* `pgAdmin 4 <http://pgadmin.org>`_ |linux| |macosx| |windows|
+* `pgAdmin III <http://pgadmin.org>`_ |linux| |macosx| |windows| (Replacer par PgAdmin 4)
 * `phppgadmin <https://github.com/phppgadmin/phppgadmin>`_ Interface Web
 
 
