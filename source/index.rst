@@ -14,6 +14,7 @@ Contenus:
    :maxdepth: 2
 
    commun.rst
+   information.rst
    outils.rst
    programmation/index.rst
    services/index.rst
