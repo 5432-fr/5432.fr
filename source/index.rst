@@ -16,6 +16,8 @@ Contenus:
    commun.rst
    outils.rst
    programmation/index.rst
+   services/index.rst
+
 
 
 
