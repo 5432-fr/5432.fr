@@ -114,6 +114,9 @@ html_theme = 'alabaster'
 # documentation.
 html_theme_options = {
     'analytics_id': 'UA-73430711-1',
+    'github_banner': True,
+    'github_user': '5432-fr',
+    'github_repo': '5432.fr',
 }
 
 # Add any paths that contain custom themes here, relative to this directory.
