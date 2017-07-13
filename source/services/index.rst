@@ -1,8 +1,9 @@
-Société de services
-===================
+Prestation autour de PostgreSQL
+===============================
 
-Liste des sociétés assurants de la prestation de services autour de PostgreSQL (Trié par ordre alphabétique)
+.. toctree::
+   :maxdepth: 2
 
-* `2ndQuadrant <http://2ndquadrant.fr>`_
-* `DALIBO <http://www.dalibo.com/>`_
-* `LOXODATA <http://www.loxodata.com/>`_
+   societes.rst
+   hebergeurs.rst
+

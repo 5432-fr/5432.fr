@@ -18,6 +18,7 @@ Contenus:
    outils.rst
    articles/index.rst
    programmation/index.rst
+   logiciel/index.rst
    services/index.rst
 
 
