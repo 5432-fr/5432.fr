@@ -1,8 +1,8 @@
 Traitement sur les dates
-------------------------
+========================
 
 Convertir une date Access en type date
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------------
 
 Sous Access et historiquement Lotus 1-2-3 (Explication `ici <https://stackoverflow.com/a/3963650>`_) la date est stockée
 sous forme d'un entier, Dans PostgreSQL nosu allons utiliser le type interval pour retrouver le type date.
@@ -22,6 +22,9 @@ Pour l'utiliser
 
     SELECT access_to_date(42821)
     -- on obtient 27/03/2017
+
+Convertir un type date en date Access
+-------------------------------------
 
 La fonction inverse, qui permet de retrouver la valeur à stocker
 
