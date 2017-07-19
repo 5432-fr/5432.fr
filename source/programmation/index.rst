@@ -8,3 +8,4 @@ Programmation
    java.rst
    python.rst
    php.rst
+   plpgsql/index.rst
