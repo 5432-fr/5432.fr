@@ -8,6 +8,7 @@ Gestionnaires de base de données
 * `pgAdmin III <http://pgadmin.org>`_ |linux| |macosx| |windows| (Replacer par PgAdmin 4)
 * `phppgadmin <https://github.com/phppgadmin/phppgadmin>`_ Interface Web
 * `RazorSQL <http://www.razorsql.com/features/postgresql_features.html>`_ Client JAVA Multibase
+* `DataGrip <https://www.jetbrains.com/datagrip/>` |linux| |macosx| |windows| 
 
 
 Modelisation
