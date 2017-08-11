@@ -9,4 +9,6 @@ Cette page regroupe des séries d'article sur PostgreSQL en français
 
 .. include:: maintenance.rst
 
+.. include:: replication.rst
+
 .. include:: sauvegarde.rst
