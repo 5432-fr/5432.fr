@@ -4,6 +4,7 @@ Outils
 Gestionnaires de base de données
 --------------------------------
 
+* `OmniDB <https://omnidb.org/en/>`_ Application Client et Version serveur |linux| |macosx| |windows| (Python 3.5 et Django)
 * `pgAdmin 4 <http://pgadmin.org>`_ |linux| |macosx| |windows|
 * `pgAdmin III <http://pgadmin.org>`_ |linux| |macosx| |windows| (Replacer par PgAdmin 4)
 * `phppgadmin <https://github.com/phppgadmin/phppgadmin>`_ Interface Web
