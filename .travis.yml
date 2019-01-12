@@ -1,9 +1,14 @@
 language: python
 python:
   - "3.6"
+
+addons:
+  apt:
+    packages:
+      - lftp
+
 install:
   - pip install -r requirements.txt
-  - apt-get install lftp
 
 script:
   - make html
