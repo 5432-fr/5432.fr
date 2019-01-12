@@ -9,7 +9,7 @@
  lftp -f "
  open $FTP_HOST
  user $FTP_USER $FTP_PASS
- mirror -R $TARGETFOLDER
+ mirror -R . ./$TARGETFOLDER
  bye
  "
 
