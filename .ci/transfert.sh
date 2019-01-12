@@ -5,7 +5,7 @@
  lftp -f "
  open $FTP_HOST
  user $FTP_USER $FTP_PASS
- mirror --use-cache $SOURCEFOLDER $TARGETFOLDER
+ mirror -R --use-cache $SOURCEFOLDER $TARGETFOLDER
  bye
  "
 
