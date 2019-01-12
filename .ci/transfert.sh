@@ -2,10 +2,14 @@
  SOURCEFOLDER='build/html/'
  TARGETFOLDER='www'
 
+ echo "Got to ${SOURCEFOLDER}"
+ cd ${SOURCEFOLDER}
+
+ echo "Upload files"
  lftp -f "
  open $FTP_HOST
  user $FTP_USER $FTP_PASS
- mirror -R --use-cache $SOURCEFOLDER $TARGETFOLDER
+ mirror -R $TARGETFOLDER
  bye
  "
 
