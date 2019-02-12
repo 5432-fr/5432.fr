@@ -6,6 +6,6 @@
  # cd ${SOURCEFOLDER}
  
  lftp -u $FTP_USER,$FTP_PASS $FTP_HOST \
- -e 'mirror -c -e -R ${SOURCEFOLDER} ~ ; exit'
+ -e 'mirror -c -e -R build/html/ ~ ; exit'
 
  echo "File send to the server"
