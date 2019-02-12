@@ -3,14 +3,9 @@
  TARGETFOLDER='www'
 
  echo "Got to ${SOURCEFOLDER}"
- cd ${SOURCEFOLDER}
-
- echo "Upload files"
- lftp -f "
- open $FTP_HOST
- user $FTP_USER $FTP_PASS
- mirror -R . ./$TARGETFOLDER
- bye
- "
+ # cd ${SOURCEFOLDER}
+ 
+ lftp -u $FTP_USER,$FTP_PASS $FTP_HOST \
+ -e 'mirror -c -e -R $SOURCEFOLDER ~ ; exit'
 
  echo "File send to the server"
