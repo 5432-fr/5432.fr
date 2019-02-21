@@ -1,0 +1,9 @@
+image: ubuntu
+
+install:
+- pip install -r requirements.txt
+
+test_script:
+- make html
+
+build: off
