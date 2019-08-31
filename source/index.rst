@@ -16,6 +16,7 @@ Contenus:
    commun.rst
    information.rst
    outils.rst
+   livres/index.rst
    articles/index.rst
    programmation/index.rst
    logiciel/index.rst
