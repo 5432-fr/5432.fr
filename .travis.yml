@@ -12,5 +12,5 @@ install:
 
 script:
   - make html
-  - lftp --version
-  - ./.ci/transfert.sh
+  # - lftp --version
+  # - ./.ci/transfert.sh
