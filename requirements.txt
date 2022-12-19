@@ -1,3 +1,5 @@
-phinx==3.2.1
+docutils==0.18
+Sphinx==5.3.0
 sphinx-autobuild==2021.3.14
 sphinx-sitemap==2.2.1
+furo==2022.9.29
