@@ -14,6 +14,7 @@
 
 import sys
 import os
+import time
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -28,7 +29,7 @@ import os
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx_sitemap']
+extensions = ['sphinx_sitemap', 'sphinx.ext.githubpages']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -46,7 +47,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Ressources PostgreSQL Francophones'
-copyright = u'2016, Christophe CHAUVET, CC BY-SA 4.0'
+copyright = u'2016,%s Christophe CHAUVET, CC BY-SA 4.0' % time.strftime('%Y')
 author = u'Christophe CHAUVET'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -105,6 +106,7 @@ todo_include_todos = False
 
 # -- Options for HTML output ----------------------------------------------
 site_url = 'https://5432.fr/'
+html_baseurl = 'https://5432.fr/'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
