@@ -27,7 +27,7 @@ Agent
 -----
 
 * `pg_listen <https://github.com/begriffs/pg_listen>`_ Utilise Listen/Notify pour executer des commandes shell |linux| |macosx| |windows|
-* `pgAgent <https://www.pgadmin.org/docs/pgadmin4/dev/pgagent.html>`_ Planificateur de tâche sous PostgreSQL |linux| |macosx| |windows|
+* `pgAgent <https://www.pgadmin.org/docs/pgadmin4/development/pgagent.html>`_ Planificateur de tâche sous PostgreSQL |linux| |macosx| |windows|
 
 .. |windows| image:: windows.png
              :alt: Windows
