@@ -1,0 +1,219 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Traitement sur les dates &#8212; Documentation Ressources PostgreSQL Francophones 1.0.0</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <link rel="canonical" href="https://5432.fr/programmation/plpgsql/date.html" />
+    <link rel="icon" href="../../_static/postgresql.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Recherche" href="../../search.html" />
+    <link rel="next" title="Logiciels" href="../../logiciel/index.html" />
+    <link rel="prev" title="Langage PLpgSQL" href="index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="traitement-sur-les-dates">
+<h1>Traitement sur les dates<a class="headerlink" href="#traitement-sur-les-dates" title="Lien permanent vers cette rubrique">¶</a></h1>
+<section id="convertir-une-date-access-en-type-date">
+<h2>Convertir une date Access en type date<a class="headerlink" href="#convertir-une-date-access-en-type-date" title="Lien permanent vers cette rubrique">¶</a></h2>
+<p>Sous Access et historiquement Lotus 1-2-3 (Explication <a class="reference external" href="https://stackoverflow.com/a/3963650">ici</a>) la date est stockée
+sous forme d’un entier, Dans PostgreSQL nosu allons utiliser le type interval pour retrouver le type date.</p>
+<div class="highlight-postgres notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1">--</span>
+<span class="linenos"> 2</span><span class="c1">-- Fonction qui converti un entier en date</span>
+<span class="linenos"> 3</span><span class="c1">-- Dans Lotus 1-2-3 et Access, le jour 0 est égal au 30/12/1899</span>
+<span class="linenos"> 4</span><span class="c1">-- Auteur: Christophe CHAUVET</span>
+<span class="linenos"> 5</span><span class="c1">-- License: Creative commons BY-SA</span>
+<span class="linenos"> 6</span><span class="c1">--   https://creativecommons.org/licenses/by-sa/4.0/</span>
+<span class="linenos"> 7</span><span class="c1">--</span>
+<span class="linenos"> 8</span><span class="k">CREATE</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="k">REPLACE</span><span class="w"> </span><span class="k">FUNCTION</span><span class="w"> </span><span class="n">access_to_date</span><span class="p">(</span>
+<span class="linenos"> 9</span><span class="w">   </span><span class="n">a_num</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">)</span>
+<span class="linenos">10</span><span class="k">RETURNS</span><span class="w"> </span><span class="nb">date</span><span class="w"> </span><span class="k">AS</span>
+<span class="linenos">11</span><span class="s">$</span><span class="dl">BODY</span><span class="s">$</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span><span class="k">BEGIN</span>
+<span class="linenos">14</span>
+<span class="hll"><span class="linenos">15</span><span class="w">  </span><span class="k">RETURN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;1899-12-30&#39;</span><span class="o">::</span><span class="nb">date</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">a_num</span><span class="o">||</span><span class="s1">&#39; day&#39;</span><span class="p">)</span><span class="o">::</span><span class="nb">interval</span><span class="p">)</span><span class="o">::</span><span class="nb">date</span><span class="p">;</span>
+</span><span class="linenos">16</span>
+<span class="linenos">17</span><span class="k">END</span><span class="p">;</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span><span class="s">$</span><span class="dl">BODY</span><span class="s">$</span>
+<span class="linenos">20</span><span class="k">LANGUAGE</span><span class="w"> </span><span class="n">plpgsql</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Télécharger le fichier <a class="reference download internal" download="" href="../../_downloads/9e1d27fd581298e7bfa963a0cc35ea0d/access_to_date.sql"><code class="xref download docutils literal notranslate"><span class="pre">access_to_date.sql</span></code></a></p>
+<p>Pour l’utiliser</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">access_to_date</span><span class="p">(</span><span class="mi">42821</span><span class="p">)</span>
+<span class="c1">-- on obtient 27/03/2017</span>
+</pre></div>
+</div>
+</section>
+<section id="convertir-un-type-date-en-date-access">
+<h2>Convertir un type date en date Access<a class="headerlink" href="#convertir-un-type-date-en-date-access" title="Lien permanent vers cette rubrique">¶</a></h2>
+<p>La fonction inverse, qui permet de retrouver la valeur à stocker</p>
+<div class="highlight-postgres notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1">--</span>
+<span class="linenos"> 2</span><span class="c1">-- Fonction qui converti une date en entier</span>
+<span class="linenos"> 3</span><span class="c1">-- Dans Lotus 1-2-3 et Access, le jour 0 est égal au 30/12/1899</span>
+<span class="linenos"> 4</span><span class="c1">-- Auteur: Christophe CHAUVET</span>
+<span class="linenos"> 5</span><span class="c1">-- License: Creative commons BY-SA</span>
+<span class="linenos"> 6</span><span class="c1">--   https://creativecommons.org/licenses/by-sa/4.0/</span>
+<span class="linenos"> 7</span><span class="c1">--</span>
+<span class="linenos"> 8</span><span class="k">CREATE</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="k">REPLACE</span><span class="w"> </span><span class="k">FUNCTION</span><span class="w"> </span><span class="n">date_to_access</span><span class="p">(</span>
+<span class="linenos"> 9</span><span class="w">   </span><span class="n">a_date</span><span class="w"> </span><span class="nb">DATE</span><span class="p">)</span>
+<span class="linenos">10</span><span class="k">RETURNS</span><span class="w"> </span><span class="nb">integer</span><span class="w"> </span><span class="k">AS</span>
+<span class="linenos">11</span><span class="s">$</span><span class="dl">BODY</span><span class="s">$</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span><span class="k">BEGIN</span>
+<span class="linenos">14</span>
+<span class="hll"><span class="linenos">15</span><span class="w">  </span><span class="k">RETURN</span><span class="w"> </span><span class="p">(</span><span class="n">a_date</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="s1">&#39;1899-12-30&#39;</span><span class="o">::</span><span class="nb">date</span><span class="p">)</span><span class="o">::</span><span class="nb">integer</span><span class="p">;</span>
+</span><span class="linenos">16</span>
+<span class="linenos">17</span><span class="k">END</span><span class="p">;</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span><span class="s">$</span><span class="dl">BODY</span><span class="s">$</span>
+<span class="linenos">20</span><span class="k">LANGUAGE</span><span class="w"> </span><span class="n">plpgsql</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Télécharger le fichier <a class="reference download internal" download="" href="../../_downloads/a0cc4c70c92d9909d39c913af0d88565/date_to_access.sql"><code class="xref download docutils literal notranslate"><span class="pre">date_to_access.sql</span></code></a></p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">date_to_access</span><span class="p">(</span><span class="s1">&#39;2017-03-27&#39;</span><span class="p">::</span><span class="nb">date</span><span class="p">)</span>
+<span class="c1">-- on obtient 42821</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../_static/postgresql-200x200.png" alt="Logo"/>
+            </a></p>
+<h1 class="logo"><a href="../../index.html">Ressources PostgreSQL Francophones</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=5432-fr&repo=5432.fr&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../commun.html">Communauté Francophone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../information.html">Informations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../outils.html">Outils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../livres/index.html">Livres</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../articles/index.html">Articles sur PostgreSQL</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Programmation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../c.html">Langage C</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../java.html">Langage Java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python.html">Langage Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../php.html">Langage PHP</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Langage PLpgSQL</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../logiciel/index.html">Logiciels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../services/index.html">Prestation autour de PostgreSQL</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Programmation</a><ul>
+  <li><a href="index.html">Langage PLpgSQL</a><ul>
+      <li>Previous: <a href="index.html" title="Chapitre précédent">Langage PLpgSQL</a></li>
+      <li>Next: <a href="../../logiciel/index.html" title="Chapitre suivant">Logiciels</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016,2023 Christophe CHAUVET, CC BY-SA 4.0.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+    </div>
+
+    
+    <a href="https://github.com/5432-fr/5432.fr" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-73430711-1']);
+      _gaq.push(['_setDomainName', 'none']);
+      _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    
+  </body>
+</html>
