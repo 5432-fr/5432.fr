@@ -8,7 +8,7 @@ Bibliothèque
 
 En Java nous utiliseront le driver JDBC_ qui fournit une interface de programmation standard
 
-* `driver JDBC pour PostgreSQL <https://jdbc.postgresql.org/download.html>`_
+* `driver JDBC pour PostgreSQL <https://jdbc.postgresql.org/download/>`_
 
 .. warning::
 
