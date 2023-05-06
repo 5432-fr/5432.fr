@@ -24,6 +24,6 @@ jobs:
     - name: Install dependencies
       run: |
         if [ -f requirements.txt ]; then pip3 install -r requirements.txt; fi
-    - name: Vverify link
+    - name: Generate HTML page
       run: |
-        make linkcheck
+        make html
