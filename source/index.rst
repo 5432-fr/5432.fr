@@ -11,7 +11,7 @@ Retrouver sur ce site une liste de ressources francophones concernant PostgreSQL
 Contenus:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    commun.rst
    information.rst

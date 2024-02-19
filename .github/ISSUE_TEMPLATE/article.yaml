@@ -1,0 +1,24 @@
+name: Article
+description: Lien vers un article en ligne en lien avec PostgreSQL
+labels: ["article"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci d'avoir pris du temps à remplir ce formulaire
+  - type: input
+    id: article
+    attributes:
+      label: lien vers l'article
+      description: Merci de partager l'adresse de l'article 
+      placeholder: https://...
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Décrire l'article que vous suggérer
+      description: Mettez un résumé de l'article, pour le présenter
+      placeholder: la gestion des droits sour PostgreSQL .....
+    validations:
+      required: true

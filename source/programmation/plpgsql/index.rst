@@ -8,5 +8,5 @@ Le langage PLpgSQL_ est intégré nativement à PostgreSQL, et permet de réalis
 
    date.rst
 
-.. _PLpgSQL: http://docs.postgresql.fr/9.6/plpgsql.html
+.. _PLpgSQL: https://docs.postgresql.fr/16/plpgsql.html
 
