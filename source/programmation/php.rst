@@ -4,8 +4,8 @@ Langage PHP
 Bibliothèques
 -------------
 
-* `Librairie officiel native <http://php.net/manual/fr/book.pgsql.php>`_
-* `Librairie PDO <http://php.net/manual/fr/book.pdo.php>`_ 
+* `Librairie officiel native <https://www.php.net/manual/fr/book.pgsql.php>`_
+* `Librairie PDO <https://php.net/manual/fr/book.pdo.php>`_ 
 
 Gestionnaire de modèle
 ----------------------

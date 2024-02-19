@@ -102,6 +102,7 @@ pygments_style = 'sphinx'
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = False
+tls_verify = False
 
 
 # -- Options for HTML output ----------------------------------------------
@@ -116,10 +117,15 @@ html_theme = 'furo'
 # further.  For a list of options available for each theme, see the
 # documentation.
 html_theme_options = {
-    'analytics_id': 'UA-73430711-1',
-    'github_banner': True,
-    'github_user': '5432-fr',
-    'github_repo': '5432.fr',
+    "announcement": """<a href="https://www.postgresql.org/about/news/postgresql-162-156-1411-1314-and-1218-released-2807/">Sortie de PostgreSQL 16.2, 15.6, 14.11, 13.14, et 12.18</a>""",
+    "footer_icons": [
+        {
+            "name": "GitHub",
+            "url": "https://github.com/5432-fr/5432.fr",
+            "html": "",
+            "class": "fa-brands fa-solid fa-github fa-2x",
+        },
+    ],    
 }
 
 # Add any paths that contain custom themes here, relative to this directory.

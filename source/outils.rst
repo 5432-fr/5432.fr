@@ -16,7 +16,7 @@ Modelisation
 ------------
 
 * `pgModeler <http://www.pgmodeler.com.br/>`_ |linux| |macosx| |windows|
-* `DbVisualizer <http://www.dbvis.com/doc/postgresql-database-features/>`_ |linux| |macosx| |windows|
+* `DbVisualizer <https://www.dbvis.com/database/postgresql/features/>`_ |linux| |macosx| |windows|
 
 Monitoring
 ----------

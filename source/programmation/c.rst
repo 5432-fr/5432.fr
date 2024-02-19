@@ -6,5 +6,5 @@ Langage C
 Bibliothèque
 ------------
 
-La bibliothèque pour la language C se nomme `libpq <http://docs.postgresqlfr.org/9.5/libpq.html>`_ 
+La bibliothèque pour la language C se nomme `libpq <https://doc.postgresql.fr/16/libpq.html>`_ 
 
