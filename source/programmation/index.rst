@@ -6,6 +6,6 @@ Programmation
 
    c.rst
    java.rst
-   python.rst
+   python/index.rst
    php.rst
    plpgsql/index.rst
