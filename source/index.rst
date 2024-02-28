@@ -22,12 +22,8 @@ Contenus:
    logiciel/index.rst
    services/index.rst
 
-
-
-
 Annexes et tableaux
 ===================
 
 * :ref:`genindex`
-* :ref:`search`
 
