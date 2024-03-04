@@ -1,9 +1,10 @@
-name: "Build and deploy Github pages"
+name: "Build and deploy 5432"
 
 on:
   push:         
     branches:
       - master  
+      - ftp-deployment
 
 jobs:
 
@@ -39,3 +40,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages     
           FOLDER: build/html/  
+
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./build/html/
+          server-dir: test/
