@@ -3,8 +3,7 @@ name: "Build and deploy 5432"
 on:
   push:         
     branches:
-      - master  
-      - ftp-deployment
+      - master
 
 jobs:
 
@@ -48,4 +47,4 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./build/html/
-          server-dir: test/
+          server-dir: www/
