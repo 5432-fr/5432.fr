@@ -2,6 +2,9 @@ RewriteEngine On
 RewriteCond %{ENV:HTTPS} !on
 RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+RewriteRule ^$ /index.html [R=301,L]
+RewriteRule ^/$ /index.html [R=301,L]
+
 Redirect 301 /fr/1.0/articles/maintenance.html https://5432.fr/articles/maintenance.html
 Redirect 301 /fr/1.0/index.html https://5432.fr/index.html
 
