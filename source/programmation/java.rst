@@ -1,3 +1,10 @@
+.. title:: Programmation langage Java
+
+.. meta::
+   :description: Programmation en langage Java
+   :keywords: java, langage, postgresql, jdbc
+
+
 Langage Java
 ============
 
