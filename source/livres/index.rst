@@ -3,6 +3,8 @@
 Livres
 ======
 
+.. title:: Livres sur PostgreSQL
+
 .. meta::
    :description: Selection de livres en français autour de POstgreSQL
    :keywords: book, epub, livres, postgresql

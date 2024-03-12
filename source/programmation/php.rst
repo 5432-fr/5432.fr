@@ -1,5 +1,13 @@
+.. title:: Programmation langage PHP
+
+.. meta::
+   :description: Programmation en langage PHP
+   :keywords: php, langage, postgresql, PDO
+
 Langage PHP
 ===========
+
+.. index:: php, pdo
 
 Bibliothèques
 -------------

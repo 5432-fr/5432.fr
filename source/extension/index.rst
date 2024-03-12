@@ -3,6 +3,12 @@
 Extensions
 ==========
 
+.. title:: Extensions pour PostgreSQL
+
+.. meta::
+   :description: Liste d'extensions pour PostgreSQL
+   :keywords: foreign data wrapper, fdw, extensions, postgresql
+
 .. index:: extensions
 
 Apache AGE

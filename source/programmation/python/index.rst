@@ -1,7 +1,15 @@
+.. title:: Programmation langage Python
+
+.. meta::
+   :description: Programmation en langage C
+   :keywords: python, langage, postgresql, db-api
+
+.. _langage_python:
+
 Langage Python
 ==============
 
-.. index:: python
+.. index:: python, db-api, psycopg
 
 Bibiliothèques
 --------------
