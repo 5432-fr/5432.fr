@@ -3,11 +3,13 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Programmation en langage C" name="description" />
+<meta content="c, langage, postgresql, c++" name="keywords" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Recherche" href="../search.html" /><link rel="next" title="Langage Java" href="java.html" /><link rel="prev" title="Programmation" href="index.html" />
         <link rel="canonical" href="https://5432.fr/programmation/c.html" />
 
     <link rel="shortcut icon" href="../_static/postgresql.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
-        <title>Langage C - Documentation Ressources PostgreSQL Francophones 1.0.0</title>
+        <title>Programmation langage C</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
@@ -128,7 +130,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Documentation Ressources PostgreSQL Francophones 1.0.0</div></a>
+      <a href="../index.html"><div class="brand">Ressources PostgreSQL Francophones</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -154,7 +156,7 @@
     <img class="sidebar-logo" src="../_static/postgresql-200x200.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Documentation Ressources PostgreSQL Francophones 1.0.0</span>
+  <span class="sidebar-brand-text">Ressources PostgreSQL Francophones</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Recherche" name="q" aria-label="Recherche">
@@ -221,10 +223,54 @@
         </div>
         <article role="main">
           <section id="langage-c">
-<h1>Langage C<a class="headerlink" href="#langage-c" title="Link to this heading">#</a></h1>
-<section id="bibliotheque">
-<span id="index-0"></span><h2>Bibliothèque<a class="headerlink" href="#bibliotheque" title="Link to this heading">#</a></h2>
-<p>La bibliothèque pour la language C se nomme <a class="reference external" href="https://doc.postgresql.fr/16/libpq.html">libpq</a></p>
+<span id="id1"></span><h1>Langage C<a class="headerlink" href="#langage-c" title="Link to this heading">#</a></h1>
+<p id="index-0">PostgreSQL était écrit en <strong>C</strong>, il existe par conséquent une bibliothèque native qui se nomme <a class="reference external" href="https://docs.postgresql.fr/current/libpq.html">libpq</a></p>
+<section id="bibliotheque-libpq">
+<span id="language-c-libpq"></span><h2>Bibliothèque libpq<a class="headerlink" href="#bibliotheque-libpq" title="Link to this heading">#</a></h2>
+<p id="index-1">La bibliothèque pour le language C se nomme <a class="reference external" href="https://doc.postgresql.fr/16/libpq.html">libpq</a> .</p>
+<p>D’autres langages de programmation on également leur bibliothèque mais les principales s’appuie sur la libpq</p>
+<section id="bibiotheque-ecpg">
+<h3>Bibiothèque ECPG<a class="headerlink" href="#bibiotheque-ecpg" title="Link to this heading">#</a></h3>
+<p>ECPG est un préprocesseur, qui vous permet d’embarquer du SQL directement dans votre programme en C</p>
+<p>vos fichiers C embraquant du SQL auront pour extension <strong>pgc</strong>.</p>
+<p>Chaque instructions utilisants du SQL commencera par <strong>EXEC SQL</strong>.</p>
+<p>Ci-dessous un exemple tiré de la documentation utilisant de multiples connexions</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="n">EXEC</span><span class="w"> </span><span class="n">SQL</span><span class="w"> </span><span class="n">BEGIN</span><span class="w"> </span><span class="n">DECLARE</span><span class="w"> </span><span class="n">SECTION</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">nomdb</span><span class="p">[</span><span class="mi">1024</span><span class="p">];</span>
+<span class="n">EXEC</span><span class="w"> </span><span class="n">SQL</span><span class="w"> </span><span class="n">END</span><span class="w"> </span><span class="n">DECLARE</span><span class="w"> </span><span class="n">SECTION</span><span class="p">;</span>
+
+<span class="kt">int</span>
+<span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">EXEC</span><span class="w"> </span><span class="n">SQL</span><span class="w"> </span><span class="n">CONNECT</span><span class="w"> </span><span class="n">TO</span><span class="w"> </span><span class="n">basetest1</span><span class="w"> </span><span class="n">AS</span><span class="w"> </span><span class="n">con1</span><span class="w"> </span><span class="n">USER</span><span class="w"> </span><span class="n">utilisateurtest</span><span class="p">;</span>
+<span class="w">    </span><span class="n">EXEC</span><span class="w"> </span><span class="n">SQL</span><span class="w"> </span><span class="n">SELECT</span><span class="w"> </span><span class="n">pg_catalog</span><span class="p">.</span><span class="n">set_config</span><span class="p">(</span><span class="err">&#39;</span><span class="n">search_path</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">);</span><span class="w"> </span><span class="n">EXEC</span><span class="w"> </span><span class="n">SQL</span><span class="w"> </span><span class="n">COMMIT</span><span class="p">;</span>
+<span class="w">    </span><span class="n">EXEC</span><span class="w"> </span><span class="n">SQL</span><span class="w"> </span><span class="n">CONNECT</span><span class="w"> </span><span class="n">TO</span><span class="w"> </span><span class="n">basetest2</span><span class="w"> </span><span class="n">AS</span><span class="w"> </span><span class="n">con2</span><span class="w"> </span><span class="n">USER</span><span class="w"> </span><span class="n">utilisateurtest</span><span class="p">;</span>
+<span class="w">    </span><span class="n">EXEC</span><span class="w"> </span><span class="n">SQL</span><span class="w"> </span><span class="n">SELECT</span><span class="w"> </span><span class="n">pg_catalog</span><span class="p">.</span><span class="n">set_config</span><span class="p">(</span><span class="err">&#39;</span><span class="n">search_path</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">);</span><span class="w"> </span><span class="n">EXEC</span><span class="w"> </span><span class="n">SQL</span><span class="w"> </span><span class="n">COMMIT</span><span class="p">;</span>
+<span class="w">    </span><span class="n">EXEC</span><span class="w"> </span><span class="n">SQL</span><span class="w"> </span><span class="n">CONNECT</span><span class="w"> </span><span class="n">TO</span><span class="w"> </span><span class="n">basetest3</span><span class="w"> </span><span class="n">AS</span><span class="w"> </span><span class="n">con3</span><span class="w"> </span><span class="n">USER</span><span class="w"> </span><span class="n">utilisateurtest</span><span class="p">;</span>
+<span class="w">    </span><span class="n">EXEC</span><span class="w"> </span><span class="n">SQL</span><span class="w"> </span><span class="n">SELECT</span><span class="w"> </span><span class="n">pg_catalog</span><span class="p">.</span><span class="n">set_config</span><span class="p">(</span><span class="err">&#39;</span><span class="n">search_path</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">);</span><span class="w"> </span><span class="n">EXEC</span><span class="w"> </span><span class="n">SQL</span><span class="w"> </span><span class="n">COMMIT</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Cette requête serait exécuté dans la dernière base ouverte &quot;basetest3&quot;. */</span>
+<span class="w">    </span><span class="n">EXEC</span><span class="w"> </span><span class="n">SQL</span><span class="w"> </span><span class="n">SELECT</span><span class="w"> </span><span class="n">current_database</span><span class="p">()</span><span class="w"> </span><span class="n">INTO</span><span class="w"> </span><span class="o">:</span><span class="n">nomdb</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;courante=%s (devrait être basetest3)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">nomdb</span><span class="p">);</span>
+
+<span class="w">    </span><span class="cm">/* Utiliser &quot;AT&quot; pour exécuter une requête dans &quot;basetest2&quot; */</span>
+<span class="w">    </span><span class="n">EXEC</span><span class="w"> </span><span class="n">SQL</span><span class="w"> </span><span class="n">AT</span><span class="w"> </span><span class="n">con2</span><span class="w"> </span><span class="n">SELECT</span><span class="w"> </span><span class="n">current_database</span><span class="p">()</span><span class="w"> </span><span class="n">INTO</span><span class="w"> </span><span class="o">:</span><span class="n">nomdb</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;courante=%s (devrait être basetest2)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">nomdb</span><span class="p">);</span>
+
+<span class="w">    </span><span class="cm">/* Basculer la connexion courante à &quot;basetest1&quot;. */</span>
+<span class="w">    </span><span class="n">EXEC</span><span class="w"> </span><span class="n">SQL</span><span class="w"> </span><span class="n">SET</span><span class="w"> </span><span class="n">CONNECTION</span><span class="w"> </span><span class="n">con1</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">EXEC</span><span class="w"> </span><span class="n">SQL</span><span class="w"> </span><span class="n">SELECT</span><span class="w"> </span><span class="n">current_database</span><span class="p">()</span><span class="w"> </span><span class="n">INTO</span><span class="w"> </span><span class="o">:</span><span class="n">nomdb</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;courante=%s (devrait être basetest1)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">nomdb</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">EXEC</span><span class="w"> </span><span class="n">SQL</span><span class="w"> </span><span class="n">DISCONNECT</span><span class="w"> </span><span class="n">ALL</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 
@@ -286,7 +332,10 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Langage C</a><ul>
-<li><a class="reference internal" href="#bibliotheque">Bibliothèque</a></li>
+<li><a class="reference internal" href="#bibliotheque-libpq">Bibliothèque libpq</a><ul>
+<li><a class="reference internal" href="#bibiotheque-ecpg">Bibiothèque ECPG</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

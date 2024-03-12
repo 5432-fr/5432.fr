@@ -1,3 +1,11 @@
+.. title:: Programmation langage PLpgSQL
+
+.. meta::
+   :description: Programmation en langage PLpgSQL
+   :keywords: plpgsql, langage, postgresql, fonction, procedure
+
+.. _langage_plpgsql:
+
 Langage PLpgSQL
 ===============
 
