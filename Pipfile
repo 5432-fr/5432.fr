@@ -7,7 +7,7 @@ verify_ssl = true
 
 [packages]
 sphinx = "==7.2.6"
-sphinx-autobuild = "==2024.2.4"
+sphinx-autobuild = "==2024.4.13"
 sphinx-sitemap = "==2.5.1"
 furo = "==2024.1.29"
 
