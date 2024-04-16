@@ -31,3 +31,9 @@ pull_request_rules:
     actions:
       merge:
         method: squash
+  - name: Automatically approve Dependabot PRs
+    conditions:
+      - author = dependabot[bot]
+    actions:
+      review:
+        type: APPROVE
