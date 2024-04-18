@@ -27,11 +27,12 @@ jobs:
 
       - name: "Install Python dependencies"
         run: |
-          pip3 install -r requirements.txt
+          pip3 install pipenv
+          pipenv install --python 3.9
 
       - name: "Build Sphinx Doc"
         run: |
-          make html
+          pipenv run make html
 
       - name: "Deploy Github Pages"
         uses: JamesIves/github-pages-deploy-action@3.7.1
