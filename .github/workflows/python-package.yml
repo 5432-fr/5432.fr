@@ -24,6 +24,7 @@ jobs:
     - name: Install dependencies
       run: |
         pip3 install pipenv
+        pipenv install --python ${{ matrix.python-version }}
     - name: Generate HTML page
       run: |
         pipenv run make html
