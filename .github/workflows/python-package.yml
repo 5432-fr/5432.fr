@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ['3.9']
+        python-version: ['3.9', '3.10', '3.11']
 
     steps:
     - uses: actions/checkout@v3
@@ -23,7 +23,7 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
       run: |
-        if [ -f requirements.txt ]; then pip3 install -r requirements.txt; fi
+        pip3 install pipenv
     - name: Generate HTML page
       run: |
-        make html
+        pipenv run make html
