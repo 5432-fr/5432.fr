@@ -367,3 +367,8 @@ epub_exclude_files = ['search.html']
 #epub_use_index = True
 
 sitemap_url_scheme = "{link}"
+
+sitemap_excludes = [
+    "search.html",
+    "genindex.html",
+]
