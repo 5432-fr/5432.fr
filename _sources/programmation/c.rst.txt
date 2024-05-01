@@ -20,7 +20,7 @@ Bibliothèque libpq
 
 .. index:: libpq
 
-La bibliothèque pour le language C se nomme `libpq <https://doc.postgresql.fr/16/libpq.html>`_ .
+La bibliothèque pour le language C se nomme `libpq <https://docs.postgresql.fr/current/libpq.html>`_ .
 
 D'autres langages de programmation on également leur bibliothèque mais les principales s'appuie sur la libpq
 
