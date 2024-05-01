@@ -234,42 +234,42 @@
 <section id="bibiotheque-ecpg">
 <h3>Bibiothèque ECPG<a class="headerlink" href="#bibiotheque-ecpg" title="Lien vers cette rubrique">¶</a></h3>
 <p>ECPG est un préprocesseur, qui vous permet d’embarquer du SQL directement dans votre programme en C</p>
-<p>vos fichiers C embraquant du SQL auront pour extension <strong>pgc</strong>.</p>
+<p>Vos fichiers C embarquant du SQL auront pour extension <strong>pgc</strong>.</p>
 <p>Chaque instructions utilisants du SQL commencera par <strong>EXEC SQL</strong>.</p>
 <p>Ci-dessous un exemple tiré de la documentation utilisant de multiples connexions</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>#include &lt;stdio.h&gt;
 
-<span class="n">EXEC</span><span class="w"> </span><span class="n">SQL</span><span class="w"> </span><span class="n">BEGIN</span><span class="w"> </span><span class="n">DECLARE</span><span class="w"> </span><span class="n">SECTION</span><span class="p">;</span>
-<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">nomdb</span><span class="p">[</span><span class="mi">1024</span><span class="p">];</span>
-<span class="n">EXEC</span><span class="w"> </span><span class="n">SQL</span><span class="w"> </span><span class="n">END</span><span class="w"> </span><span class="n">DECLARE</span><span class="w"> </span><span class="n">SECTION</span><span class="p">;</span>
+EXEC SQL BEGIN DECLARE SECTION;
+    char nomdb[1024];
+EXEC SQL END DECLARE SECTION;
 
-<span class="kt">int</span>
-<span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="n">EXEC</span><span class="w"> </span><span class="n">SQL</span><span class="w"> </span><span class="n">CONNECT</span><span class="w"> </span><span class="n">TO</span><span class="w"> </span><span class="n">basetest1</span><span class="w"> </span><span class="n">AS</span><span class="w"> </span><span class="n">con1</span><span class="w"> </span><span class="n">USER</span><span class="w"> </span><span class="n">utilisateurtest</span><span class="p">;</span>
-<span class="w">    </span><span class="n">EXEC</span><span class="w"> </span><span class="n">SQL</span><span class="w"> </span><span class="n">SELECT</span><span class="w"> </span><span class="n">pg_catalog</span><span class="p">.</span><span class="n">set_config</span><span class="p">(</span><span class="err">&#39;</span><span class="n">search_path</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">);</span><span class="w"> </span><span class="n">EXEC</span><span class="w"> </span><span class="n">SQL</span><span class="w"> </span><span class="n">COMMIT</span><span class="p">;</span>
-<span class="w">    </span><span class="n">EXEC</span><span class="w"> </span><span class="n">SQL</span><span class="w"> </span><span class="n">CONNECT</span><span class="w"> </span><span class="n">TO</span><span class="w"> </span><span class="n">basetest2</span><span class="w"> </span><span class="n">AS</span><span class="w"> </span><span class="n">con2</span><span class="w"> </span><span class="n">USER</span><span class="w"> </span><span class="n">utilisateurtest</span><span class="p">;</span>
-<span class="w">    </span><span class="n">EXEC</span><span class="w"> </span><span class="n">SQL</span><span class="w"> </span><span class="n">SELECT</span><span class="w"> </span><span class="n">pg_catalog</span><span class="p">.</span><span class="n">set_config</span><span class="p">(</span><span class="err">&#39;</span><span class="n">search_path</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">);</span><span class="w"> </span><span class="n">EXEC</span><span class="w"> </span><span class="n">SQL</span><span class="w"> </span><span class="n">COMMIT</span><span class="p">;</span>
-<span class="w">    </span><span class="n">EXEC</span><span class="w"> </span><span class="n">SQL</span><span class="w"> </span><span class="n">CONNECT</span><span class="w"> </span><span class="n">TO</span><span class="w"> </span><span class="n">basetest3</span><span class="w"> </span><span class="n">AS</span><span class="w"> </span><span class="n">con3</span><span class="w"> </span><span class="n">USER</span><span class="w"> </span><span class="n">utilisateurtest</span><span class="p">;</span>
-<span class="w">    </span><span class="n">EXEC</span><span class="w"> </span><span class="n">SQL</span><span class="w"> </span><span class="n">SELECT</span><span class="w"> </span><span class="n">pg_catalog</span><span class="p">.</span><span class="n">set_config</span><span class="p">(</span><span class="err">&#39;</span><span class="n">search_path</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">);</span><span class="w"> </span><span class="n">EXEC</span><span class="w"> </span><span class="n">SQL</span><span class="w"> </span><span class="n">COMMIT</span><span class="p">;</span>
+int
+main()
+{
+    EXEC SQL CONNECT TO basetest1 AS con1 USER utilisateurtest;
+    EXEC SQL SELECT pg_catalog.set_config(&#39;search_path&#39;, &#39;&#39;, false); EXEC SQL COMMIT;
+    EXEC SQL CONNECT TO basetest2 AS con2 USER utilisateurtest;
+    EXEC SQL SELECT pg_catalog.set_config(&#39;search_path&#39;, &#39;&#39;, false); EXEC SQL COMMIT;
+    EXEC SQL CONNECT TO basetest3 AS con3 USER utilisateurtest;
+    EXEC SQL SELECT pg_catalog.set_config(&#39;search_path&#39;, &#39;&#39;, false); EXEC SQL COMMIT;
 
-<span class="w">    </span><span class="cm">/* Cette requête serait exécuté dans la dernière base ouverte &quot;basetest3&quot;. */</span>
-<span class="w">    </span><span class="n">EXEC</span><span class="w"> </span><span class="n">SQL</span><span class="w"> </span><span class="n">SELECT</span><span class="w"> </span><span class="n">current_database</span><span class="p">()</span><span class="w"> </span><span class="n">INTO</span><span class="w"> </span><span class="o">:</span><span class="n">nomdb</span><span class="p">;</span>
-<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;courante=%s (devrait être basetest3)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">nomdb</span><span class="p">);</span>
+    /* Cette requête serait exécuté dans la dernière base ouverte &quot;basetest3&quot;. */
+    EXEC SQL SELECT current_database() INTO :nomdb;
+    printf(&quot;courante=%s (devrait être basetest3)\n&quot;, nomdb);
 
-<span class="w">    </span><span class="cm">/* Utiliser &quot;AT&quot; pour exécuter une requête dans &quot;basetest2&quot; */</span>
-<span class="w">    </span><span class="n">EXEC</span><span class="w"> </span><span class="n">SQL</span><span class="w"> </span><span class="n">AT</span><span class="w"> </span><span class="n">con2</span><span class="w"> </span><span class="n">SELECT</span><span class="w"> </span><span class="n">current_database</span><span class="p">()</span><span class="w"> </span><span class="n">INTO</span><span class="w"> </span><span class="o">:</span><span class="n">nomdb</span><span class="p">;</span>
-<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;courante=%s (devrait être basetest2)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">nomdb</span><span class="p">);</span>
+    /* Utiliser &quot;AT&quot; pour exécuter une requête dans &quot;basetest2&quot; */
+    EXEC SQL AT con2 SELECT current_database() INTO :nomdb;
+    printf(&quot;courante=%s (devrait être basetest2)\n&quot;, nomdb);
 
-<span class="w">    </span><span class="cm">/* Basculer la connexion courante à &quot;basetest1&quot;. */</span>
-<span class="w">    </span><span class="n">EXEC</span><span class="w"> </span><span class="n">SQL</span><span class="w"> </span><span class="n">SET</span><span class="w"> </span><span class="n">CONNECTION</span><span class="w"> </span><span class="n">con1</span><span class="p">;</span>
+    /* Basculer la connexion courante à &quot;basetest1&quot;. */
+    EXEC SQL SET CONNECTION con1;
 
-<span class="w">    </span><span class="n">EXEC</span><span class="w"> </span><span class="n">SQL</span><span class="w"> </span><span class="n">SELECT</span><span class="w"> </span><span class="n">current_database</span><span class="p">()</span><span class="w"> </span><span class="n">INTO</span><span class="w"> </span><span class="o">:</span><span class="n">nomdb</span><span class="p">;</span>
-<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;courante=%s (devrait être basetest1)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">nomdb</span><span class="p">);</span>
+    EXEC SQL SELECT current_database() INTO :nomdb;
+    printf(&quot;courante=%s (devrait être basetest1)\n&quot;, nomdb);
 
-<span class="w">    </span><span class="n">EXEC</span><span class="w"> </span><span class="n">SQL</span><span class="w"> </span><span class="n">DISCONNECT</span><span class="w"> </span><span class="n">ALL</span><span class="p">;</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
+    EXEC SQL DISCONNECT ALL;
+    return 0;
+}
 </pre></div>
 </div>
 </section>

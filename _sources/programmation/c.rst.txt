@@ -29,14 +29,14 @@ ________________
 
 ECPG est un préprocesseur, qui vous permet d'embarquer du SQL directement dans votre programme en C
 
-vos fichiers C embraquant du SQL auront pour extension **pgc**.
+Vos fichiers C embarquant du SQL auront pour extension **pgc**.
 
 Chaque instructions utilisants du SQL commencera par **EXEC SQL**. 
 
 Ci-dessous un exemple tiré de la documentation utilisant de multiples connexions
 
 .. literalinclude:: c/exemple1.pgc
-   :language: c
+   :language: text
 
 
 
