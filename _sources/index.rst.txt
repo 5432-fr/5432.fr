@@ -3,6 +3,12 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+.. title:: Ressources PostgreSQL Francophones
+
+.. meta::
+   :description: regroupement de ressource disponible en français autour de PostgreSQL
+   :keywords: article, blog, programmation, postgresql
+
 Ressources PostgreSQL Francophones
 ==================================
 
