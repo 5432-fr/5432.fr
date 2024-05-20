@@ -121,7 +121,7 @@ html_theme = 'furo'
 # further.  For a list of options available for each theme, see the
 # documentation.
 html_theme_options = {
-    "announcement": """<a href="https://www.postgresql.org/about/news/postgresql-163-157-1412-1315-and-1219-released-2858/">Sortie de PostgreSQL 16.3, 15.7, 14.12, 13.15, et 12.19</a>""",
+    "announcement": """<a href="https://pgday.fr/programme">PG DAY France, à Lille le 11 et 12 Juin 2024</a>""",
     "footer_icons": [
         {
             "name": "GitHub",
