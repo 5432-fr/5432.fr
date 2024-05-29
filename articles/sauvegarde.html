@@ -290,6 +290,20 @@
         <article role="main" id="furo-main-content">
           <section id="sauvegarde-et-restauration">
 <h1>Sauvegarde et restauration<a class="headerlink" href="#sauvegarde-et-restauration" title="Lien vers cette rubrique">¶</a></h1>
+<p>Sous PostgreSQL par défaut il existe 3 type de sauvegarde.</p>
+<ul class="simple">
+<li><p>Sauvegarde de type SQL (Dump)</p></li>
+<li><p>Sauvegarde au niveau du système de fichier</p></li>
+<li><p>Sauvegarde en archivage continue</p></li>
+</ul>
+<section id="sauvegarde-sql">
+<h2>Sauvegarde SQL<a class="headerlink" href="#sauvegarde-sql" title="Lien vers cette rubrique">¶</a></h2>
+<p>La sauvegarde SQL (également appelé Dump) se réalise avec le programme founit en standard <a class="reference external" href="https://docs.postgresql.fr/current/app-pgdump.html">pg_dump</a>.</p>
+<p>la restauration de cette sauvegarde se fera avec le programme <a class="reference external" href="https://docs.postgresql.fr/current/app-pgrestore.html">pg_restore</a></p>
+</section>
+</section>
+<section id="articles">
+<h1>Articles<a class="headerlink" href="#articles" title="Lien vers cette rubrique">¶</a></h1>
 <section id="sauvegarde">
 <h2>Sauvegarde<a class="headerlink" href="#sauvegarde" title="Lien vers cette rubrique">¶</a></h2>
 <ul class="simple">
@@ -344,6 +358,10 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Sauvegarde et restauration</a><ul>
+<li><a class="reference internal" href="#sauvegarde-sql">Sauvegarde SQL</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#articles">Articles</a><ul>
 <li><a class="reference internal" href="#sauvegarde">Sauvegarde</a></li>
 <li><a class="reference internal" href="#restauration">Restauration</a></li>
 </ul>
