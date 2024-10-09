@@ -10,9 +10,19 @@
    :keywords: article, blog, programmation, postgresql
 
 Ressources PostgreSQL Francophones
-==================================
+================================== 
 
-Retrouver sur ce site une liste de ressources francophones concernant PostgreSQL.
+**PostgreSQL** également connu sous le nom de **Postgres**, est un système de gestion de base de données relationnelle (SGBDR) 
+gratuit et open source mettant l'accent sur l'extensibilité et la conformité SQL. c'est l'une des plus complète disponible sur le marché.
+
+**PostgreSQL** propose des transactions avec des propriétés d'atomicité, de cohérence, d'isolation, 
+de durabilité (ACID), des vues automatiquement actualisables, 
+des vues matérialisées, des déclencheurs, des clés étrangères et des procédures stockées.
+
+Il est pris en charge sur tous les principaux systèmes d'exploitation, 
+notamment Windows, Linux, macOS, FreeBSD et OpenBSD, 
+et gère une gamme de charges de travail allant des machines individuelles aux entrepôts de données, 
+ou aux services Web avec de nombreux utilisateurs simultanés.
 
 Contenus:
 
