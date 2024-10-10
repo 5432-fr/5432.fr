@@ -378,3 +378,16 @@ sitemap_excludes = [
 ]
 
 googleanalytics_id="GTM-MHD7527M"
+
+# -- OpenGraph ------------------------------------------------
+
+ogp_site_url = site_url
+ogp_image = "https://5432.fr/_static/postgresql-200x200.png"
+ogp_description_length = 300
+ogp_type = "article"
+
+ogp_custom_meta_tags = [
+    '<meta property="og:ignore_canonical" content="true" />',
+]
+
+ogp_enable_meta_description = True 
