@@ -388,6 +388,7 @@ ogp_type = "article"
 
 ogp_custom_meta_tags = [
     '<meta property="og:ignore_canonical" content="true" />',
+    '<meta property="og:locale" content="fr_FR" />',
 ]
 
 ogp_enable_meta_description = True 
