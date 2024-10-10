@@ -32,7 +32,8 @@ import time
 extensions = [
     'sphinx_sitemap', 
     'sphinx.ext.githubpages', 
-    'sphinxcontrib.googleanalytics'
+    'sphinxcontrib.googleanalytics',
+    'sphinxext.opengraph',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
