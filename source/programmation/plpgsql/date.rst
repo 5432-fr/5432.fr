@@ -1,8 +1,18 @@
+:og:title: PL/pgSQL et les dates
+:og:description: Traitement sur les dates en PL/pgSQL
+:og:type: article
+
+.. _plpgsql_date_converter:
+
 Traitement sur les dates
 ========================
 
+.. index:: PL/pgSQL date
+
 Convertir une date Access en type date
 --------------------------------------
+
+.. index:: date, ACCESS, Lotus 1-2-3
 
 Sous Access et historiquement Lotus 1-2-3 (Explication `ici <https://stackoverflow.com/a/3963650>`_) la date est stockée
 sous forme d'un entier, Dans PostgreSQL nosu allons utiliser le type interval pour retrouver le type date.

@@ -7,6 +7,7 @@ RUN apt-get update \
       make \
       gettext \
       sshpass \
+      openssh-client \
  && apt-get autoremove \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* \
@@ -14,4 +15,3 @@ RUN apt-get update \
  && rm -f /etc/ssh/ssh_host_*
 
 RUN python3 -m pip install --no-cache-dir -U pip
-RUN python3 -m pip install --no-cache-dir Sphinx==7.2.6 Pillow==10.2.0 furo
