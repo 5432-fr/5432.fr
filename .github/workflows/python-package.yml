@@ -21,10 +21,11 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: ${{ matrix.python-version }}
+    - name: Display Python version
+      run: python -c "import sys; print(sys.version)"
     - name: Install dependencies
       run: |
-        pip3 install pipenv
-        pipenv install --python ${{ matrix.python-version }} -r requirements.txt
+        python -m pip install -r requirements.txt
     - name: Generate HTML page
       run: |
-        pipenv run make html
+        make html
