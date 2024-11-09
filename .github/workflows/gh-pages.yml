@@ -11,28 +11,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
       - name: "Checkout"
         uses: actions/checkout@v2
         with:
           persist-credentials: false
 
-      # 2. Partie spécifique à Sphinx (installation des
-      #    dépendances et génération de la doc)
-
       - name: "Set up Python"
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v4
         with:
           python-version: 3.11
 
+      - name: Display Python version
+        run: python -c "import sys; print(sys.version)"
+
       - name: "Install Python dependencies"
         run: |
-          pip3 install pipenv
-          pipenv install --python 3.11 -r requirements.txt
+          python -m pip install -r requirements.txt
 
       - name: "Build Sphinx Doc"
         run: |
-          pipenv run make html
+          make html
 
       - name: "Deploy Github Pages"
         uses: JamesIves/github-pages-deploy-action@3.7.1
