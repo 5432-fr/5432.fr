@@ -3,6 +3,8 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Programmation" name="description" />
+<meta content="langage, postgresql" name="keywords" />
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=GTM-MHD7527M"></script>
@@ -16,10 +18,9 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://5432.fr/programmation/index.html" />
 <meta property="og:site_name" content="Ressources PostgreSQL Francophones" />
-<meta property="og:description" content="Langage C- Bibliothèque libpq., Langage Java- Bibliothèque., Langage Python- Bibiliothèques., Langage PHP- Bibliothèques, Gestionnaire de modèle., Langage PLpgSQL- Traitement sur les dates.." />
+<meta property="og:description" content="Programmation avec PostgreSQL" />
 <meta property="og:image" content="https://5432.fr/_static/postgresql-200x200.png" />
 <meta property="og:image:alt" content="Ressources PostgreSQL Francophones" />
-<meta name="description" content="Langage C- Bibliothèque libpq., Langage Java- Bibliothèque., Langage Python- Bibiliothèques., Langage PHP- Bibliothèques, Gestionnaire de modèle., Langage PLpgSQL- Traitement sur les dates.." />
 <meta property="og:ignore_canonical" content="true" />
 <meta property="og:locale" content="fr_FR" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Recherche" href="../search.html" /><link rel="next" title="Langage C" href="c.html" /><link rel="prev" title="Extensions" href="../extension/index.html" />
@@ -202,7 +203,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -279,7 +280,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -287,10 +288,16 @@
         <article role="main" id="furo-main-content">
           <section id="programmation">
 <h1>Programmation<a class="headerlink" href="#programmation" title="Lien vers cette rubrique">¶</a></h1>
+<section id="ecosysteme">
+<span id="index-0"></span><h2>Ecosystème<a class="headerlink" href="#ecosysteme" title="Lien vers cette rubrique">¶</a></h2>
+<p>L’ecosystème PostgreSQL dispose de nombreuses bibliothèques natives pour s’interfacer avec une multitude de langage.</p>
+<p>Lorsque que pour un langage, aucune interface native n’est disponible, il est parfois possible de s’y connecter
+avec un driver ODBC.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="c.html">Langage C</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="c.html#bibliotheque-libpq">Bibliothèque libpq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="c.html#bibiotheque-ecpg">Bibiothèque ECPG</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="java.html">Langage Java</a><ul>
@@ -312,6 +319,7 @@
 </li>
 </ul>
 </div>
+</section>
 </section>
 
         </article>
@@ -359,8 +367,27 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Programmation</a><ul>
+<li><a class="reference internal" href="#ecosysteme">Ecosystème</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

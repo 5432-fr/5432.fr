@@ -12,11 +12,11 @@
         gtag('js', new Date());
         gtag('config', 'GTM-MHD7527M');
     </script>
-    <meta property="og:title" content="Traitement sur les dates" />
+    <meta property="og:title" content="PL/pgSQL et les dates" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://5432.fr/programmation/plpgsql/date.html" />
 <meta property="og:site_name" content="Ressources PostgreSQL Francophones" />
-<meta property="og:description" content="Convertir une date Access en type date: Sous Access et historiquement Lotus 1-2-3 (Explication ici) la date est stockée sous forme d’un entier, Dans PostgreSQL nosu allons utiliser le type interval pour retrouver le type date. Télécharger le fichier access_to_date.sql Pour l’utiliser Convertir un..." />
+<meta property="og:description" content="Traitement sur les dates en PL/pgSQL" />
 <meta property="og:image" content="https://5432.fr/_static/postgresql-200x200.png" />
 <meta property="og:image:alt" content="Ressources PostgreSQL Francophones" />
 <meta name="description" content="Convertir une date Access en type date: Sous Access et historiquement Lotus 1-2-3 (Explication ici) la date est stockée sous forme d’un entier, Dans PostgreSQL nosu allons utiliser le type interval pour retrouver le type date. Télécharger le fichier access_to_date.sql Pour l’utiliser Convertir un..." />
@@ -286,10 +286,10 @@
         </div>
         <article role="main" id="furo-main-content">
           <section id="traitement-sur-les-dates">
-<h1>Traitement sur les dates<a class="headerlink" href="#traitement-sur-les-dates" title="Lien vers cette rubrique">¶</a></h1>
+<span id="plpgsql-date-converter"></span><h1>Traitement sur les dates<a class="headerlink" href="#traitement-sur-les-dates" title="Lien vers cette rubrique">¶</a></h1>
 <section id="convertir-une-date-access-en-type-date">
-<h2>Convertir une date Access en type date<a class="headerlink" href="#convertir-une-date-access-en-type-date" title="Lien vers cette rubrique">¶</a></h2>
-<p>Sous Access et historiquement Lotus 1-2-3 (Explication <a class="reference external" href="https://stackoverflow.com/a/3963650">ici</a>) la date est stockée
+<span id="index-0"></span><h2>Convertir une date Access en type date<a class="headerlink" href="#convertir-une-date-access-en-type-date" title="Lien vers cette rubrique">¶</a></h2>
+<p id="index-1">Sous Access et historiquement Lotus 1-2-3 (Explication <a class="reference external" href="https://stackoverflow.com/a/3963650">ici</a>) la date est stockée
 sous forme d’un entier, Dans PostgreSQL nosu allons utiliser le type interval pour retrouver le type date.</p>
 <div class="highlight-postgres notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1">--</span>
 <span class="linenos"> 2</span><span class="c1">-- Fonction qui converti un entier en date</span>

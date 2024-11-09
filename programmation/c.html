@@ -18,7 +18,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://5432.fr/programmation/c.html" />
 <meta property="og:site_name" content="Ressources PostgreSQL Francophones" />
-<meta property="og:description" content="Langage C: PostgreSQL était écrit en C, il existe par conséquent une bibliothèque native qui se nomme libpq Bibliothèque libpq: La bibliothèque pour le language C se nomme libpq. D’autres langages de programmation on également leur bibliothèque mais les principales s’appuie sur la libpq Bibiothèq..." />
+<meta property="og:description" content="Programmation PostgreSQL en langage C" />
 <meta property="og:image" content="https://5432.fr/_static/postgresql-200x200.png" />
 <meta property="og:image:alt" content="Ressources PostgreSQL Francophones" />
 <meta property="og:ignore_canonical" content="true" />
@@ -288,16 +288,200 @@
         <article role="main" id="furo-main-content">
           <section id="langage-c">
 <span id="id1"></span><h1>Langage C<a class="headerlink" href="#langage-c" title="Lien vers cette rubrique">¶</a></h1>
-<p id="index-0">PostgreSQL était écrit en <strong>C</strong>, il existe par conséquent une bibliothèque native qui se nomme <a class="reference external" href="https://docs.postgresql.fr/current/libpq.html">libpq</a></p>
+<p id="index-0">PostgreSQL étant écrit en <strong>C</strong>, il existe par conséquent une bibliothèque native qui se nomme <a class="reference external" href="https://docs.postgresql.fr/current/libpq.html">libpq</a></p>
 <section id="bibliotheque-libpq">
 <span id="language-c-libpq"></span><h2>Bibliothèque libpq<a class="headerlink" href="#bibliotheque-libpq" title="Lien vers cette rubrique">¶</a></h2>
 <p id="index-1">La bibliothèque pour le language C se nomme <a class="reference external" href="https://docs.postgresql.fr/current/libpq.html">libpq</a> .</p>
-<p>D’autres langages de programmation on également leur bibliothèque mais les principales s’appuie sur la libpq</p>
+<p>D’autres langages de programmation on également leur bibliothèque mais les principales s’appuie sur la libpq via des wrappers</p>
+<p>Pour commencer à travailler avec libpq dans votre programme C,
+vous devez importer les bibliothèques nécessaires.</p>
+<p>Ouvrez votre fichier de programme C et incluez les bibliothèques suivantes en haut du fichier</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;libpq-fe.h&gt;</span>
+</pre></div>
+</div>
+<section id="etablir-une-connexion">
+<h3>Etablir une connexion<a class="headerlink" href="#etablir-une-connexion" title="Lien vers cette rubrique">¶</a></h3>
+<p>Pour établir une connexion à la base de données PostgreSQL à l’aide de libpq, nous utiliserons la fonction PQconnectdb().</p>
+<p>Cette fonction ouvre une nouvelle connexion à la base de données en fonction des paramètres fournis dans la chaîne <strong>conninfo</strong>.</p>
+<p>La chaîne <strong>conninfo</strong> contient un ou plusieurs paramètres au format <strong>keyword=value</strong>, séparés par des espaces.
+Vous pouvez utiliser des paramètres par défaut en transmettant une chaîne vide ou
+spécifier des paramètres personnalisés selon vos besoins.</p>
+<p>Pour inclure une valeur nulle ou une valeur avec des espaces, placez-la entre guillemets simples (keyword=”value”).
+Si nécessaire, échappez les guillemets simples dans la valeur à l’aide d’une barre oblique inverse (').
+Les espaces autour du signe égal sont facultatifs.</p>
+<p>Il est important de noter que la fonction PQconnectdb() renvoie toujours un pointeur d’objet PGconn non nul,
+sauf si la mémoire est insuffisante pour allouer l’objet.</p>
+<p>Pendant le processus de connexion, vous pouvez vérifier l’état de la connexion à l’aide de la fonction PQstatus().
+Si l’état est <strong>CONNECTION_BAD</strong>, la procédure de connexion a échoué.
+A l’inverse, si le statut est <strong>CONNECTION_OK</strong>, la connexion est prête.</p>
+<p>Pour fermer correctement la connexion et libérer la mémoire utilisée par l’objet PGconn, appelez la fonction <a class="reference external" href="https://www.postgresql.org/docs/current/libpq-connect.html#LIBPQ-PQFINISH">PQfinish()</a>.
+Même si la tentative de connexion au backend échoue (comme indiqué par PQstatus), il est essentiel d’appeler <a class="reference external" href="https://www.postgresql.org/docs/current/libpq-connect.html#LIBPQ-PQFINISH">PQfinish()</a> pour libérer la mémoire allouée.
+Après avoir appelé <a class="reference external" href="https://www.postgresql.org/docs/current/libpq-connect.html#LIBPQ-PQFINISH">PQfinish()</a>, le pointeur <strong>PGconn</strong> ne doit plus être utilisé.</p>
+<p>Ci-dessous un exemple de programme qui se connect au serveur de base de données, et affiche les informations de connexions</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;libpq-fe.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Tuto utilisation de la libpq </span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+<span class="w">   </span><span class="c1">// Connexion à la base de données</span>
+<span class="w">   </span><span class="c1">// la chaine conninfo contient les mots clés et les valeurs séparés par des espaces.</span>
+<span class="w">   </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">conninfo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;dbname=votre_nom_db user=utilisateur password=mot_de_passe host=localhost port=5432&quot;</span><span class="p">;</span>
+
+<span class="w">   </span><span class="c1">// Creation de la connexion</span>
+<span class="w">   </span><span class="n">PGconn</span><span class="w"> </span><span class="o">*</span><span class="n">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PQconnectdb</span><span class="p">(</span><span class="n">conninfo</span><span class="p">);</span>
+
+<span class="w">   </span><span class="c1">// Vérification si la connexion s&#39;est faite correctement</span>
+<span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">PQstatus</span><span class="p">(</span><span class="n">conn</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">CONNECTION_OK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="c1">// Si echec de connxion, nous imprimons les messages d&#39;erreur et liberont les ressources</span>
+<span class="w">      </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Erreur lors de la connexion au serveur de base de données: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">PQerrorMessage</span><span class="p">(</span><span class="n">conn</span><span class="p">));</span>
+
+<span class="w">      </span><span class="c1">// On ferme la connexion</span>
+<span class="w">      </span><span class="n">PQfinish</span><span class="p">(</span><span class="n">conn</span><span class="p">);</span>
+
+<span class="w">      </span><span class="c1">// On sort du programme avec un code 1 pour indiquer une erreur</span>
+<span class="w">      </span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">   </span><span class="p">}</span>
+
+<span class="w">   </span><span class="c1">// La connexion a été établie avec succès, nous affichons les informations du serveur de base de données</span>
+<span class="w">   </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Connection établie</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">   </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Port: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">PQport</span><span class="p">(</span><span class="n">conn</span><span class="p">));</span>
+<span class="w">   </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hote: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">PQhost</span><span class="p">(</span><span class="n">conn</span><span class="p">));</span>
+<span class="w">   </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Nom de la DB: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">PQdb</span><span class="p">(</span><span class="n">conn</span><span class="p">));</span>
+
+<span class="w">   </span><span class="c1">// Fermeture de la connexion et libération de la mémoire</span>
+<span class="w">   </span><span class="n">PQfinish</span><span class="p">(</span><span class="n">conn</span><span class="p">);</span>
+
+<span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Dans ce code, remplacez votre_nom_dn, utilisateur et mot_de_passe par les valeurs appropriées pour votre configuration PostgreSQL.
+Le programme imprime les détails de la connexion, tels que le port, l’hôte et le nom de la base de données,
+pour confirmer la connexion réussie.</p>
+<p>Enfin, la connexion est fermée à l’aide de <a class="reference external" href="https://www.postgresql.org/docs/current/libpq-connect.html#LIBPQ-PQFINISH">PQfinish()</a> pour libérer la mémoire allouée à l’objet PGconn.</p>
+</section>
+<section id="executer-une-requete-sql">
+<h3>Executer une requête SQL<a class="headerlink" href="#executer-une-requete-sql" title="Lien vers cette rubrique">¶</a></h3>
+<p>Une fois la connexion à la base de données établie, nous pouvons procéder à l’exécution des requêtes à l’aide de libpq.</p>
+<p>La fonction principale que nous utiliserons pour l’exécution des requêtes est <a class="reference external" href="https://www.postgresql.org/docs/current/libpq-exec.html#LIBPQ-EXEC-MAIN">PQexec()</a>.</p>
+<p>La fonction <a class="reference external" href="https://www.postgresql.org/docs/current/libpq-exec.html#LIBPQ-EXEC-MAIN">PQexec()</a> est utilisée pour soumettre une requête à PostgreSQL et attendre le résultat.</p>
+<p>Elle renvoie un pointeur PGresult, qui encapsule le résultat de la requête renvoyé par le backend de la base de données.</p>
+<p>Dans la plupart des cas, un pointeur non nul est renvoyé, sauf dans des situations telles que
+des conditions de manque de mémoire ou des erreurs critiques empêchant l’envoi de la requête au backend.</p>
+<p>Si un pointeur nul est renvoyé, il doit être traité comme un résultat <strong>PGRES_FATAL_ERROR</strong>.
+Pour obtenir plus d’informations sur l’erreur, vous pouvez utiliser la fonction <a class="reference external" href="https://www.postgresql.org/docs/current/libpq-exec.html#LIBPQ-PQRESULTERRORMESSAGE">PQerrorMessage()</a>.</p>
+<p>La structure PGresult doit être conservée comme une abstraction lors de l’utilisation du résultat de la requête.
+Il est recommandé d’utiliser des fonctions d’accès au lieu de référencer directement les champs de la structure <strong>PGresult</strong>,
+car les champs peuvent changer dans les futures versions de libpq.</p>
+<p>Après avoir exécuté une requête à l’aide de <a class="reference external" href="https://www.postgresql.org/docs/current/libpq-exec.html#LIBPQ-EXEC-MAIN">PQexec()</a>, vous pouvez vérifier l’état du résultat à l’aide de PQresultStatus().
+Les états de résultat possibles incluent:</p>
+<ul class="simple">
+<li><p><strong>PGRES_EMPTY_QUERY</strong>: la chaîne de requête envoyée par le backend était vide.</p></li>
+<li><p><strong>PGRES_COMMAND_OK</strong>: la commande s’est terminée avec succès, mais aucune donnée n’a été renvoyée.</p></li>
+<li><p><strong>PGRES_TUPLES_OK</strong>: la requête s’est exécutée avec succès et a renvoyé des tuples (lignes).</p></li>
+<li><p><strong>PGRES_COPY_OUT</strong>: le transfert de données (copie sortante) depuis le serveur a commencé.</p></li>
+<li><p><strong>PGRES_COPY_IN</strong>: le transfert de données (copie entrante) vers le serveur a commencé.</p></li>
+<li><p><strong>PGRES_BAD_RESPONSE</strong>: la réponse du serveur n’a pas été comprise.</p></li>
+<li><p><strong>PGRES_NONFATAL_ERROR</strong>: une erreur non fatale s’est produite lors de l’exécution de la requête.</p></li>
+<li><p><strong>PGRES_FATAL_ERROR</strong>: une erreur fatale s’est produite lors de l’exécution de la requête.</p></li>
+</ul>
+<p>Si le statut du résultat de la requête est <strong>PGRES_TUPLES_OK</strong>,
+vous pouvez utiliser diverses fonctions pour récupérer des informations sur les tuples renvoyés.</p>
+<p>Voici quelques fonctions utiles:</p>
+<ul class="simple">
+<li><p><strong>PQntuples()</strong> : renvoie le nombre de tuples (lignes) dans le résultat de la requête.</p></li>
+<li><p><strong>PQnfields()</strong> : renvoie le nombre de champs (attributs) dans chaque tuple du résultat de la requête.</p></li>
+<li><p><strong>PQfname()</strong> : renvoie le nom du champ (attribut) associé à l’index de champ donné. Les indices de champ commencent à 0.</p></li>
+<li><p><strong>PQftype()</strong> : renvoie le type de champ associé à l’index de champ donné. L’entier renvoyé représente un codage interne du type. Les indices de champ commencent à 0.</p></li>
+<li><p><strong>PQgetvalue()</strong> : renvoie la valeur d’un champ spécifique (attribut) dans un tuple du résultat de la requête. Les indices de tuple et de champ commencent à 0.</p></li>
+</ul>
+<p>Ces fonctions fournissent des fonctionnalités essentielles pour récupérer et travailler avec les résultats de la requête.</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="c1">// Requête a exécuter</span>
+<span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;SELECT * FROM ma_table&quot;</span><span class="p">;</span>
+
+<span class="c1">// Envoyer la requête et récupérer les résultats</span>
+<span class="n">PGresult</span><span class="w"> </span><span class="o">*</span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PQexec</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span><span class="w"> </span><span class="n">query</span><span class="p">);</span>
+
+<span class="c1">// Vérifier l&#39;état de résultat de la requête</span>
+<span class="n">ExecStatusType</span><span class="w"> </span><span class="n">resStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PQresultStatus</span><span class="p">(</span><span class="n">res</span><span class="p">);</span>
+
+<span class="c1">// Convertir l&#39;état en message texte et &#39;l&#39;afficher</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;Etat requete: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">PQresStatus</span><span class="p">(</span><span class="n">resStatus</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>Vérification de ce que retourne la requête</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">resStatus</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">PGRES_TUPLES_OK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">//Si on ne récupère pas de ligne, on affiche et un message et on termine la connexion</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Erreur lors de l&#39;execution de la requête: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">PQerrorMessage</span><span class="p">(</span><span class="n">conn</span><span class="p">));</span>
+
+<span class="w">    </span><span class="n">PQclear</span><span class="p">(</span><span class="n">res</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">PQfinish</span><span class="p">(</span><span class="n">conn</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// On recupère des données, on affiche un message</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;Requête exécutée avec succès</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Ensuite on affiche le résultat sur la console.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// On récupère le nombre de lignes et de colonne</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">rows</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PQntuples</span><span class="p">(</span><span class="n">res</span><span class="p">);</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PQnfields</span><span class="p">(</span><span class="n">res</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;Nombre de lignes: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rows</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;Nombre de colonnes: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">cols</span><span class="p">);</span>
+
+<span class="c1">// On affiche les noms de colonnes</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">cols</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\t</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">PQfname</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">));</span>
+<span class="p">}</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+<span class="c1">// On affiche le contenue des lignes</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">rows</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">cols</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\t</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">PQgetvalue</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>On n’oublie pas de liberer les ressources et de fermer la connexion</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">PQclear</span><span class="p">(</span><span class="n">res</span><span class="p">);</span>
+
+<span class="n">PQfinish</span><span class="p">(</span><span class="n">conn</span><span class="p">);</span>
+
+<span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Pour compiler et exécuter votre code, suivez les étapes ci-dessou:</p>
+<ol class="arabic simple">
+<li><p>Assurez-vous que le répertoire bin de PostgreSQL est inclus dans le chemin de vos variables d’environnement. Cela permet au compilateur de localiser les bibliothèques et exécutables PostgreSQL nécessaires.</p></li>
+<li><p>Ouvrez le terminal ou l’invite de commande et accédez au répertoire où se trouve votre fichier C.</p></li>
+<li><p>Utilisez la commande suivante pour compiler votre code:</p></li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>gcc<span class="w"> </span>monprogramme.c<span class="w"> </span>-o<span class="w"> </span>monprogramme<span class="w"> </span>-I<span class="w"> </span><span class="s2">&quot;path/to/postgres/include&quot;</span><span class="w"> </span>-L<span class="w"> </span><span class="s2">&quot;path/to/postgres/lib&quot;</span><span class="w"> </span>-lpq
+</pre></div>
+</div>
+<p>Si la compilation s’est déroulé correctement, vous devriez avoir un executable <strong>monprogramme</strong> dans votre dossier</p>
+<p>Que vous pourrez lancer comme ceci:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./monprogramme
+</pre></div>
+</div>
+<p>Pour plus de maintenabilité, vous pourrez privilégié la creation d’un fichier <a class="reference external" href="https://fr.wikipedia.org/wiki/Make">Makefile</a>.</p>
+</section>
+</section>
 <section id="bibiotheque-ecpg">
-<h3>Bibiothèque ECPG<a class="headerlink" href="#bibiotheque-ecpg" title="Lien vers cette rubrique">¶</a></h3>
-<p>ECPG est un préprocesseur, qui vous permet d’embarquer du SQL directement dans votre programme en C</p>
+<h2>Bibiothèque ECPG<a class="headerlink" href="#bibiotheque-ecpg" title="Lien vers cette rubrique">¶</a></h2>
+<p id="index-2">ECPG est un préprocesseur, qui vous permet d’embarquer du SQL directement dans votre programme en C</p>
 <p>Vos fichiers C embarquant du SQL auront pour extension <strong>pgc</strong>.</p>
 <p>Chaque instructions utilisants du SQL commencera par <strong>EXEC SQL</strong>.</p>
+<p>Lors de la compilation, les fichiers ayant l’extension pgc seront traduit en fichier C et seront ensuite compilés</p>
 <p>Ci-dessous un exemple tiré de la documentation utilisant de multiples connexions</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>#include &lt;stdio.h&gt;
 
@@ -334,7 +518,6 @@ main()
 }
 </pre></div>
 </div>
-</section>
 </section>
 </section>
 
@@ -397,9 +580,11 @@ main()
             <ul>
 <li><a class="reference internal" href="#">Langage C</a><ul>
 <li><a class="reference internal" href="#bibliotheque-libpq">Bibliothèque libpq</a><ul>
-<li><a class="reference internal" href="#bibiotheque-ecpg">Bibiothèque ECPG</a></li>
+<li><a class="reference internal" href="#etablir-une-connexion">Etablir une connexion</a></li>
+<li><a class="reference internal" href="#executer-une-requete-sql">Executer une requête SQL</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#bibiotheque-ecpg">Bibiothèque ECPG</a></li>
 </ul>
 </li>
 </ul>
