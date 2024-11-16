@@ -1,6 +1,13 @@
 :og:title: Hebergeur PostgreSQL
 :og:description: Liste d'hébergeur proposant la solution PostgreSQL
 
+.. title:: Hebergeur PostgreSQL
+
+.. meta::
+   :description: Liste d'hébergeur proposant la solution PostgreSQL
+   :keywords: hebergeur, housing, hosting, postgresql
+
+
 .. _hosting:
 
 Hebergeurs PostgreSQL

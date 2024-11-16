@@ -3,6 +3,8 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Cette page regroupe des séries d'article sur PostgreSQL en français concernant la réplication de la base de données" name="description" />
+<meta content="replication, logique, slony" name="keywords" />
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=GTM-MHD7527M"></script>
@@ -12,21 +14,20 @@
         gtag('js', new Date());
         gtag('config', 'GTM-MHD7527M');
     </script>
-    <meta property="og:title" content="Réplication" />
+    <meta property="og:title" content="Liste d’articles autour des opérations de la réplication de la base de données PostgreSQL" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://5432.fr/articles/replication.html" />
 <meta property="og:site_name" content="Ressources PostgreSQL Francophones" />
-<meta property="og:description" content="PostgreSQL 10 et la réplication logique – Fonctionnement, PostgreSQL 10 et la réplication logique – Mise en oeuvre, PostgreSQL 10 et la réplication logique – Restrictions, PostgreSQL et la réplication logique." />
+<meta property="og:description" content="Cette page regroupe des séries d’article sur PostgreSQL en français concernant la réplication de la base de données" />
 <meta property="og:image" content="https://5432.fr/_static/postgresql-200x200.png" />
 <meta property="og:image:alt" content="Ressources PostgreSQL Francophones" />
-<meta name="description" content="PostgreSQL 10 et la réplication logique – Fonctionnement, PostgreSQL 10 et la réplication logique – Mise en oeuvre, PostgreSQL 10 et la réplication logique – Restrictions, PostgreSQL et la réplication logique." />
 <meta property="og:ignore_canonical" content="true" />
 <meta property="og:locale" content="fr_FR" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Recherche" href="../search.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Recherche" href="../search.html" /><link rel="next" title="Sauvegarde et restauration" href="sauvegarde.html" /><link rel="prev" title="Maintenance" href="maintenance.html" />
         <link rel="canonical" href="https://5432.fr/articles/replication.html" />
 
     <link rel="shortcut icon" href="../_static/postgresql.ico"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
-        <title>Réplication</title>
+        <title>Liste d&#39;articles autour des opérations de la réplication de la base de données PostgreSQL</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
@@ -202,7 +203,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -225,26 +226,34 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <ul>
+  <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../commun.html">Communauté Francophone</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../information.html">Informations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../outils.html">Outils</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../livres/index.html">Livres</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html">Articles sur PostgreSQL</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Articles sur PostgreSQL</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Articles sur PostgreSQL</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="generalite.html">Généralité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="types.html">Les types de données</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexes.html">Indexes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maintenance.html">Maintenance</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Réplication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sauvegarde.html">Sauvegarde et restauration</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../extension/index.html">Extensions</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../programmation/index.html">Programmation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Programmation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../programmation/index.html">Programmation</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Programmation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../programmation/c.html">Langage C</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../programmation/java.html">Langage Java</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../programmation/python/index.html">Langage Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../programmation/php.html">Langage PHP</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../programmation/plpgsql/index.html">Langage PLpgSQL</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Langage PLpgSQL</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../programmation/plpgsql/index.html">Langage PLpgSQL</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Langage PLpgSQL</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../programmation/plpgsql/date.html">Traitement sur les dates</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../logiciel/index.html">Logiciels</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../services/index.html">Prestation autour de PostgreSQL</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Prestation autour de PostgreSQL</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../services/index.html">Prestation autour de PostgreSQL</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Prestation autour de PostgreSQL</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../services/societes.html">Société de services</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../services/hebergeurs.html">Hebergeurs PostgreSQL</a></li>
 </ul>
@@ -279,7 +288,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -287,6 +296,17 @@
         <article role="main" id="furo-main-content">
           <section id="replication">
 <h1>Réplication<a class="headerlink" href="#replication" title="Lien vers cette rubrique">¶</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Lien vers cette rubrique">¶</a></h2>
+<p>La réplication de base de données consiste à copier électroniquement et fréquemment des données
+d’une base de données d’un ordinateur ou d’un serveur vers une base de données d’un autre,
+de sorte que tous les utilisateurs partagent le même niveau d’informations.</p>
+<p>Le résultat est une base de données distribuée dans laquelle les utilisateurs peuvent accéder r
+apidement aux données pertinentes pour leurs tâches sans interférer avec le travail des autres.
+De nombreux éléments contribuent au processus global de création et de gestion de la réplication de base de données.</p>
+</section>
+<section id="articles">
+<h2>Articles<a class="headerlink" href="#articles" title="Lien vers cette rubrique">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://blog.anayrat.info/2017/07/29/postgresql-10-et-la-replication-logique-fonctionnement/">PostgreSQL 10 et la réplication logique – Fonctionnement</a></p></li>
 <li><p><a class="reference external" href="https://blog.anayrat.info/2017/08/05/postgresql-10-et-la-replication-logique-mise-en-oeuvre/">PostgreSQL 10 et la réplication logique – Mise en oeuvre</a></p></li>
@@ -294,14 +314,33 @@
 <li><p><a class="reference external" href="http://www.loxodata.com/post/replicationlogique/">PostgreSQL et la réplication logique</a></p></li>
 </ul>
 </section>
+</section>
 
         </article>
       </div>
       <footer>
         
         <div class="related-pages">
-          
-          
+          <a class="next-page" href="sauvegarde.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Sauvegarde et restauration</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="maintenance.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Maintenance</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -329,8 +368,28 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Réplication</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#articles">Articles</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

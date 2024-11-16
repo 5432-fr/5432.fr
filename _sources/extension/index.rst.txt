@@ -1,13 +1,18 @@
-.. _extensions:
-
-Extensions
-==========
+:og:title: Extensions pour PostgreSQL
+:og:description: Liste d'extensions pour les base de données PostgreSQL
+:og:type: article   
 
 .. title:: Extensions pour PostgreSQL
 
 .. meta::
-   :description: Liste d'extensions pour PostgreSQL
-   :keywords: foreign data wrapper, fdw, extensions, postgresql
+   :description: Liste d'extensions pour les base de données PostgreSQL
+   :keywords: foreign data wrapper, fdw, extensions, postgresql, PLpgSQL, age, citus, pgtap
+
+
+.. _extensions:
+
+Extensions
+==========
 
 .. index:: extensions
 
@@ -95,6 +100,7 @@ pgTAP
 -----
 
 pgTAP est un framework de tests unitaires pour PostgreSQL écrit en PL/pgSQL et PL/SQL.
+il repose sur le protocole `TAP <https://testanything.org/>`_
 
 Il comprend une collection complète de fonctions d'assertion émettant des TAP, 
 ainsi que la possibilité de s'intégrer à d'autres frameworks de tests émettant des TAP. 

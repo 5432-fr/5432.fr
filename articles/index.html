@@ -3,6 +3,8 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Cette page regroupe des séries d'article sur PostgreSQL en français, cela couvre les différentes thématiques comme la replication, sauvegarde, restauration, les indexes" name="description" />
+<meta content="restauration, sauvegarde, replication, indexes, psql" name="keywords" />
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=GTM-MHD7527M"></script>
@@ -12,21 +14,20 @@
         gtag('js', new Date());
         gtag('config', 'GTM-MHD7527M');
     </script>
-    <meta property="og:title" content="Articles sur PostgreSQL" />
+    <meta property="og:title" content="Liste d’articles autour de la base de données PostgreSQL" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://5432.fr/articles/index.html" />
 <meta property="og:site_name" content="Ressources PostgreSQL Francophones" />
-<meta property="og:description" content="Cette page regroupe des séries d’article sur PostgreSQL en français Généralité: Les processus de PostgreSQL, PostgreSQL et ses journaux de transactions, Utilisation de Psql. Les types de données: PostgreSQL - JSONB et Statistiques. Indexes: Le site Use the index, Luke décrit les problématiques du..." />
+<meta property="og:description" content="Cette page regroupe des séries d’article sur PostgreSQL en français, cela couvre les différentes thématiques comme la replication, sauvegarde, restauration, les indexes" />
 <meta property="og:image" content="https://5432.fr/_static/postgresql-200x200.png" />
 <meta property="og:image:alt" content="Ressources PostgreSQL Francophones" />
-<meta name="description" content="Cette page regroupe des séries d’article sur PostgreSQL en français Généralité: Les processus de PostgreSQL, PostgreSQL et ses journaux de transactions, Utilisation de Psql. Les types de données: PostgreSQL - JSONB et Statistiques. Indexes: Le site Use the index, Luke décrit les problématiques du..." />
 <meta property="og:ignore_canonical" content="true" />
 <meta property="og:locale" content="fr_FR" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Recherche" href="../search.html" /><link rel="next" title="Extensions" href="../extension/index.html" /><link rel="prev" title="Livres" href="../livres/index.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Recherche" href="../search.html" /><link rel="next" title="Généralité" href="generalite.html" /><link rel="prev" title="Livres" href="../livres/index.html" />
         <link rel="canonical" href="https://5432.fr/articles/index.html" />
 
     <link rel="shortcut icon" href="../_static/postgresql.ico"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
-        <title>Articles sur PostgreSQL</title>
+        <title>Liste d&#39;articles autour de la base de données PostgreSQL</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
@@ -202,7 +203,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -230,21 +231,29 @@
 <li class="toctree-l1"><a class="reference internal" href="../information.html">Informations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../outils.html">Outils</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../livres/index.html">Livres</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Articles sur PostgreSQL</a></li>
+<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">Articles sur PostgreSQL</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Articles sur PostgreSQL</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="generalite.html">Généralité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="types.html">Les types de données</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexes.html">Indexes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maintenance.html">Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="replication.html">Réplication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sauvegarde.html">Sauvegarde et restauration</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../extension/index.html">Extensions</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../programmation/index.html">Programmation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Programmation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../programmation/index.html">Programmation</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Programmation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../programmation/c.html">Langage C</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../programmation/java.html">Langage Java</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../programmation/python/index.html">Langage Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../programmation/php.html">Langage PHP</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../programmation/plpgsql/index.html">Langage PLpgSQL</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Langage PLpgSQL</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../programmation/plpgsql/index.html">Langage PLpgSQL</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Langage PLpgSQL</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../programmation/plpgsql/date.html">Traitement sur les dates</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../logiciel/index.html">Logiciels</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../services/index.html">Prestation autour de PostgreSQL</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Prestation autour de PostgreSQL</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../services/index.html">Prestation autour de PostgreSQL</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Prestation autour de PostgreSQL</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../services/societes.html">Société de services</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../services/hebergeurs.html">Hebergeurs PostgreSQL</a></li>
 </ul>
@@ -279,7 +288,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -287,76 +296,29 @@
         <article role="main" id="furo-main-content">
           <section id="articles-sur-postgresql">
 <h1>Articles sur PostgreSQL<a class="headerlink" href="#articles-sur-postgresql" title="Lien vers cette rubrique">¶</a></h1>
-<p>Cette page regroupe des séries d’article sur PostgreSQL en français</p>
-<section id="generalite">
-<h2>Généralité<a class="headerlink" href="#generalite" title="Lien vers cette rubrique">¶</a></h2>
+<p id="index-0">Cette page regroupe des séries d’article sur PostgreSQL en français, cela couvre les différentes thématiques
+comme:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="http://www.dalibo.org/glmf112_les_processus_de_postgresql">Les processus de PostgreSQL</a></p></li>
-<li><p><a class="reference external" href="https://public.dalibo.com/archives/publications/glmf108_postgresql_et_ses_journaux_de_transactions.pdf">PostgreSQL et ses journaux de transactions</a></p></li>
-<li><p><a class="reference external" href="http://laetitia-avrot.blogspot.fr/2011/04/psql.html">Utilisation de Psql</a></p></li>
+<li><p>sauvegarde</p></li>
+<li><p>restauration</p></li>
+<li><p>républication</p></li>
+<li><p>utilisation <strong>psql</strong></p></li>
+<li><p>les journaux de transactions</p></li>
+<li><p>les indexes</p></li>
+<li><p>les types de données telles que JSON et JSONB</p></li>
+<li><p>l’utilisation des VACUUM et AUTOVACUUM</p></li>
+<li><p>les extensions</p></li>
 </ul>
-</section>
-<section id="les-types-de-donnees">
-<h2>Les types de données<a class="headerlink" href="#les-types-de-donnees" title="Lien vers cette rubrique">¶</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="https://blog.anayrat.info/2017/11/26/postgresql-jsonb-et-statistiques/">PostgreSQL - JSONB et Statistiques</a></p></li>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="generalite.html">Généralité</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types.html">Les types de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indexes.html">Indexes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maintenance.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="replication.html">Réplication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sauvegarde.html">Sauvegarde et restauration</a></li>
 </ul>
-</section>
-<section id="indexes">
-<h2>Indexes<a class="headerlink" href="#indexes" title="Lien vers cette rubrique">¶</a></h2>
-<p>Le site <a class="reference external" href="http://use-the-index-luke.com/fr/sql/preface">Use the index, Luke</a> décrit les problématiques du SQL,
-et vous donnent des pistes pour créer des indexes efficaces en fonctions de vos cas de figures.</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://blog.anayrat.info/2016/08/13/postgresql-retarder-la-verification-des-contraintes/">Retarder la vérification des contraintes</a></p></li>
-<li><p><a class="reference external" href="https://blog.anayrat.info/2016/04/21/index-brin-performances/">Index BRIN – Performances</a></p></li>
-</ul>
-</section>
-<section id="maintenance">
-<h2>Maintenance<a class="headerlink" href="#maintenance" title="Lien vers cette rubrique">¶</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="https://web.archive.org/web/20181129020959/http://blog.guillaume.lelarge.info/index.php/category/Postgresql">Analyse du VACUUM</a></p></li>
-<li><p><a class="reference external" href="https://web.archive.org/web/20181128143819/http://blog.guillaume.lelarge.info/index.php/post/2015/07/14/Comment-quantifier-le-maintenance_work_mem">Comment quantifier le maintenance_work_mem</a></p></li>
-<li><p><a class="reference external" href="http://laetitia-avrot.blogspot.fr/2011/04/psql.html">Liste et taille des bases, des schémas et des tables en postgreSQL</a></p></li>
-</ul>
-</section>
-<section id="replication">
-<h2>Réplication<a class="headerlink" href="#replication" title="Lien vers cette rubrique">¶</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="https://blog.anayrat.info/2017/07/29/postgresql-10-et-la-replication-logique-fonctionnement/">PostgreSQL 10 et la réplication logique – Fonctionnement</a></p></li>
-<li><p><a class="reference external" href="https://blog.anayrat.info/2017/08/05/postgresql-10-et-la-replication-logique-mise-en-oeuvre/">PostgreSQL 10 et la réplication logique – Mise en oeuvre</a></p></li>
-<li><p><a class="reference external" href="https://blog.anayrat.info/2017/08/27/postgresql-10-et-la-replication-logique-restrictions/">PostgreSQL 10 et la réplication logique – Restrictions</a></p></li>
-<li><p><a class="reference external" href="http://www.loxodata.com/post/replicationlogique/">PostgreSQL et la réplication logique</a></p></li>
-</ul>
-</section>
-<section id="sauvegarde-et-restauration">
-<h2>Sauvegarde et restauration<a class="headerlink" href="#sauvegarde-et-restauration" title="Lien vers cette rubrique">¶</a></h2>
-<p>Sous PostgreSQL par défaut il existe 3 type de sauvegarde.</p>
-<ul class="simple">
-<li><p>Sauvegarde de type SQL (Dump)</p></li>
-<li><p>Sauvegarde au niveau du système de fichier</p></li>
-<li><p>Sauvegarde en archivage continue</p></li>
-</ul>
-<section id="sauvegarde-sql">
-<h3>Sauvegarde SQL<a class="headerlink" href="#sauvegarde-sql" title="Lien vers cette rubrique">¶</a></h3>
-<p>La sauvegarde SQL (également appelé Dump) se réalise avec le programme founit en standard <a class="reference external" href="https://docs.postgresql.fr/current/app-pgdump.html">pg_dump</a>.</p>
-<p>la restauration de cette sauvegarde se fera avec le programme <a class="reference external" href="https://docs.postgresql.fr/current/app-pgrestore.html">pg_restore</a></p>
-</section>
-</section>
-<section id="articles">
-<h2>Articles<a class="headerlink" href="#articles" title="Lien vers cette rubrique">¶</a></h2>
-<section id="sauvegarde">
-<h3>Sauvegarde<a class="headerlink" href="#sauvegarde" title="Lien vers cette rubrique">¶</a></h3>
-<ul class="simple">
-<li><p><a class="reference external" href="http://laetitia-avrot.blogspot.fr/2017/02/faire-une-sauvegarde-avec-pgbackrest.html">Faire une sauvegarde avec pgBackRest</a></p></li>
-</ul>
-</section>
-<section id="restauration">
-<h3>Restauration<a class="headerlink" href="#restauration" title="Lien vers cette rubrique">¶</a></h3>
-<ul class="simple">
-<li><p><a class="reference external" href="http://laetitia-avrot.blogspot.fr/2017/02/restaurer-avec-pgbackrest.html">Restaurer avec pgBackRest</a></p></li>
-</ul>
-</section>
-</section>
+</div>
 </section>
 
         </article>
@@ -364,12 +326,12 @@ et vous donnent des pistes pour créer des indexes efficaces en fonctions de vos
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../extension/index.html">
+          <a class="next-page" href="generalite.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Extensions</div>
+                <div class="title">Généralité</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -411,40 +373,8 @@ et vous donnent des pistes pour créer des indexes efficaces en fonctions de vos
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">Articles sur PostgreSQL</a><ul>
-<li><a class="reference internal" href="#generalite">Généralité</a></li>
-<li><a class="reference internal" href="#les-types-de-donnees">Les types de données</a></li>
-<li><a class="reference internal" href="#indexes">Indexes</a></li>
-<li><a class="reference internal" href="#maintenance">Maintenance</a></li>
-<li><a class="reference internal" href="#replication">Réplication</a></li>
-<li><a class="reference internal" href="#sauvegarde-et-restauration">Sauvegarde et restauration</a><ul>
-<li><a class="reference internal" href="#sauvegarde-sql">Sauvegarde SQL</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#articles">Articles</a><ul>
-<li><a class="reference internal" href="#sauvegarde">Sauvegarde</a></li>
-<li><a class="reference internal" href="#restauration">Restauration</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>

@@ -22,7 +22,7 @@
 <meta name="description" content="PostgreSQL - JSONB et Statistiques." />
 <meta property="og:ignore_canonical" content="true" />
 <meta property="og:locale" content="fr_FR" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Recherche" href="../search.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Recherche" href="../search.html" /><link rel="next" title="Indexes" href="indexes.html" /><link rel="prev" title="Généralité" href="generalite.html" />
         <link rel="canonical" href="https://5432.fr/articles/types.html" />
 
     <link rel="shortcut icon" href="../_static/postgresql.ico"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
@@ -225,26 +225,34 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <ul>
+  <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../commun.html">Communauté Francophone</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../information.html">Informations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../outils.html">Outils</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../livres/index.html">Livres</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html">Articles sur PostgreSQL</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Articles sur PostgreSQL</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Articles sur PostgreSQL</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="generalite.html">Généralité</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Les types de données</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexes.html">Indexes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maintenance.html">Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="replication.html">Réplication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sauvegarde.html">Sauvegarde et restauration</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../extension/index.html">Extensions</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../programmation/index.html">Programmation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Programmation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../programmation/index.html">Programmation</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Programmation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../programmation/c.html">Langage C</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../programmation/java.html">Langage Java</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../programmation/python/index.html">Langage Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../programmation/php.html">Langage PHP</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../programmation/plpgsql/index.html">Langage PLpgSQL</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Langage PLpgSQL</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../programmation/plpgsql/index.html">Langage PLpgSQL</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Langage PLpgSQL</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../programmation/plpgsql/date.html">Traitement sur les dates</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../logiciel/index.html">Logiciels</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../services/index.html">Prestation autour de PostgreSQL</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Prestation autour de PostgreSQL</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../services/index.html">Prestation autour de PostgreSQL</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Prestation autour de PostgreSQL</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../services/societes.html">Société de services</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../services/hebergeurs.html">Hebergeurs PostgreSQL</a></li>
 </ul>
@@ -297,8 +305,26 @@
       <footer>
         
         <div class="related-pages">
-          
-          
+          <a class="next-page" href="indexes.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Indexes</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="generalite.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Généralité</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
