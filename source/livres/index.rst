@@ -1,16 +1,17 @@
-:og:title: Livres sur PostgreSQL
-:og:description: Selection de livres en français autour de PostgreSQL
+:og:title: Livres sur la base de données PostgreSQL en français
+:og:description: Selection de livres en français autour de la base de données PostgreSQL
+
+.. title:: Livres sur la base de données PostgreSQL en français
+
+.. meta::
+   :description: Selection de livres en français autour de la base de données PostgreSQL
+   :keywords: book, epub, livres, postgresql
+
 
 .. _livres:
 
 Livres
 ======
-
-.. title:: Livres sur PostgreSQL
-
-.. meta::
-   :description: Selection de livres en français autour de PostgreSQL
-   :keywords: book, epub, livres, postgresql
 
 .. index:: livres
 
