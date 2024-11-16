@@ -2,6 +2,9 @@ RewriteEngine On
 RewriteCond %{SERVER_PORT} 80
 RewriteRule ^(.*)$ https://5432.fr/$1 [R,L]
 
+RewriteCond %{HTTP_HOST} ^www.5432.fr$
+RewriteRule ^(.*) https://5432.fr/$1 [QSA,L,R=301]
+
 RewriteRule ^index\.html$ https://5432.fr/ [R=301,L]
 
 Redirect 301 /fr/1.0/articles/maintenance.html https://5432.fr/articles/maintenance.html
