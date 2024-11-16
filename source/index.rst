@@ -3,14 +3,21 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-.. title:: Ressources PostgreSQL Francophones
+:og:title: Liste de ressources francophones la base de données PostgreSQL
+:og:description: regroupement de ressource disponible en français autour de la base de données PostgreSQL 
+:og:type: article   
+
+.. title:: Liste de ressources francophones la base de données PostgreSQL
 
 .. meta::
-   :description: regroupement de ressource disponible en français autour de PostgreSQL
+   :description: regroupement de ressource disponible en français autour de la base de données PostgreSQL 
    :keywords: article, blog, programmation, postgresql
 
 Ressources PostgreSQL Francophones
 ================================== 
+
+Introduction
+------------
 
 **PostgreSQL** également connu sous le nom de **Postgres**, est un système de gestion de base de données relationnelle (SGBDR) 
 gratuit et open source mettant l'accent sur l'extensibilité et la conformité SQL. c'est l'une des plus complète disponible sur le marché.
@@ -24,7 +31,8 @@ notamment Windows, Linux, macOS, FreeBSD et OpenBSD,
 et gère une gamme de charges de travail allant des machines individuelles aux entrepôts de données, 
 ou aux services Web avec de nombreux utilisateurs simultanés.
 
-Contenus:
+Contenus
+--------
 
 .. toctree::
    :maxdepth: 1
@@ -40,7 +48,7 @@ Contenus:
    services/index.rst
 
 Annexes et tableaux
-===================
+-------------------
 
 * :ref:`genindex`
 
