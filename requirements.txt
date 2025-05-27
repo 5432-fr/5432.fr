@@ -2,6 +2,6 @@ Sphinx==8.2.3
 sphinx-autobuild==2024.10.3
 sphinx-sitemap==2.6.0
 furo==2024.8.6
-sphinxcontrib-googleanalytics==0.4
+sphinxcontrib-googleanalytics==0.5
 sphinxext-opengraph==0.10.0
 matplotlib==3.10.1
