@@ -30,7 +30,7 @@ Lien vers [PostgreSQL - Architecture et notions avancées
 
 ### Présentation
 
-![image](postgresql-architecture-et-notions-avancees-5ed.png){.align-right}
+![image](/postgresql-architecture-et-notions-avancees-5ed.png){.align-right}
 
 Pour maîtriser PostgreSQL, rien de mieux que de comprendre son
 fonctionnement interne. C'est ce que vous proposent **Guillaume
@@ -88,7 +88,7 @@ Lien vers [PostgreSQL - Administration et exploitation de vos bases de données]
 
 ### Présentation
 
-![image](administration-exploit-bases-de-donnes.jpg){.align-right}
+![image](/administration-exploit-bases-de-donnes.jpg){.align-right}
 
 L'administrateur de bases de données, le technicien d'exploitation et
 le développeur trouveront dans ce livre les informations indispensables
@@ -133,7 +133,7 @@ Lien vers [PostgreSQL - Entraînez-vous à créer et programmer une base de donn
 
 ### Présentation
 
-![image](creer-programmer-base-de-donnes-relationnelle.jpg){.align-right}
+![image](/creer-programmer-base-de-donnes-relationnelle.jpg){.align-right}
 
 Conçu par un formateur, ce livre sur PostgreSQL est destiné à un public
 de lecteurs débutants ou initiés, déjà familiers de l\'utilisation
