@@ -11,33 +11,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: "Checkout"
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+      - uses: actions/setup-node@v4
         with:
-          persist-credentials: false
-
-      - name: "Set up Python"
-        uses: actions/setup-python@v4
-        with:
-          python-version: 3.11
-
-      - name: Display Python version
-        run: python -c "import sys; print(sys.version)"
-
-      - name: "Install Python dependencies"
-        run: |
-          python -m pip install -r requirements.txt
-
-      - name: "Build Sphinx Doc"
-        run: |
-          make html
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install
+      - run: pnpm build
 
       - name: "Deploy Github Pages"
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages     
-          FOLDER: build/html/  
+          FOLDER: dist/  
 
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -45,5 +33,5 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./build/html/
+          local-dir: ./dist/
           server-dir: www/
