@@ -9,6 +9,7 @@
     "docs:preview": "vitepress preview source",
     "build": "vitepress build source"
   },
+  "packageManager": "pnpm@10.15.1",
   "dependencies": {
     "vitepress": "2.0.0-alpha.12"
   }  
