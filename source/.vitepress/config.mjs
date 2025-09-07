@@ -87,5 +87,11 @@ export default defineConfig({
   },
   outDir: '../dist',
   lastUpdated: true,
+  head: [
+    [
+      'script',
+      { async: '', src: 'https://scripts.simpleanalyticscdn.com/latest.js' }
+    ],
+  ]
 })
 
