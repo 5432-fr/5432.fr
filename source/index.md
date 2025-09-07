@@ -8,9 +8,9 @@ head:
       content: Ressources Francophones sur PostgreSQL
   - - meta      
     - property: 'og:description'
-      content: Le site 5432.fr est une plateforme francophone dédiée à PostgreSQL, l’un des systèmes de gestion de bases de données relationnelles 
-        les plus avancés et populaires au monde. Il se présente comme un "regroupement de ressources disponibles en français autour de PostgreSQL". 
-        Son objectif principal est de centraliser et de faciliter l’accès à des informations, documentations, tutoriels, articles et autres ressources utiles pour les utilisateurs, administrateurs et développeurs francophones travaillant avec PostgreSQL
+      content: 'Le site 5432.fr est une plateforme francophone dédiée à PostgreSQL, l’un des systèmes de gestion de bases de données relationnelles 
+        les plus avancés et populaires au monde. Il se présente comme un "regroupement de ressources disponibles en français autour de PostgreSQL. 
+        Son objectif principal est de centraliser et de faciliter l’accès à des informations, documentations, tutoriels, articles et autres ressources utiles pour les utilisateurs, administrateurs et développeurs francophones travaillant avec PostgreSQL'
   - - meta      
     - property: 'og:type'
       content: 'website'
