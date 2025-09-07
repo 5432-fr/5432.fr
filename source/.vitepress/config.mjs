@@ -74,6 +74,9 @@ export default defineConfig({
       message: 'Released under <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.fr">CC BY-SA 4.0</a>.',
       copyright: `Copyright © 2016-${new Date().getUTCFullYear()} Christophe Chauvet` 
     },
+    search: {
+      provider: 'local',
+    },
     lastUpdated: {
       text: 'Updated at',
       formatOptions: {
@@ -85,13 +88,29 @@ export default defineConfig({
   sitemap: {
     hostname: 'https://5432.fr'
   },
+  cleanUrls: true,
   outDir: '../dist',
   lastUpdated: true,
+  lang: 'fr-FR',
   head: [
+    [
+      'link',
+      { rel: 'icon', type: 'image/png', href: '/postgresql-200x200.png' }
+    ],
     [
       'script',
       { async: '', src: 'https://scripts.simpleanalyticscdn.com/latest.js' }
     ],
-  ]
+  ],
+	transformPageData(pageData) {
+		const canonicalUrl =
+			`https://5432.fr/${pageData.relativePath}`.replace(/\.md$/, "");
+
+		pageData.frontmatter.head ??= [];
+		pageData.frontmatter.head.push([
+			"link",
+			{ rel: "canonical", href: canonicalUrl },
+		]);
+	},  
 })
 
