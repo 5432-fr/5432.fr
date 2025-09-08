@@ -1,5 +1,15 @@
 ---
 title: Installation PostgreSQL 17 sous Windows
+head:
+  - - meta
+    - property: 'og:title'
+      content: Installation de PostgreSQL 17 sous Windows
+  - - meta      
+    - property: 'og:description'
+      content: Documentation d'installation de PostgreSQL 17 sous Windows
+  - - meta      
+    - property: 'og:type'
+      content: 'article'
 ---
 
 # Installation PostgreSQL 17 sous Windows
@@ -8,7 +18,7 @@ title: Installation PostgreSQL 17 sous Windows
 
 Après avoir téléchargé l'installeur, vous devez avoir un fichier similaire dans votre dossier **Téléchargements**
 
-![Fichier téléchargemetn windows](pg-17-windows-step_1.png)
+![Fichier téléchargement windows](pg-17-windows-step_1.png)
 
 ::: warning
 Les droits administrateur seront requis pour l'installation de PostgreSQL en tant que service Windows
