@@ -4,8 +4,8 @@ import { version } from '../../package.json'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "PostgreSQL Collection",
-  description: `Le site 5432.fr est une plateforme francophone dédiée à PostgreSQL, l’un des systèmes de gestion de bases de données relationnelles 
-        les plus avancés et populaires au monde. Il se présente comme un regroupement de ressources disponibles en français autour de PostgreSQL.`,
+  description: `Le site 5432.fr est une plateforme francophone dédiée à PostgreSQL, 
+    l’un des systèmes de gestion de bases de données relationnelles les plus avancés.`,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [

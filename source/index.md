@@ -1,7 +1,7 @@
 ---
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
-
+title: PostgreSQL Ressources Francophones
 head:
   - - meta
     - property: 'og:title'
