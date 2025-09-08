@@ -40,6 +40,9 @@ export default defineConfig({
             { text: 'Mac OS', link: 'https://www.postgresql.org/download/macosx/' },
             { text: 'Linux', link: 'https://www.postgresql.org/download/linux/' },
           ]},
+          { text: 'Installation', items: [
+            { text: 'Windows', link: '/installation/pg-17-windows' }
+          ]}          
       ]}      
     ],
 
