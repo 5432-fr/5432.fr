@@ -22,18 +22,21 @@ jobs:
       - run: pnpm install
       - run: pnpm build
 
-      - name: "Deploy Github Pages"
-        uses: JamesIves/github-pages-deploy-action@3.7.1
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages     
-          FOLDER: ./dist/  
+      - name: Setup IndexNow
+        run: echo ${{ secrets.INDEXNOW_KEY }} > ./dist/${{ secrets.INDEXNOW_KEY }}.txt  
 
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
+          log-level: 'minimal'
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
           server-dir: www/
+
+      - name: IndexNow
+        uses: bojieyang/indexnow-action@v2 # v2 is the latest major version following the action-versioning.
+        with:
+          sitemap-location: 'https://5432.fr/sitemap.xml' 
+          key: ${{ secrets.INDEXNOW_KEY }} # The key you get from IndexNow.          
