@@ -3,7 +3,7 @@ title: Les différents types de données de PostgreSQL
 head:
   - - meta
     - name: 'keyword'
-      content: types datatypes PostgreSQL varchar enum datetime uuid
+      content: types datatypes PostgreSQL varchar enum datetime uuid composite
   - - meta
     - property: 'og:title'
       content: Les différents types de données de PostgreSQL
@@ -199,6 +199,108 @@ Résultat
 | Type         | Description                                      | Exemple de valeur         |
 |--------------|--------------------------------------------------|---------------------------|
 | `composite`  | Type personnalisé (créé avec `CREATE TYPE`)      | `(valeur1, valeur2)`      |
+
+### Création d’un type composite
+
+Supposons que l'on veut créer un type pour représenter une adresse, et stocker:
+
+* le nom de la rue
+* la ville
+* le code postal
+* le pays
+* le numéro de la rue
+
+Nous allons donc créer le type ci-dessous
+
+``` sql
+CREATE TYPE adresse_type AS (
+    rue VARCHAR(100),
+    ville VARCHAR(50),
+    code_postal CHAR(5),
+    pays VARCHAR(50),
+    numero INTEGER
+);
+```
+
+### Utilisation dans une table
+
+ On peut utiliser ce type comme colonne d’une table
+
+ ``` sql
+CREATE TABLE clients (
+    id SERIAL PRIMARY KEY,
+    nom VARCHAR(100) NOT NULL,
+    adresse adresse_type
+);
+```
+
+### Insertion de données
+
+Pour insérer une valeur de type composite, on utilise la syntaxe (val1, val2, ...):
+
+``` sql
+INSERT INTO clients (nom, adresse)
+VALUES (
+    'Jean Dupont',
+    ('Rue de Paris', 'Paris', '75000', 'France', 123)::adresse_type
+);
+```
+
+### Accès aux champs d’un type composite
+
+Pour accéder à un champ spécifique:
+
+``` sql
+SELECT nom, (adresse).ville FROM clients;
+```
+
+Résultat
+
+|id|nom|adresse|
+|--|---|-------|
+|1|Jean Dupont|(Rue de Paris,Paris,75000,France,123)|
+
+
+### Mise à jour d’un champ composite
+
+Pour mettre à jour un seul champ de la colonne du type composite :
+
+``` sql
+UPDATE clients
+SET adresse.pays = 'Espagne'
+WHERE nom = 'Jean Dupont';
+```
+
+::: tip
+Vous remarquerez que dans le cas de l'UPDATE, nous n'avons pas mis de parenthèse à adresse
+:::
+
+Nous avons maintenant le résultat dans la table
+
+|id|nom|adresse|
+|--|---|-------|
+|1|Jean Dupont|(Rue de Paris,Paris,75000,Espagne,123)|
+
+
+par contre si l'on avait besoin de faire une incrémentation d'un élement du type composite par exemple, nous aurions du utiliser la syntaxe suivante.
+
+``` sql
+UPDATE clients
+SET adresse.numero = (adresse).numero + 1
+WHERE nom = 'Jean Dupont';
+```
+
+::: tip
+Dans la partie gauche du SET (entre le SET et le =), nous avons la colonne de la table donc les parenthères ne sont pas nécéssaire, 
+par contre dans la partie nous pourrions avoir le nom d'un table (Voir UPDATE ... FROM ...), donc il faut indiquer 
+que l'on est sur une colonne
+:::
+
+Nous avons maintenant le résultat dans la table
+
+|id|nom|adresse|
+|--|---|-------|
+|1|Jean Dupont|(Rue de Paris,Paris,75000,Espagne,124)|
 
 ## 16. Types de plage
 
