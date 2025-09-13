@@ -202,7 +202,15 @@ Résultat
 
 ### Création d’un type composite
 
-Supposons que l'on veut créer un type pour représenter une adresse
+Supposons que l'on veut créer un type pour représenter une adresse, et stocker:
+
+* le nom de la rue
+* la ville
+* le code postal
+* le pays
+* le numéro de la rue
+
+Nous allons donc créer le type ci-dessous
 
 ``` sql
 CREATE TYPE adresse_type AS (
@@ -234,7 +242,7 @@ Pour insérer une valeur de type composite, on utilise la syntaxe (val1, val2, .
 INSERT INTO clients (nom, adresse)
 VALUES (
     'Jean Dupont',
-    ('123 Rue de Paris', 'Paris', '75000', 'France', 1)::adresse_type
+    ('Rue de Paris', 'Paris', '75000', 'France', 123)::adresse_type
 );
 ```
 
@@ -245,6 +253,13 @@ Pour accéder à un champ spécifique:
 ``` sql
 SELECT nom, (adresse).ville FROM clients;
 ```
+
+Résultat
+
+|id|nom|adresse|
+|--|---|-------|
+|1|Jean Dupont|(Rue de Paris,Paris,75000,France,123)|
+
 
 ### Mise à jour d’un champ composite
 
@@ -260,13 +275,32 @@ WHERE nom = 'Jean Dupont';
 Vous remarquerez que dans le cas de l'UPDATE, nous n'avons pas mis de parenthèse à adresse
 :::
 
+Nous avons maintenant le résultat dans la table
+
+|id|nom|adresse|
+|--|---|-------|
+|1|Jean Dupont|(Rue de Paris,Paris,75000,Espagne,123)|
+
+
 par contre si l'on avait besoin de faire une incrémentation d'un élement du type composite par exemple, nous aurions du utiliser la syntaxe suivante.
 
 ``` sql
 UPDATE clients
-SET adresse.numero = (adresse).numéro + 1
+SET adresse.numero = (adresse).numero + 1
 WHERE nom = 'Jean Dupont';
 ```
+
+::: tip
+Dans la partie gauche du SET (entre le SET et le =), nous avons la colonne de la table donc les parenthères ne sont pas nécéssaire, 
+par contre dans la partie nous pourrions avoir le nom d'un table (Voir UPDATE ... FROM ...), donc il faut indiquer 
+que l'on est sur une colonne
+:::
+
+Nous avons maintenant le résultat dans la table
+
+|id|nom|adresse|
+|--|---|-------|
+|1|Jean Dupont|(Rue de Paris,Paris,75000,Espagne,124)|
 
 ## 16. Types de plage
 
