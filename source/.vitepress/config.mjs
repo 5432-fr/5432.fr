@@ -4,7 +4,8 @@ import { version } from '../../package.json'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "PostgreSQL Collection",
-  description: `Le site 5432.fr est une plateforme francophone dédiée à PostgreSQL, 
+  titleTemplate: ':title',
+  description: `Le site 5432.fr est une plateforme francophone dédiée à PostgreSQL,
     l’un des systèmes de gestion de bases de données relationnelles les plus avancés.`,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
@@ -17,15 +18,15 @@ export default defineConfig({
         { text: 'Livres', link: '/livres', activeMatch: '^/livres/' },
         { text: 'Logiciels', link: '/logiciels', activeMatch: '^/logiciels/' },
         { text: 'Programmation', link: '/programmation', activeMatch: '^/programmation/' },
-        { text: 'Services', link: '/services', activeMatch: '^/services/' },        
-      ]}, 
+        { text: 'Services', link: '/services', activeMatch: '^/services/' },
+      ]},
       { text: 'Documentation', items: [
         { text: 'PostgreSQL 17', link: 'https://docs.postgresql.fr/17/' },
         { text: 'PostgreSQL 16', link: 'https://docs.postgresql.fr/16/' },
         { text: 'PostgreSQL 15', link: 'https://docs.postgresql.fr/15/' },
         { text: 'PostgreSQL 14', link: 'https://docs.postgresql.fr/14/' },
         { text: 'PostgreSQL 13', link: 'https://docs.postgresql.fr/13/' }
-      ]},     
+      ]},
       { text: 'Liens', items: [
         { text: 'PostgreSQLFr', link: 'https://www.postgresql.fr/' },
         { text: 'Documentation', link: 'https://docs.postgresql.fr/' },
@@ -42,8 +43,8 @@ export default defineConfig({
           ]},
           { text: 'Installation', items: [
             { text: 'Windows', link: '/installation/pg-17-windows' }
-          ]}          
-      ]}      
+          ]}
+      ]}
     ],
 
     sidebar: [
@@ -66,7 +67,7 @@ export default defineConfig({
           { text: 'PHP', link: '/programmation/php' },
           { text: 'Python', link: '/programmation/python' },
           { text: 'PLpgSQL', link: '/programmation/plpgsql' },
-        ]        
+        ]
       }
     ],
 
@@ -76,7 +77,7 @@ export default defineConfig({
     ],
     footer: {
       message: 'Released under <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.fr">CC BY-SA 4.0</a>.',
-      copyright: `Copyright © 2016-${new Date().getUTCFullYear()} Christophe Chauvet` 
+      copyright: `Copyright © 2016-${new Date().getUTCFullYear()} Christophe Chauvet`
     },
     search: {
       provider: 'local',
@@ -87,7 +88,7 @@ export default defineConfig({
         dateStyle: 'full',
         timeStyle: 'medium'
       }
-    }        
+    }
   },
   sitemap: {
     hostname: 'https://5432.fr'
@@ -122,7 +123,7 @@ export default defineConfig({
     pageData.frontmatter.head.push([
 			"meta",
 			{ property: "og:image", content: 'https://5432.fr/postgresql-200x200.png' },
-		]);      
-	},  
+		]);
+	},
 })
 
