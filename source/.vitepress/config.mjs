@@ -103,6 +103,10 @@ export default defineConfig({
       { rel: 'icon', type: 'image/png', href: '/postgresql-200x200.png' }
     ],
     [
+      'link',
+      { rel: 'apple-touch-icon', type: 'image/png', sizes:"200x200", href: '/postgresql-200x200.png' }
+    ],
+    [
       'script',
       { async: '', src: 'https://scripts.simpleanalyticscdn.com/latest.js' }
     ],
