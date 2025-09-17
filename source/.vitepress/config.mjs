@@ -55,6 +55,7 @@ export default defineConfig({
       {
         text: 'Articles',
         items: [
+          { text: 'Coût', link: '/articles/cout' },
           { text: 'Generalité', link: '/articles/generalite' },
           { text: 'Indexes', link: '/articles/indexes' },
           { text: 'Maintenance', link: '/articles/maintenance' },
