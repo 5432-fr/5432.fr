@@ -1,5 +1,5 @@
 ---
-title: Liste d'articles autour des opérations de sauvegarde et de restauration de la base de données PostgreSQL
+title: Article sur la sauvegarde et restauration de PostgreSQL
 head:
   - - meta
     - name: 'keyword'
@@ -14,6 +14,7 @@ head:
     - property: 'og:type'
       content: 'article'
 ---
+
 # Sauvegarde et restauration
 
 ## Introduction

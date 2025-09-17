@@ -7,6 +7,10 @@ export default defineConfig({
   titleTemplate: ':title',
   description: `Le site 5432.fr est une plateforme francophone dédiée à PostgreSQL,
     l’un des systèmes de gestion de bases de données relationnelles les plus avancés.`,
+  srcExclude: ['public/**/*.md'],
+  ignoreDeadLinks: [
+    /^https?:\/\/localhost:*/,
+  ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -79,19 +83,32 @@ export default defineConfig({
       message: 'Released under <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.fr">CC BY-SA 4.0</a>.',
       copyright: `Copyright © 2016-${new Date().getUTCFullYear()} Christophe Chauvet`
     },
+    outline: {
+      label: "Sommaire"
+    },
+    docFooter: {
+      prev: false,
+      next: false
+    },
     search: {
       provider: 'local',
     },
     lastUpdated: {
-      text: 'Updated at',
+      text: 'Mise à jour le',
       formatOptions: {
         dateStyle: 'full',
-        timeStyle: 'medium'
+        timeStyle: 'short'
       }
     }
   },
   sitemap: {
     hostname: 'https://5432.fr'
+  },
+  markdown: {
+    lineNumbers: true,
+    image: {
+      lazyLoading: true
+    }
   },
   cleanUrls: true,
   outDir: '../dist',
