@@ -18,18 +18,15 @@ head:
 Cette page regroupe des séries d'articles sur PostgreSQL en français,
 cela couvre les différentes thématiques comme:
 
-- sauvegarde
-- restauration
-- réplication
 - utilisation **psql**
 - les journaux de transactions
-- les indexes
 - les types de données telles que JSON et JSONB
 - l'utilisation des VACUUM et AUTOVACUUM
 - les extensions
+- [Les coûts](./cout.md)
 - [Généralité](./generalite.md)
 - [Types](./types.md)
-- [Indexes](./indexes.md )
+- [Les index](./indexes.md )
 - [Maintenance](./maintenance.md )
 - [Réplication](./replication.md)
-- [Sauvegarde](./sauvegarde.md)
+- [Sauvegarde et restauration](./sauvegarde.md)
