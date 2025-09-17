@@ -27,12 +27,9 @@ cela couvre les différentes thématiques comme:
 - les types de données telles que JSON et JSONB
 - l'utilisation des VACUUM et AUTOVACUUM
 - les extensions
-
-
-* [Généralité](./generalite.md)
-* [Types](./types.md)
-* [Indexes](./indexes.md )
-* [Maintenance](./maintenance.md )
-* [Réplication](./replication.md)
-* [Sauvegarde](./sauvegarde.md)
-
+- [Généralité](./generalite.md)
+- [Types](./types.md)
+- [Indexes](./indexes.md )
+- [Maintenance](./maintenance.md )
+- [Réplication](./replication.md)
+- [Sauvegarde](./sauvegarde.md)

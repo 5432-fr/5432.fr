@@ -57,8 +57,8 @@ Explications:
 
 Ci dessous quelques exemples d’utilisation des **index HASH** sous PostgreSQL, avec des cas concrets et des bonnes pratiques:
 
-
 ### Création d’un index HASH sur une colonne simple
+
 Supposons une table `clients` avec une colonne `email` souvent utilisée dans des requêtes de type `WHERE email = '...'`.
 
 ```sql
@@ -69,8 +69,8 @@ CREATE INDEX idx_clients_email_hash ON clients USING HASH (email);
 L’index HASH est très efficace pour les recherches d’égalité (`=`), mais pas pour les comparaisons de plage (`>`, `<`, `BETWEEN`).
 :::
 
-
 ### Utilisation dans une requête
+
 L’index sera automatiquement utilisé par le planificateur de requêtes si la condition est une égalité.
 
 ```sql
@@ -95,7 +95,6 @@ CREATE INDEX idx_clients_nom_prenom_hash ON clients USING HASH (nom, prenom);
 SELECT * FROM clients WHERE nom = 'Dupont' AND prenom = 'Jean';
 ```
 
-
 ### Cas d’usage typique : tables de jointure
 
 Les index HASH sont souvent utilisés pour les colonnes de jointure, surtout si les valeurs sont uniformément distribuées.
@@ -115,11 +114,10 @@ WHERE co.client_id = 123;
 
 ### Limites et bonnes pratiques
 
-- **Pas de tri** : Les index HASH ne permettent pas de trier les résultats (`ORDER BY`).
-- **Pas de recherche de plage** : Ils ne sont pas adaptés pour `>`, `<`, `BETWEEN`.
-- **Maintenance** : Les index HASH doivent être recréés après un `VACUUM FULL` ou une réorganisation majeure de la table.
-- **PostgreSQL 10+** : Avant PostgreSQL 10, les index HASH n’étaient pas persistants après un redémarrage du serveur.
-
+* **Pas de tri** : Les index HASH ne permettent pas de trier les résultats (`ORDER BY`).
+* **Pas de recherche de plage** : Ils ne sont pas adaptés pour `>`, `<`, `BETWEEN`.
+* **Maintenance** : Les index HASH doivent être recréés après un `VACUUM FULL` ou une réorganisation majeure de la table.
+* **PostgreSQL 10+** : Avant PostgreSQL 10, les index HASH n’étaient pas persistants après un redémarrage du serveur.
 
 ### Vérification de l’utilisation de l’index
 
@@ -133,14 +131,11 @@ EXPLAIN ANALYZE SELECT * FROM clients WHERE email = 'client@example.com';
 Si l’index est utilisé, vous verrez une ligne comme `Index Scan using idx_clients_email_hash on clients`.
 :::
 
-
 ### Quand ne pas utiliser un index HASH ?
 
-- Si vous avez besoin de recherches de plage ou de tri.
-- Si la colonne a une faible cardinalité (peu de valeurs distinctes).
-- Si vous utilisez souvent des opérateurs autres que `=`.
-
-
+* Si vous avez besoin de recherches de plage ou de tri.
+* Si la colonne a une faible cardinalité (peu de valeurs distinctes).
+* Si vous utilisez souvent des opérateurs autres que `=`.
 
 ## Index GIST
 
@@ -177,7 +172,6 @@ WHERE ST_DWithin(position, ST_SetSRID(ST_MakePoint(2.3522, 48.8566), 4326), 1000
 L’index GiST accélère les calculs de distance et les intersections spatiales.
 :::
 
-
 ### Index GiST pour les types de données textuels (recherche full-text)
 
 GiST peut aussi être utilisé pour la recherche full-text, bien que GIN soit souvent plus efficace.
@@ -202,7 +196,6 @@ WHERE to_tsvector('french', contenu) @@ to_tsquery('french', 'PostgreSQL & index
 ::: info
 L’index GiST permet d’accélérer les recherches de mots-clés.
 :::
-
 
 ### Index GiST pour les types de données personnalisés
 
@@ -231,7 +224,6 @@ WHERE periode && '[2025-09-01, 2025-09-30]'::TSRANGE;
 ::: info
 L’index GiST accélère les tests de chevauchement (`&&`), de contenu (`@>`), etc.
 :::
-
 
 ### Index GiST pour les types de données géométriques natifs
 
@@ -271,12 +263,9 @@ Cherchez `Index Scan using idx_lieux_position_gist` dans le plan d’exécution.
 
 ### Quand utiliser GiST plutôt que GIN ou SP-GiST ?
 
-- `GiST` : Idéal pour les données géométriques, les intervalles, les recherches de chevauchement.
-- `GIN` : Mieux adapté pour les recherches full-text, les tableaux, les données composites.
-- `SP-GiST` : Utile pour les données hiérarchiques ou les recherches de préfixe.
-
-
-
+* `GiST` : Idéal pour les données géométriques, les intervalles, les recherches de chevauchement.
+* `GIN` : Mieux adapté pour les recherches full-text, les tableaux, les données composites.
+* `SP-GiST` : Utile pour les données hiérarchiques ou les recherches de préfixe.
 
 ## Index GIN
 
@@ -314,7 +303,6 @@ SELECT * FROM articles WHERE tags && ARRAY['postgresql', 'base de données'];
 ::: info
 L’index GIN accélère les recherches de valeurs dans les tableaux, surtout pour les opérateurs `@>`, `&&` et `= ANY`.
 :::
-
 
 ### Index GIN pour la recherche full-text
 
@@ -362,6 +350,7 @@ CREATE INDEX idx_produits_attributs_gin ON produits USING GIN(attributs);
 ```
 
 **Requêtes utilisant l’index** :
+
 ```sql
 -- Trouver les produits dont l'attribut 'couleur' est 'bleu'
 SELECT * FROM produits WHERE attributs @> '{"couleur": "bleu"}';
@@ -376,7 +365,6 @@ SELECT * FROM produits WHERE attributs->>'prix'::NUMERIC > 100;
 ::: info
 → L’index GIN accélère les recherches de clés, de valeurs et les tests de contenu dans les JSONB.
 :::
-
 
 ### Index GIN pour les colonnes de type composite ou personnalisé
 
@@ -419,21 +407,19 @@ Cherchez `Bitmap Heap Scan` ou `Index Scan` avec le nom de votre index GIN dans 
 
 ### Quand utiliser GIN plutôt que GiST ou SP-GiST ?
 
-- `GIN` : Idéal pour les tableaux, les JSONB, la recherche full-text, les données composites.
-- `GiST` : Mieux adapté pour les données géométriques, les intervalles, les recherches de chevauchement.
-- `SP-GiST` : Utile pour les données hiérarchiques ou les recherches de préfixe.
-
+* `GIN` : Idéal pour les tableaux, les JSONB, la recherche full-text, les données composites.
+* `GiST` : Mieux adapté pour les données géométriques, les intervalles, les recherches de chevauchement.
+* `SP-GiST` : Utile pour les données hiérarchiques ou les recherches de préfixe.
 
 ## Index BRIN
 
 Voici des exemples concrets d’utilisation des **index BRIN** (Block Range INdex) sous PostgreSQL, avec des cas d’usage typiques, des bonnes pratiques et des exemples de requêtes.
 
-
 ### Qu’est-ce qu’un index BRIN ?
 
-- **BRIN** est un type d’index conçu pour les **très grandes tables** où les données sont **physiquement ordonnées** selon une colonne (par exemple, une colonne de type date, timestamp, ou série numérique).
-- Il est **très compact** et **rapide à maintenir**, mais moins précis qu’un B-tree pour les recherches ponctuelles.
-- Idéal pour les tables où les données sont **insérées dans l’ordre** (logs, séries temporelles, etc.).
+* **BRIN** est un type d’index conçu pour les **très grandes tables** où les données sont **physiquement ordonnées** selon une colonne (par exemple, une colonne de type date, timestamp, ou série numérique).
+* Il est **très compact** et **rapide à maintenir**, mais moins précis qu’un B-tree pour les recherches ponctuelles.
+* Idéal pour les tables où les données sont **insérées dans l’ordre** (logs, séries temporelles, etc.).
 
 ### Création d’un index BRIN sur une colonne de type timestamp
 
@@ -451,11 +437,11 @@ CREATE INDEX idx_logs_date_brin ON logs USING BRIN(date_log);
 ```
 
 ::: tip Pourquoi BRIN ?
-- Les logs sont toujours insérés par ordre chronologique.
-- La table peut devenir très volumineuse.
-- BRIN est très efficace pour les requêtes de plage sur `date_log`.
-:::
 
+* Les logs sont toujours insérés par ordre chronologique.
+* La table peut devenir très volumineuse.
+* BRIN est très efficace pour les requêtes de plage sur `date_log`.
+:::
 
 ### Requêtes utilisant l’index BRIN
 
@@ -516,7 +502,6 @@ CREATE INDEX idx_mesures_timestamp_valeur_brin ON mesures USING BRIN(timestamp, 
 BRIN est surtout efficace si les colonnes sont **physiquement corrélées** dans l’ordre d’insertion.
 :::
 
-
 ### Vérification de l’utilisation de l’index BRIN
 
 Pour vérifier si PostgreSQL utilise bien votre index BRIN, utilisez `EXPLAIN ANALYZE` :
@@ -531,7 +516,6 @@ WHERE date_log BETWEEN '2025-09-01' AND '2025-09-16';
 Cherchez `Index Scan using idx_logs_date_brin` dans le plan d’exécution.
 :::
 
-
 ### Quand utiliser BRIN plutôt que B-tree ou GiST ?
 
 | Critère                | BRIN           | B-tree          | GiST          |
@@ -543,23 +527,23 @@ Cherchez `Index Scan using idx_logs_date_brin` dans le plan d’exécution.
 | Maintenance            | Très rapide     | Lente          | Rapide        |
 
 ::: info Cas d’usage typiques pour BRIN
-- Tables de logs, séries temporelles, données IoT.
-- Tables où les données sont toujours insérées dans l’ordre (par exemple, par date).
-- Tables très volumineuses où la taille de l’index est un critère important.
-:::
 
+* Tables de logs, séries temporelles, données IoT.
+* Tables où les données sont toujours insérées dans l’ordre (par exemple, par date).
+* Tables très volumineuses où la taille de l’index est un critère important.
+:::
 
 ### Bonnes pratiques avec BRIN
 
-- **Ordonner les données** : BRIN est efficace si les données sont physiquement ordonnées selon la colonne indexée.
-- **Éviter les mises à jour aléatoires** : BRIN est optimisé pour les insertions séquentielles.
-- **Utiliser `pages_per_range`** : Vous pouvez ajuster la taille des blocs indexés pour optimiser les performances (par défaut, 128 pages par bloc).
+* **Ordonner les données** : BRIN est efficace si les données sont physiquement ordonnées selon la colonne indexée.
+* **Éviter les mises à jour aléatoires** : BRIN est optimisé pour les insertions séquentielles.
+* **Utiliser `pages_per_range`** : Vous pouvez ajuster la taille des blocs indexés pour optimiser les performances (par défaut, 128 pages par bloc).
 
 ```sql
 CREATE INDEX idx_logs_date_brin ON logs USING BRIN(date_log) WITH (pages_per_range = 64);
 ```
 
-## Use the index Luke 
+## Use the index Luke
 
 Le site [Use the index,
 Luke](http://use-the-index-luke.com/fr/sql/preface) décrit les
@@ -568,7 +552,7 @@ efficaces en fonctions de vos cas de figures.
 
 ## Articles divers
 
-- [Retarder la vérification des
+* [Retarder la vérification des
   contraintes](https://blog.anayrat.info/2016/08/13/postgresql-retarder-la-verification-des-contraintes/)
-- [Index BRIN --
+* [Index BRIN --
   Performances](https://blog.anayrat.info/2016/04/21/index-brin-performances/)
