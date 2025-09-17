@@ -1,4 +1,20 @@
-## Coûts
+---
+title: Coût d'acquisition de PostgreSQL
+head:
+  - - meta
+    - name: 'keyword'
+      content: cout acquisition hébergement auto-hebergement PostgreSQL ovh
+  - - meta
+    - property: 'og:title'
+      content: Les différents coûts pour l'acquisition de PostgreSQL
+  - - meta      
+    - property: 'og:description'
+      content: Cette page décrit les couts d'acquisition de PostgreSQL quelle que soit le mode d'hébergement.
+  - - meta      
+    - property: 'og:type'
+      content: 'article'
+---
+# Coûts
 
 PostgreSQL est un système de gestion de base de données relationnelle open source, 
 ce qui signifie que son acquisition et son utilisation de base sont gratuites. 
