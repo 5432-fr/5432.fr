@@ -13,6 +13,12 @@ head:
   - - meta      
     - property: 'og:type'
       content: 'article'
+  - - meta
+    - property: 'twitter:title'
+      content: Les différents types de données de PostgreSQL
+  - - meta      
+    - property: 'twitter:description'
+      content: Descriptif des types de données géré par de PostgreSQL      
 ---
 
 # Types de données PostgreSQL

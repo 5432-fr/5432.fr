@@ -13,6 +13,12 @@ head:
   - - meta      
     - property: 'og:type'
       content: 'article'
+  - - meta
+    - property: 'twitter:title'
+      content: Utilisation des différents types d'index sous PostgreSQL
+  - - meta      
+    - property: 'twitter:description'
+      content: Cette page décrit l'utilisation des index dans PostgreSQL en français      
 ---
 
 # Les Index

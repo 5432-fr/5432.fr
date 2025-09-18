@@ -10,6 +10,12 @@ head:
   - - meta      
     - property: 'og:type'
       content: 'article'
+  - - meta
+    - name: 'twitter:title'
+      content: Installation de PostgreSQL 17 sous Windows
+  - - meta      
+    - name: 'twitter:description'
+      content: Documentation d'installation de PostgreSQL 17 sous Windows      
 ---
 
 # Installation PostgreSQL 17 sous Windows

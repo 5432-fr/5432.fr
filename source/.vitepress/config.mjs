@@ -146,6 +146,18 @@ export default defineConfig({
 			"meta",
 			{ property: "og:image", content: 'https://5432.fr/postgresql-200x200.png' },
 		]);
+    pageData.frontmatter.head.push([
+			"meta",
+			{ name: "twitter:card", content: 'summary' },
+		]);
+    pageData.frontmatter.head.push([
+			"meta",
+			{ name: "twitter:site", content: '@5432Fr' },
+		]);
+    pageData.frontmatter.head.push([
+			"meta",
+			{ name: "twitter:image", content: 'https://5432.fr/postgresql-200x200.png' },
+    ]);
 	},
 })
 
