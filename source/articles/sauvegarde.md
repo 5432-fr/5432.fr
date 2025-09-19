@@ -6,13 +6,19 @@ head:
       content: sauvegarde restauration PostgreSQL pg_dump pg_restore, pgbackrest, psql
   - - meta
     - property: 'og:title'
-      content: Liste d'articles autour des opérations de sauvegarde et de restauration de la base de données PostgreSQL
+      content: Article décrivant les possibilités des opérations de sauvegarde et de restauration de la base de données PostgreSQL
   - - meta      
     - property: 'og:description'
       content: Cette page regroupe des séries d'article sur PostgreSQL en français concernant la sauvegarde et la restauration de la base de données
   - - meta      
     - property: 'og:type'
       content: 'article'
+  - - meta
+    - name: 'twitter:title'
+      content: Article décrivant les possibilités des opérations de sauvegarde et de restauration de la base de données PostgreSQL
+  - - meta      
+    - name: 'twitter:description'
+      content: Cette page regroupe des séries d'article sur PostgreSQL en français concernant la sauvegarde et la restauration de la base de données      
 ---
 
 # Sauvegarde et restauration

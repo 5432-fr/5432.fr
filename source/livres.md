@@ -1,5 +1,5 @@
 ---
-title: Livre sur PostgreSQL
+title: Sélection de livre sur PostgreSQL
 head:
   - - meta
     - property: 'og:title'
@@ -10,6 +10,15 @@ head:
   - - meta      
     - property: 'og:type'
       content: 'article'
+  - - meta
+    - name: 'twitter:title'
+      content: Livres sur la base de données PostgreSQL en français
+  - - meta      
+    - name: 'twitter:description'
+      content: Selection de livres en français autour de la base de données PostgreSQL
+  - - meta
+    - name: 'twitter:image'
+      content: 'https://5432.fr/postgresql-architecture-et-notions-avancees-5ed.png'        
 ---
 # Livres
 
