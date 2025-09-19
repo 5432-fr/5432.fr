@@ -78,7 +78,8 @@ export default defineConfig({
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/5432-fr/5432.fr' },
-      { icon: 'linkedin', link: 'https://www.linkedin.com/groups/13044096/' }
+      { icon: 'linkedin', link: 'https://www.linkedin.com/groups/13044096/' },
+      { icon: 'twitter', link: 'https://x.com/5432Fr'}
     ],
     footer: {
       message: 'Released under <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.fr">CC BY-SA 4.0</a>.',
