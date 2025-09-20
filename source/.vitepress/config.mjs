@@ -1,6 +1,8 @@
 import { defineConfig } from 'vitepress'
 import { version } from '../../package.json'
 
+const currentDate = new Date();
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "PostgreSQL Collection",
@@ -16,7 +18,7 @@ export default defineConfig({
     nav: [
       { text: 'Accueil', link: '/' },
       { text: 'Ressources', items: [
-        { text: 'Outils', link: '/outils', activeMatch: '^/outils/' },
+        { text: 'Clients', link: '/clients', activeMatch: '^/clients/' },
         { text: 'Articles', link: '/articles/', activeMatch: '^/articles/' },
         { text: 'Extensions', link: '/extensions', activeMatch: '^/extensions/' },
         { text: 'Livres', link: '/livres', activeMatch: '^/livres/' },
@@ -131,8 +133,8 @@ export default defineConfig({
     ],
   ],
 	transformPageData(pageData) {
-		const canonicalUrl =
-			`https://5432.fr/${pageData.relativePath}`.replace(/\.md$/, "");
+		const canonicalUrl = `https://5432.fr/${pageData.relativePath}`.replace(/\.md$/, "");
+    const updtDate = new Date(pageData.lastUpdated);
 
 		pageData.frontmatter.head ??= [];
 		pageData.frontmatter.head.push([
@@ -159,6 +161,27 @@ export default defineConfig({
 			"meta",
 			{ name: "twitter:image", content: 'https://5432.fr/postgresql-200x200.png' },
     ]);
+
+    if (pageData.filePath === "index.md") {
+      pageData.frontmatter.head.push([
+        'script',
+        {
+          id: 'application-json',
+          type: 'application/ld+json',
+        },
+        `{"@context":"https://schema.org", "@type":"WebPage", "name":"${pageData.title}", "datePublished": "${currentDate.toISOString()}", "dateModified": "${updtDate.toISOString()}"}`,
+      ]); 
+    } else {
+      pageData.frontmatter.head.push([
+        'script',
+        {
+          id: 'application-json',
+          type: 'application/ld+json',
+        },
+        `{"@context":"https://schema.org", "@type":"Article", "name":"${pageData.title}", "datePublished": "${currentDate.toISOString()}", "dateModified": "${updtDate.toISOString()}"}`,
+      ]);
+    }
 	},
 })
+
 
