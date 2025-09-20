@@ -16,7 +16,7 @@ export default defineConfig({
     nav: [
       { text: 'Accueil', link: '/' },
       { text: 'Ressources', items: [
-        { text: 'Outils', link: '/outils', activeMatch: '^/outils/' },
+        { text: 'Clients', link: '/clients', activeMatch: '^/clients/' },
         { text: 'Articles', link: '/articles/', activeMatch: '^/articles/' },
         { text: 'Extensions', link: '/extensions', activeMatch: '^/extensions/' },
         { text: 'Livres', link: '/livres', activeMatch: '^/livres/' },
