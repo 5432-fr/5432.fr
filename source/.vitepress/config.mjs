@@ -74,6 +74,7 @@ export default defineConfig({
           { text: 'PHP', link: '/programmation/php' },
           { text: 'Python', link: '/programmation/python' },
           { text: 'PLpgSQL', link: '/programmation/plpgsql' },
+          { text: 'Powershell', link: '/programmation/powershell' },
         ]
       }
     ],
@@ -134,7 +135,11 @@ export default defineConfig({
   ],
 	transformPageData(pageData) {
 		const canonicalUrl = `https://5432.fr/${pageData.relativePath}`.replace(/\.md$/, "");
-    const updtDate = new Date(pageData.lastUpdated);
+    let updtDate = new Date();
+    // If no commit for a page (dev in progress), lastUpdated == NaN
+    if (!isNaN(pageData.lastUpdated)) {
+      updtDate = new Date(pageData.lastUpdated);
+    }
 
 		pageData.frontmatter.head ??= [];
 		pageData.frontmatter.head.push([
