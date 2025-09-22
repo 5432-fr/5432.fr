@@ -70,13 +70,14 @@ Et comme il est basé sur **.NET** on peut utiliser le driver ODBC ou tout autre
 
 ## Accès avec le driver ODBC
 
-Pour notre exemple de script PowerShell qui utilise le driver ODBC officiel pour se connecter à une base de données PostgreSQL. Ce script suppose que le driver ODBC pour PostgreSQL est déjà installé sur votre machine (par exemple, [psqlODBC](https://odbc.postgresql.org/ "Driver ODBC for Windows") en version 32 ou 64 bits).
+Pour notre exemple de script PowerShell qui utilise le driver `ODBC` officiel pour se connecter à une base de données PostgreSQL. Ce script suppose que le driver ODBC pour PostgreSQL est déjà installé sur votre machine (par exemple, [psqlODBC](https://odbc.postgresql.org/ "Driver ODBC for Windows") en version 32 ou 64 bits).
+
+La documentation d'installation en français se trouve dans [cette partie](../installation/odbc-windows.md "Installation driver ODBC").
 
 ### Prérequis
 
-- Le driver ODBC pour PostgreSQL doit être installé (de préférence utiliser la version 64 bits). 
-- Une source de données ODBC (DSN) doit être configurée, ou vous pouvez utiliser une chaîne de connexion directe.
-
+* Le driver ODBC pour PostgreSQL doit être installé (de préférence utiliser la version 64 bits). 
+* Une source de données ODBC (DSN) doit être configurée, ou vous pouvez utiliser une chaîne de connexion directe.
 
 ### Exemple de script PowerShell
 
@@ -147,8 +148,6 @@ $connectionString = "DSN=nom_de_votre_dsn;Uid=$username;Pwd=$password;"
 ## Accès avec Npgsql
 
 Voici un exemple complet d’utilisation de **Npgsql** avec **PowerShell** pour interagir avec une base de données PostgreSQL, incluant l’installation de la bibliothèque.
-
----
 
 ### Installation de Npgsql
 
