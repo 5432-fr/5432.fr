@@ -48,7 +48,8 @@ export default defineConfig({
             { text: 'Linux', link: 'https://www.postgresql.org/download/linux/' },
           ]},
           { text: 'Installation', items: [
-            { text: 'Windows', link: '/installation/pg-17-windows' }
+            { text: 'Windows', link: '/installation/pg-17-windows' },
+            { text: 'Driver ODBC', link: '/installation/odbc-windows' }
           ]}
       ]}
     ],
@@ -175,7 +176,7 @@ export default defineConfig({
           type: 'application/ld+json',
         },
         `{"@context":"https://schema.org", "@type":"WebPage", "name":"${pageData.title}", "datePublished": "${currentDate.toISOString()}", "dateModified": "${updtDate.toISOString()}"}`,
-      ]); 
+      ]);
     } else {
       pageData.frontmatter.head.push([
         'script',
