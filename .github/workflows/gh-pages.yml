@@ -39,6 +39,6 @@ jobs:
         uses: bojieyang/indexnow-action@v2 # v2 is the latest major version following the action-versioning.
         with:
           sitemap-location: "https://5432.fr/sitemap.xml"
-          since: 7
+          since: 2
           since-unit: "day"
           key: ${{ secrets.INDEXNOW_KEY }} # The key you get from IndexNow.          
