@@ -71,6 +71,7 @@ export default defineConfig({
         text: 'Programmation',
         items: [
           { text: 'Langage C', link: '/programmation/c' },
+          { text: 'Rust', link: '/programmation/rust' },
           { text: 'Java', link: '/programmation/java' },
           { text: 'PHP', link: '/programmation/php' },
           { text: 'Python', link: '/programmation/python' },
