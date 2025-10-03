@@ -27,11 +27,11 @@ export default defineConfig({
         { text: 'Services', link: '/services', activeMatch: '^/services/' },
       ]},
       { text: 'Documentation', items: [
+        { text: 'PostgreSQL 18', link: 'https://docs.postgresql.fr/18/' },
         { text: 'PostgreSQL 17', link: 'https://docs.postgresql.fr/17/' },
         { text: 'PostgreSQL 16', link: 'https://docs.postgresql.fr/16/' },
         { text: 'PostgreSQL 15', link: 'https://docs.postgresql.fr/15/' },
-        { text: 'PostgreSQL 14', link: 'https://docs.postgresql.fr/14/' },
-        { text: 'PostgreSQL 13', link: 'https://docs.postgresql.fr/13/' }
+        { text: 'PostgreSQL 14', link: 'https://docs.postgresql.fr/14/' }
       ]},
       { text: 'Liens', items: [
         { text: 'PostgreSQLFr', link: 'https://www.postgresql.fr/' },
@@ -82,9 +82,10 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/5432-fr/5432.fr' },
+      { icon: 'discord', link: 'https://discord.gg/ypY23QFEcn'},
       { icon: 'linkedin', link: 'https://www.linkedin.com/groups/13044096/' },
-      { icon: 'twitter', link: 'https://x.com/5432Fr'}
+      { icon: 'twitter', link: 'https://x.com/5432Fr'},
+      { icon: 'github', link: 'https://github.com/5432-fr/5432.fr' }      
     ],
     footer: {
       message: 'Released under <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.fr">CC BY-SA 4.0</a>.',
