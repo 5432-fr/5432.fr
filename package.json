@@ -15,5 +15,20 @@
   },
   "devDependencies": {
     "markdownlint-cli2": "^0.18.1"
+  },
+  "5432_fr": {
+    "social": {
+      "github": "https://github.com/5432-fr/5432.fr",
+      "linkedin": "https://www.linkedin.com/groups/13044096/",
+      "twitter": "https://x.com/5432Fr",
+      "discord": "https://discord.gg/ypY23QFEcn"
+    },
+    "documentation": [
+      { "text": "PostgreSQL 18", "link": "https://docs.postgresql.fr/18/"},
+      { "text": "PostgreSQL 17", "link": "https://docs.postgresql.fr/17/"},
+      { "text": "PostgreSQL 16", "link": "https://docs.postgresql.fr/16/"},
+      { "text": "PostgreSQL 15", "link": "https://docs.postgresql.fr/15/"},
+      { "text": "PostgreSQL 14", "link": "https://docs.postgresql.fr/14/"}
+    ]
   }
 }
