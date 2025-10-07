@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import llmstxt from 'vitepress-plugin-llms'
 import { version } from '../../package.json'
 
 const currentDate = new Date();
@@ -13,6 +14,9 @@ export default defineConfig({
   ignoreDeadLinks: [
     /^https?:\/\/localhost:*/,
   ],
+  vite: {
+    plugins: [llmstxt()]
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -85,7 +89,7 @@ export default defineConfig({
       { icon: 'discord', link: 'https://discord.gg/ypY23QFEcn'},
       { icon: 'linkedin', link: 'https://www.linkedin.com/groups/13044096/' },
       { icon: 'twitter', link: 'https://x.com/5432Fr'},
-      { icon: 'github', link: 'https://github.com/5432-fr/5432.fr' }      
+      { icon: 'github', link: 'https://github.com/5432-fr/5432.fr' }
     ],
     footer: {
       message: 'Released under <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.fr">CC BY-SA 4.0</a>.',
