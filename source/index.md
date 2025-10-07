@@ -30,8 +30,8 @@ hero:
       text: Programmation
       link: /programmation
     - theme: alt
-      text: Documentation
-      link: https://docs.postgresql.fr/17/      
+      text: Cookbook
+      link: /cookbook      
 
 features:
   - title: Open Source et Gratuit
