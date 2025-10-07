@@ -14,7 +14,8 @@
     "vitepress": "2.0.0-alpha.12"
   },
   "devDependencies": {
-    "markdownlint-cli2": "^0.18.1"
+    "markdownlint-cli2": "^0.18.1",
+    "vitepress-plugin-llms": "^1.8.0"
   },
   "5432_fr": {
     "social": {
@@ -24,11 +25,26 @@
       "discord": "https://discord.gg/ypY23QFEcn"
     },
     "documentation": [
-      { "text": "PostgreSQL 18", "link": "https://docs.postgresql.fr/18/"},
-      { "text": "PostgreSQL 17", "link": "https://docs.postgresql.fr/17/"},
-      { "text": "PostgreSQL 16", "link": "https://docs.postgresql.fr/16/"},
-      { "text": "PostgreSQL 15", "link": "https://docs.postgresql.fr/15/"},
-      { "text": "PostgreSQL 14", "link": "https://docs.postgresql.fr/14/"}
+      {
+        "text": "PostgreSQL 18",
+        "link": "https://docs.postgresql.fr/18/"
+      },
+      {
+        "text": "PostgreSQL 17",
+        "link": "https://docs.postgresql.fr/17/"
+      },
+      {
+        "text": "PostgreSQL 16",
+        "link": "https://docs.postgresql.fr/16/"
+      },
+      {
+        "text": "PostgreSQL 15",
+        "link": "https://docs.postgresql.fr/15/"
+      },
+      {
+        "text": "PostgreSQL 14",
+        "link": "https://docs.postgresql.fr/14/"
+      }
     ]
   }
 }
