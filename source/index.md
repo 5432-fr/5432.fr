@@ -2,6 +2,7 @@
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
 title: PostgreSQL Ressources Francophones
+description: Ensemble de ressources francophones autour de la base de données PostgreSQL
 head:
   - - meta
     - property: 'og:title'
@@ -31,7 +32,10 @@ hero:
       link: /programmation
     - theme: alt
       text: Cookbook
-      link: /cookbook      
+      link: /cookbook
+    - theme: alt
+      text: Information
+      link: /information      
 
 features:
   - title: Open Source et Gratuit
