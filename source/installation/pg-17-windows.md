@@ -20,6 +20,23 @@ head:
 
 # Installation PostgreSQL 17 sous Windows
 
+## Compatibilité
+
+Ci dessous le tableau de compatibilité des versions de PostgreSQL et Windows (Server et Desktop)
+
+| Version PostgreSQL | Version Windows  |
+|:-:|:- |
+| PostgreSQL 18 |  Windows Server 2025 64 bits<br />Windows Server 2022 64 bits<br />Windows Server 2019 64 bits<br /> Windows 11 64 Bits<br />Windows 10 64 Bits|
+| PostgreSQL 17 |  Windows Server 2025 64 bits<br />Windows Server 2022 64 bits<br />Windows Server 2019 64 bits<br /> Windows 11 64 Bits<br />Windows 10 64 Bits|
+| PostgreSQL 16 |  Windows Server 2022 64 bits<br />Windows Server 2019 64 bits<br />Windows 11 64 Bits<br />Windows 10 64 Bits|
+| PostgreSQL 15 |  Windows Server 2019 64 bits<br />Windows Server 2016 64 bits<br />Windows 10 64 Bits|
+| PostgreSQL 14 |  Windows Server 2019 64 bits<br />Windows Server 2016 64 bits<br />Windows 10 64 Bits|
+| PostgreSQL 13 |  Windows Server 2019 64 bits<br />Windows Server 2016 64 bits<br />Windows 10 64 Bits|
+
+::: info Cycle de vie 
+Le cycle de vie des versions de PostgreSQL est défini dans la partie [information](../information.md#cycle-de-vie "Cycle de vie PostgreSQL")
+:::
+
 ## Etapes d'installation
 
 Après avoir téléchargé l'installeur, vous devez avoir un fichier similaire dans votre dossier **Téléchargements**
