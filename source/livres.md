@@ -1,5 +1,6 @@
 ---
-title: Sélection de livre sur PostgreSQL
+title: Sélection de livre traitant de PostgreSQL en français
+description: Liste de livres traitant de la base de données PostgreSQL
 head:
   - - meta
     - property: 'og:title'
