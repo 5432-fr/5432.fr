@@ -1,5 +1,6 @@
 ---
 title: installation PostgreSQL
+description: installation des PostgreSQL et de ses divers composants sous Windows
 ---
 
 # installation PostgreSQL

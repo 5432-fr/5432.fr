@@ -21,7 +21,7 @@ hero:
   text: "Ressources Francophones"
   tagline: La base de données la plus complète de l'univers ...
   image: 
-    src: postgresql-200x200.png
+    src: home-server-db.png
     alt: Logo PostgreSQL
   actions:
     - theme: brand

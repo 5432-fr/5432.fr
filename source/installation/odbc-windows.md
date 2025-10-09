@@ -1,24 +1,25 @@
 ---
-title: Installation driver ODBC sous Windows
+title: Installation des drivers ODBC sous environnement Windows
+description: Installation des drivers ANSI et Unicode sous Windows en version standard ou minimalloc
 head:
   - - meta
     - name: 'keyword'
       content: odbc windows postgresql
   - - meta
     - property: 'og:title'
-      content: Installation driver ODBC sous Windows
+      content: Installation des drivers ODBC sous environnement Windows
   - - meta      
     - property: 'og:description'
-      content: Installation du driver ODBC PostgreSQL sous Windows
+      content: Installation des drivers ANSI et Unicode sous Windows en version standard ou minimalloc
   - - meta      
     - property: 'og:type'
       content: 'article'
   - - meta
     - property: 'twitter:title'
-      content: Installation driver ODBC sous Windows
+      content: Installation des drivers ODBC sous environnement Windows
   - - meta      
     - property: 'twitter:description'
-      content: Installation du driver ODBC PostgreSQL sous Windows  
+      content: Installation des drivers ANSI et Unicode sous Windows en version standard ou minimalloc
 ---
 
 # Installation driver ODBC sous Windows
