@@ -1,28 +1,28 @@
 ---
-title: Installation PostgreSQL 17 sous environnement Windows
-description: Installation de la version 17 de PostgreSQL sous Windows Server et Desktop
+title: Installation PostgreSQL 18 sous environnement Windows
+description: Installation de la version 18 de PostgreSQL sous Windows Server et Desktop
 head:
   - - meta
     - name: 'keyword'
       content:  windows postgresql pg windowsserver2025 parefeu windows10 windows11
   - - meta
     - property: 'og:title'
-      content: Installation PostgreSQL 17 sous environnement Windows
+      content: Installation PostgreSQL 18 sous environnement Windows
   - - meta      
     - property: 'og:description'
-      content: Documentation d'installation de PostgreSQL 17 sous Windows
+      content: Documentation d'installation de PostgreSQL 18 sous Windows
   - - meta      
     - property: 'og:type'
       content: 'article'
   - - meta
     - name: 'twitter:title'
-      content: Installation PostgreSQL 17 sous environnement Windows
+      content: Installation PostgreSQL 18 sous environnement Windows
   - - meta      
     - name: 'twitter:description'
       content: Documentation d'installation de PostgreSQL 17 sous Windows      
 ---
 
-# Installation PostgreSQL 17 sous Windows
+# Installation PostgreSQL 18 sous Windows
 
 ## Compatibilité
 
@@ -41,11 +41,15 @@ Ci dessous le tableau de compatibilité des versions de PostgreSQL et Windows (S
 Le cycle de vie des versions de PostgreSQL est défini dans la partie [information](../information.md#cycle-de-vie "Cycle de vie PostgreSQL")
 :::
 
+Installation des version précédentes
+
+* [PostgreSQL version 17 sous Windows](./pg-17-windows.md "PostgreSQL version 17 sous Windows")
+
 ## Téléchargement
 
 Après avoir téléchargé l'installeur, vous devez avoir un fichier similaire dans votre dossier **Téléchargements**
 
-![Fichier téléchargement windows](pg-17-windows-step_1.png "Fichier téléchargement windows")
+![Fichier téléchargement windows](pg-18-windows-step_1.png)
 
 ::: warning
 Les droits administrateur seront requis pour l'installation de PostgreSQL en tant que service Windows
@@ -53,19 +57,19 @@ Les droits administrateur seront requis pour l'installation de PostgreSQL en tan
 
 ## Exécution en mode administrateur
 
-Selectionner votre installeur puis faite un clic droit
+Selectionner votre ficher de l'installeur puis faite un clic droit
 
-![Execution en administrateur](pg-17-windows-step_2.png "Execution en mode administrateur")
+![Execution en administrateur](pg-18-windows-step_2.png "Execution en administrateur")
 
 Puis sélectionner **Exécuter en tant qu'administrateur**
 
-![Ecran de bienvenue PG 17](pg-17-windows-step_3.png "Ecran de bienvenue PG 17")
+![Ecran de bienvenue PG 18](pg-18-windows-step_3.png "Ecran de bienvenue PG 18")
 
 Nous arrivons sur l'écran de bienvenue, rien à faire de particulier, cliquer sur **Suivant**
 
 ## Dossier d'installation
 
-![Dossier d'installation](pg-17-windows-step_4.png "Dossier d'installation")
+![Dossier d'installation](pg-18-windows-step_4.png "Dossier d'installation")
 
 Cet écran nous propose de sélectionner le dossier d'installation, vous pouvez laisser le dossier par défaut, 
 ou bien le changer pour utiliser un autre lecteur (D:, E:).
@@ -80,34 +84,34 @@ Puis valider sur **Suivant**
 
 ## Sélection des composants
 
-![Sélection des composants](pg-17-windows-step_5.png "Sélection des composants")
+![Sélection des composants](pg-18-windows-step_5.png "Sélection des composants")
 
 Ensuite nous allons sélectionner les composants a installer.
 
-* **PostgreSQL Server**: Le sevreur PostgreSQL lui même
+* **PostgreSQL Server**: Le serveur PostgreSQL lui même
 * **PgAdmin 4**: le client graphique permettant la gestion de la base de données PostgreSQL
-* **Stack Builder**: Programme et extension suppélmentaire pour PostgreSQL
+* **Stack Builder**: Programmes et extensions suppélmentaires pour PostgreSQL
 * **Command Line Tools**: Utilitaire PostgreSQL en ligne de commande (utilitaire psql par exemple)
 
 Décocher les composants que vous ne souhaitez pas installer, puis cliquer sur **Suivant**
 
 ## Dossier de données
 
-![Dossier des données de PostgreSQL](pg-17-windows-step_6.png "Dossier des données de PostgreSQL")
+![Dossier des données de PostgreSQL](pg-18-windows-step_6.png "Dossier des données de PostgreSQL")
 
 Sélectionner un dossier ou seront conservés les données des base de données créées.
 
 Vous pouvez laisser le dossier par défaut, ou choisir un emplacement sur une autre lecteur.
 
 ::: warning
-N'utiliser pas de lecteurs réseaux pour des questions de performances et de stabilité.
+N'utiliser pas de lecteurs réseaux pour des questions de performance et de stabilité.
 :::
 
 Valider ensuite en cliquant sur **Suivant**
 
 ## Mot de passe
 
-![Mot de passe utilisateur postgres](pg-17-windows-step_7.png "Mot de passe utilisateur postgres")
+![Mot de passe utilisateur postgres](pg-18-windows-step_7.png "Mot de passe utilisateur postgres")
 
 Vous devez définir ensuite le mot de passe de l'utilisateur **postgres**, cet utilisteur est le super utilisateur de la
 base de données, mais également l'utilisateur windows qui lancera des service additionnel comme pgAgent par exemple.
@@ -116,23 +120,22 @@ Choisissez un mot de passe robuste pour cette utilisateur.
 
 ## Port d'écoute
 
-![Port d'écoute](pg-17-windows-step_8.png "Port d'écoute")
+![Port d'écoute](pg-18-windows-step_8.png Port d'écoute)
 
 Le port par défaut de PostgreSQL est 5432, vous pouvez bien sur le changer
 
 ::: info
-Sous Windows vous pouvez installer plusieurs versions de PostgreSQL, dans ce cas, il faudra un port différent pour chacun des services 
+Sous Windows vous pouvez installer plusieurs versions de PostgreSQL, dans ce cas, il faudra un port différent
+pour chacun des services 
 :::
 
 Valider en cliquant sur **Suivant**
 
 ## Locale
 
-![Locale du cluster de base de données](pg-17-windows-step_9.png "Locale du cluster de base de données")
-
 Vous pouvez sélectionner la locale par défaut de votre cluster
 
-![Locale French France, locale du cluster](pg-17-windows-step_10.png "Locale French France, locale du cluster")
+![Locale French France, locale du cluster](pg-18-windows-step_9.png "Locale French France, locale du cluster")
 
 Si votre base de données contiendra des données exclusivement en français, je vous conseille de sélectionner **French, France** (ou tout autre variante de French)
 
@@ -140,21 +143,21 @@ Sinon je vous invite à lire la documentation à ce sujet.
 
 ## Résumé
 
-![Résumé de l'installation](pg-17-windows-step_11.png "Résumé de l'installation")
+![Résumé de l'installation](pg-18-windows-step_10.png "Résumé de l'installation de PG 18")
 
 Cliquer sur **Suivant** pour débuter l'installation, ou **Retour** si vous souhaitez changer certaines options.
 
-![Démarrage de l'installation](pg-17-windows-step_12.png "Démarrage de l'installation")
+![Démarrage de l'installation](pg-18-windows-step_11.png "Démarrage de l'installation de PG 18")
 
 Confimer le lancement de l'installation en cliquant sur **Suivant**
 
-![Progression de l'installation](pg-17-windows-step_13.png "Progression de l'installation")
+![Progression de l'installation](pg-18-windows-step_12.png "Progression de l'installation")
 
 Cet écran vous affiche la progression de l'installation.
 
 ## Fin d'installation
 
-![Fin d'installation de PostgreSQL](pg-17-windows-step_14.png "Fin d'installation de PostgreSQL")
+![Fin d'installation de PostgreSQL](pg-18-windows-step_13.png "Fin d'installation de PostgreSQL")
 
 Ecran final d'installation.
 

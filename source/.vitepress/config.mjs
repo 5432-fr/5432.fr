@@ -52,7 +52,7 @@ export default defineConfig({
             { text: 'Linux', link: 'https://www.postgresql.org/download/linux/' },
           ]},
           { text: 'Installation', items: [
-            { text: 'Windows', link: '/installation/pg-17-windows' },
+            { text: 'Windows', link: '/installation/pg-18-windows' },
             { text: 'Driver ODBC', link: '/installation/odbc-windows' }
           ]}
       ]}
