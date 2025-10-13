@@ -5,6 +5,12 @@ head:
     - name: 'keyword'
       content: cout acquisition hébergement auto-hebergement PostgreSQL ovh
   - - meta
+    - name: 'author'
+      content: Christophe Chauvet
+  - - meta
+    - name: 'copyright'
+      content: CC BY-SA 4.0      
+  - - meta
     - property: 'og:title'
       content: Les différents coûts pour l'acquisition de PostgreSQL
   - - meta      

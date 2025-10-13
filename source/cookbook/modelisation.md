@@ -1,5 +1,15 @@
 ---
 title: Cookbook - Modelisation
+head:
+  - - meta
+    - name: 'keyword'
+      content:  modelisation clé primaire postgresql primary key uuidv7
+  - - meta
+    - name: 'author'
+      content: Christophe Chauvet
+  - - meta
+    - name: 'copyright'
+      content: CC BY-SA 4.0
 ---
 
 # Modélisation
