@@ -6,6 +6,12 @@ head:
     - name: 'keyword'
       content: odbc windows postgresql
   - - meta
+    - name: 'author'
+      content: Christophe Chauvet
+  - - meta
+    - name: 'copyright'
+      content: CC BY-SA 4.0      
+  - - meta
     - property: 'og:title'
       content: Installation des drivers ODBC sous environnement Windows
   - - meta      

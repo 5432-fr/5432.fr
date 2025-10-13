@@ -6,6 +6,12 @@ head:
     - name: 'keyword'
       content:  windows postgresql pg windowsserver2025 parefeu windows10 windows11
   - - meta
+    - name: 'author'
+      content: Christophe Chauvet
+  - - meta
+    - name: 'copyright'
+      content: CC BY-SA 4.0       
+  - - meta
     - property: 'og:title'
       content: Installation PostgreSQL 18 sous environnement Windows
   - - meta      

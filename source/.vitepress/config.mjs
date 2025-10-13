@@ -141,7 +141,9 @@ export default defineConfig({
     ],
   ],
 	transformPageData(pageData) {
-		const canonicalUrl = `https://5432.fr/${pageData.relativePath}`.replace(/\.md$/, "");
+    // Canonical url for index must be root
+		const canonicalUrl = "https://5432.fr/" + pageData.relativePath.replace(/\.md$/, "").replace(/^index$/, "");
+
     let updtDate = new Date();
     // If no commit for a page (dev in progress), lastUpdated == NaN
     if (!isNaN(pageData.lastUpdated)) {
@@ -181,7 +183,7 @@ export default defineConfig({
           id: 'application-json',
           type: 'application/ld+json',
         },
-        `{"@context":"https://schema.org", "@type":"WebPage", "name":"${pageData.title}", "datePublished": "${currentDate.toISOString()}", "dateModified": "${updtDate.toISOString()}"}`,
+        `{"@context":"https://schema.org", "@type":"WebSite", "name":"${pageData.title}", "url": "https://5432.fr/", "datePublished": "${currentDate.toISOString()}", "dateModified": "${updtDate.toISOString()}"}`,
       ]);
     } else {
       pageData.frontmatter.head.push([

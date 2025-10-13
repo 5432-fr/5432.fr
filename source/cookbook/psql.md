@@ -1,5 +1,15 @@
 ---
 title: Cookbook - psql
+head:
+  - - meta
+    - name: 'keyword'
+      content:  psql postgresql pg
+  - - meta
+    - name: 'author'
+      content: Christophe Chauvet
+  - - meta
+    - name: 'copyright'
+      content: CC BY-SA 4.0
 ---
 
 # psql

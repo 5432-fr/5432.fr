@@ -5,6 +5,12 @@ head:
     - name: 'keyword'
       content: sauvegarde restauration PostgreSQL pg_dump pg_restore, pgbackrest, psql
   - - meta
+    - name: 'author'
+      content: Christophe Chauvet
+  - - meta
+    - name: 'copyright'
+      content: CC BY-SA 4.0      
+  - - meta
     - property: 'og:title'
       content: Article décrivant les possibilités des opérations de sauvegarde et de restauration de la base de données PostgreSQL
   - - meta      
