@@ -23,10 +23,11 @@ cela couvre les différentes thématiques comme:
 - les types de données telles que JSON et JSONB
 - l'utilisation des VACUUM et AUTOVACUUM
 - les extensions
-- [Les coûts](./cout.md)
-- [Généralité](./generalite.md)
-- [Types](./types.md)
-- [Les index](./indexes.md )
-- [Maintenance](./maintenance.md )
-- [Réplication](./replication.md)
-- [Sauvegarde et restauration](./sauvegarde.md)
+- [Les coûts](./cout.md "Coûts d'acquisition de PostgreSQL")
+- [Généralité](./generalite.md "Généralité")
+- [Types](./types.md "Les Types")
+- [Les index](./indexes.md "Les index")
+- [Les langages de procédures](./plangages.md "Les langages de procédures")
+- [Maintenance](./maintenance.md "Maintenance")
+- [Réplication](./replication.md "Réplication PostgreSQL")
+- [Sauvegarde et restauration](./sauvegarde.md "Sauvegarde PostgreSQL")

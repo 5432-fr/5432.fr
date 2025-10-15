@@ -66,6 +66,7 @@ export default defineConfig({
           { text: 'Generalité', link: '/articles/generalite' },
           { text: 'Indexes', link: '/articles/indexes' },
           { text: 'Maintenance', link: '/articles/maintenance' },
+          { text: 'Langage de procédures', link: '/articles/plangages' },
           { text: 'Replication', link: '/articles/replication' },
           { text: 'Sauvegarde', link: '/articles/sauvegarde' },
           { text: 'Types', link: '/articles/types' },
