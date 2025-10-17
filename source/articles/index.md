@@ -31,3 +31,4 @@ cela couvre les différentes thématiques comme:
 - [Maintenance](./maintenance.md "Maintenance")
 - [Réplication](./replication.md "Réplication PostgreSQL")
 - [Sauvegarde et restauration](./sauvegarde.md "Sauvegarde PostgreSQL")
+- [Fonction generate_series](./fonction-gs.md "Fonction generate_series")

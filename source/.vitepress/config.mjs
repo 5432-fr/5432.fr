@@ -70,6 +70,11 @@ export default defineConfig({
           { text: 'Replication', link: '/articles/replication' },
           { text: 'Sauvegarde', link: '/articles/sauvegarde' },
           { text: 'Types', link: '/articles/types' },
+          { text: 'Fonctions',
+            items: [
+              { text: 'generate_series', link: '/articles/fonction-gs' },
+            ],
+          },
         ]
       },
       {

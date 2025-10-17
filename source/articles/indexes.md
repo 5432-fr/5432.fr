@@ -1,9 +1,16 @@
 ---
 title: Utilisation des différents index sous PostgreSQL
+description: Cette page décrit l'utilisation des diféfrents index dans PostgreSQL
 head:
   - - meta
     - name: 'keyword'
       content: index PostgreSQL pg_dump btree hash gist gin brin
+  - - meta
+    - name: 'author'
+      content: Christophe Chauvet
+  - - meta
+    - name: 'copyright'
+      content: CC BY-SA 4.0          
   - - meta
     - property: 'og:title'
       content: Utilisation des différents types d'index sous PostgreSQL
