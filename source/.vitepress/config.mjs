@@ -6,7 +6,7 @@ const currentDate = new Date();
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "PostgreSQL Collection",
+  title: "PostgreSQL",
   titleTemplate: ':title',
   description: `Le site 5432.fr est une plateforme francophone dédiée à PostgreSQL,
     l’un des systèmes de gestion de bases de données relationnelles les plus avancés.`,
@@ -98,7 +98,7 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/5432-fr/5432.fr' }
     ],
     footer: {
-      message: 'Released under <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.fr">CC BY-SA 4.0</a>.',
+      message: 'Publier sous <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.fr">CC BY-SA 4.0</a>.',
       copyright: `Copyright © 2016-${new Date().getUTCFullYear()} Christophe Chauvet`
     },
     outline: {
