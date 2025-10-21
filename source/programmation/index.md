@@ -27,5 +27,7 @@ il est parfois possible de s\'y connecter avec un driver ODBC.
 * [Python](./python.md)
 * [PHP](./php.md)
 * [PlPgSQL](./plpgsql.md)
+* [PowerShell](./powershell.md)
+* [Rust](./rust.md)
 
 

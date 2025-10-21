@@ -3,7 +3,13 @@ title: Connexion à PostgreSQL en powershell
 head:
   - - meta
     - name: 'keyword'
-      content: powershell dotnet postgresql npgsql windows forms datagridview
+      content: powershell dotnet postgresql npgsql windows forms datagridview pgpass
+  - - meta
+    - name: 'author'
+      content: Christophe Chauvet
+  - - meta
+    - name: 'copyright'
+      content: CC BY-SA 4.0          
   - - meta
     - property: 'og:title'
       content: Connexion à PostgreSQL en powershell en ODBC ou Npgsql
@@ -25,7 +31,7 @@ head:
 
 ## Qu’est-ce que PowerShell ?
 
-Avant d'attaquer avec des exemples en Powershell, il convient de faire un explicatin rapide
+Avant d'attaquer avec des exemples en Powershell, il convient de faire un explication rapide
 sur ce qu'est PowerShell
 
 ### Introduction
@@ -34,6 +40,20 @@ sur ce qu'est PowerShell
 la gestion des systèmes et l’administration des environnements Windows (mais aussi Linux et macOS depuis 2016). 
 
 Il permet aux administrateurs et aux développeurs d’automatiser des processus répétitifs, de gérer des configurations, et d’interagir avec le système d’exploitation, les applications et les services de manière efficace.
+
+#### Version de PowerShell
+
+| Version,Plateforme | Basé sur | Multiplateforme | Compatibilité modules Windows |
+| :----------------: | :---: | :---: | :---: |
+|1.0 à 5.1|Windows|.NET Framework|Non|Oui|
+|Core 6.0+|Windows/Linux/mac|.NET Core|Oui|Partielle|
+|7.0+|Windows/Linux/mac|.NET 5/6/7/8|Oui|Très bonne|
+
+
+::: info Quelle version utiliser ?
+* Pour les environnements Windows traditionnels : PowerShell 5.1 (stable et complet).
+* Pour les environnements multiplateformes ou modernes : PowerShell 7.4 (ou la dernière version disponible).
+:::
 
 #### Points clés
 
@@ -47,15 +67,15 @@ Il permet aux administrateurs et aux développeurs d’automatiser des processus
 
 PowerShell repose sur plusieurs technologies clés:
 
-| Brique technologique         | Rôle                                                                 |
-|------------------------------|----------------------------------------------------------------------|
-| **.NET Framework/.NET Core** | PowerShell est construit sur .NET, ce qui lui permet de manipuler des objets .NET directement. |
-| **Cmdlets**                  | Commandes spécialisées (ex: `Get-Process`, `Set-Service`) écrites en .NET. |
-| **Modules**                  | Regroupent des cmdlets et des fonctions pour étendre PowerShell.    |
-| **Pipeline**                 | Permet de chaîner des commandes et de transmettre des objets entre elles. |
-| **WS-Management (WinRM)**    | Protocole utilisé pour la gestion à distance des machines.          |
-| **PowerShell Remoting**      | Permet d’exécuter des commandes sur des machines distantes.         |
-| **Desired State Configuration (DSC)** | Outil de gestion de configuration basé sur PowerShell.     |
+| Brique technologique                  | Rôle                                                                                           |
+|---------------------------------------|------------------------------------------------------------------------------------------------|
+| **.NET Framework/.NET Core**          | PowerShell est construit sur .NET, ce qui lui permet de manipuler des objets .NET directement. |
+| **Cmdlets**                           | Commandes spécialisées (ex: `Get-Process`, `Set-Service`) écrites en .NET.                     |
+| **Modules**                           | Regroupent des cmdlets et des fonctions pour étendre PowerShell.                               |
+| **Pipeline**                          | Permet de chaîner des commandes et de transmettre des objets entre elles.                      |
+| **WS-Management (WinRM)**             | Protocole utilisé pour la gestion à distance des machines.                                     |
+| **PowerShell Remoting**               | Permet d’exécuter des commandes sur des machines distantes.                                    |
+| **Desired State Configuration (DSC)** | Outil de gestion de configuration basé sur PowerShell.                                         |
 
 
 ### En résumé
@@ -76,6 +96,7 @@ La documentation d'installation en français se trouve dans [cette partie](../in
 
 ### Prérequis
 
+* PowerShell 5.1 et 7.0+
 * Le driver ODBC pour PostgreSQL doit être installé (de préférence utiliser la version 64 bits). 
 * Une source de données ODBC (DSN) doit être configurée, ou vous pouvez utiliser une chaîne de connexion directe.
 
@@ -149,24 +170,51 @@ $connectionString = "DSN=nom_de_votre_dsn;Uid=$username;Pwd=$password;"
 
 Voici un exemple complet d’utilisation de **Npgsql** avec **PowerShell** pour interagir avec une base de données PostgreSQL, incluant l’installation de la bibliothèque.
 
+### Prérequis
+
+* PowerShell >= 7.0+
+* Driver Npgsql et toute ses dépendances.
+
 ### Installation de Npgsql
 
-Pour utiliser Npgsql dans PowerShell, il faut d’abord installer le package NuGet. Voici comment faire :
+Pour utiliser Npgsql dans PowerShell, il faut d’abord installer le package NuGet. Celui-ci n'est pas disponible pour PowerShell directement, 
+quelques manipulations supplémentaires vont être nécessaire.
 
-#### Méthode 1 : Installation via PackageManagement (recommandé)
+#### Méthode 1 : Creation d'un projet Dotnet
 
-```powershell
-# Installer le fournisseur NuGet si ce n'est pas déjà fait
-Install-PackageProvider -Name NuGet -Force -Scope CurrentUser
+Je vous ai préparé un dépôt contenant un projet minimal, pour la génération et le test de la librairie.
 
-# Installer Npgsql
-Install-Package Npgsql -Force -Scope CurrentUser
+::: warning
+
+Pour pouvoir compiler le projet il faut que vous ayez installer le SDK dotnet, pour cela utiliser winget dans un terminal.
+
+La commande ci-dessous installera la version 8.0 de dotnet
+
+```shell
+winget install --id Microsoft.DotNet.SDK.8 -e
+```
+:::
+
+```shell
+git clone https://github.com/5432-fr/powershell-npgsql.git
 ```
 
-#### Méthode 2 : Installation manuelle (si nécessaire)
+puis executer les commandes suivantes
 
-Téléchargez le package [Npgsql](https://www.nuget.org/packages/Npgsql/) et référencez-le dans votre script PowerShell.
+```shell
+dotnet restore
+dotnet build
+dotnet publish -c Release --sc true -o .\build
+Compress-Archive -Path .\build\*.dll -DestinationPath .\PowerShell-Npgsql-9.0.4.zip
+```
 
+Tous le nécessaire est disponible dans le fichier ZIP `PowerShell-Npgsql-9.0.4.zip`
+
+
+#### Méthode 2 : Téléchargement fichier ZIp
+
+La méthode 1 nécessite quelques connaissances en programmation Dotnet, 
+je vous ai donc préparé un fichier ZIP disponible à cette [adresse](https://github.com/5432-fr/powershell-npgsql/releases)
 
 ### Exemple d’utilisation de Npgsql avec PowerShell
 
@@ -363,5 +411,59 @@ $form.ShowDialog()
 * Remplace `$data` par les données récupérés.
 * Tu peux ajouter des colonnes, changer les titres, ou ajouter des boutons pour exporter les données.
 
+## Sécurisation
 
+Il n'est pas conseillé de stocker les identifiants en clair dans les scripts, nous pouvons soit:
 
+* Demander les identifiants à l'utilisateur lors du lancement du script
+* Récupérer les informations dans le fichier `pgpass`
+
+### Méthode interactive
+
+Lors de l'exécution d'un script, la fonction 
+[Get-Credential](https://learn.microsoft.com/fr-fr/powershell/module/microsoft.powershell.security/get-credential?view=powershell-7.5 "PowerShell Get-Credential") 
+permet de demander un identifiant et mot de passe à l'utilisateur.
+
+```powershell
+# Demander les identifiants à l'utilisateur
+$credential = Get-Credential -Message "Veuillez entrer vos identifiants PostgreSQL"
+
+# Paramètres de connexion
+$server = "localhost"  # ou l'adresse IP/nom du serveur
+$port = "5432"        # port par défaut de PostgreSQL
+$database = "nom_de_ta_base"  # remplace par le nom de ta base
+
+# Créer la chaîne de connexion
+$connectionString = "Server=$server;Port=$port;Database=$database;UserId=$($credential.UserName);Password=$($credential.GetNetworkCredential().Password);"
+```
+
+### Méthode automatique
+
+Pour la méthode automatique, il est préférable d'utiliser des solutions qui ont fait leurs preuves
+
+PostgreSQL possèdent un fichier spécial (pgpass) qui permet de stocker les informations de connexions aux différentes serveurs bases de données
+
+::: tip
+Sous windows ce fichier est stocké dans le dossier utilisateur APPDATA sous le chemin `%APPDATA%\postgresql\pgpass.conf`
+
+il s'agit d'un fichier dont le séparateur entre les champs est le `:` et les colonnes suivantes
+
+* Nom hôte ou IP
+* Port d'écoute
+* base de données
+* Nom d'utilisateur
+* Mot de passe
+:::
+
+Un exemple de fichier `pgpass.conf`
+
+```ini [pgpass.conf]
+# Première connexion
+localhost:5432:postgres:demo:demo1234
+```
+
+::: warning Avertissement
+Si vous lancez le script avec un autre utilisateur, il faudra que le fichier `pgpass` se trouve dans son `APPDATA`
+:::
+
+Pour l'utiliser dans vos scripts, laisser le mot de passe vide
