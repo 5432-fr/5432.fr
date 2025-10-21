@@ -3,7 +3,13 @@ title: Connexion à PostgreSQL en powershell
 head:
   - - meta
     - name: 'keyword'
-      content: powershell dotnet postgresql npgsql windows forms datagridview
+      content: powershell dotnet postgresql npgsql windows forms datagridview pgpass
+  - - meta
+    - name: 'author'
+      content: Christophe Chauvet
+  - - meta
+    - name: 'copyright'
+      content: CC BY-SA 4.0          
   - - meta
     - property: 'og:title'
       content: Connexion à PostgreSQL en powershell en ODBC ou Npgsql
@@ -405,10 +411,59 @@ $form.ShowDialog()
 * Remplace `$data` par les données récupérés.
 * Tu peux ajouter des colonnes, changer les titres, ou ajouter des boutons pour exporter les données.
 
-
 ## Sécurisation
 
-Il n'est pas conseillé de stocker les identifiants en clair dans les script
+Il n'est pas conseillé de stocker les identifiants en clair dans les scripts, nous pouvons soit:
+
+* Demander les identifiants à l'utilisateur lors du lancement du script
+* Récupérer les informations dans le fichier `pgpass`
 
 ### Méthode interactive
 
+Lors de l'exécution d'un script, la fonction 
+[Get-Credential](https://learn.microsoft.com/fr-fr/powershell/module/microsoft.powershell.security/get-credential?view=powershell-7.5 "PowerShell Get-Credential") 
+permet de demander un identifiant et mot de passe à l'utilisateur.
+
+```powershell
+# Demander les identifiants à l'utilisateur
+$credential = Get-Credential -Message "Veuillez entrer vos identifiants PostgreSQL"
+
+# Paramètres de connexion
+$server = "localhost"  # ou l'adresse IP/nom du serveur
+$port = "5432"        # port par défaut de PostgreSQL
+$database = "nom_de_ta_base"  # remplace par le nom de ta base
+
+# Créer la chaîne de connexion
+$connectionString = "Server=$server;Port=$port;Database=$database;UserId=$($credential.UserName);Password=$($credential.GetNetworkCredential().Password);"
+```
+
+### Méthode automatique
+
+Pour la méthode automatique, il est préférable d'utiliser des solutions qui ont fait leurs preuves
+
+PostgreSQL possèdent un fichier spécial (pgpass) qui permet de stocker les informations de connexions aux différentes serveurs bases de données
+
+::: tip
+Sous windows ce fichier est stocké dans le dossier utilisateur APPDATA sous le chemin `%APPDATA%\postgresql\pgpass.conf`
+
+il s'agit d'un fichier dont le séparateur entre les champs est le `:` et les colonnes suivantes
+
+* Nom hôte ou IP
+* Port d'écoute
+* base de données
+* Nom d'utilisateur
+* Mot de passe
+:::
+
+Un exemple de fichier `pgpass.conf`
+
+```ini [pgpass.conf]
+# Première connexion
+localhost:5432:postgres:demo:demo1234
+```
+
+::: warning Avertissement
+Si vous lancez le script avec un autre utilisateur, il faudra que le fichier `pgpass` se trouve dans son `APPDATA`
+:::
+
+Pour l'utiliser dans vos scripts, laisser le mot de passe vide
