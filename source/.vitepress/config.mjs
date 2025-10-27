@@ -14,6 +14,7 @@ export default defineConfig({
   ignoreDeadLinks: [
     /^https?:\/\/localhost:*/,
   ],
+  metaChunk: true,
   vite: {
     plugins: [llmstxt()]
   },
