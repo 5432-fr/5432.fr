@@ -1,5 +1,6 @@
 ---
 title:  Descriptif des principes généraux implémentés dans PostgreSQL
+description: Explication des clés primaires, clé étrangères, et contrainte unique dans PostgreSQL
 head:
   - - meta
     - name: 'keyword'

@@ -1,6 +1,10 @@
 ---
-title: installation PostgreSQL
+title: installation de PostgreSQL
 description: installation des PostgreSQL et de ses divers composants sous Windows
+head:
+  - - meta
+    - name: 'robots'
+      content: noindex
 ---
 
 # installation PostgreSQL

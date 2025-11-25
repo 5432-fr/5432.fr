@@ -1,5 +1,6 @@
 ---
 title: Clients graphiques et ligne de commande
+description: Listes de clients graphiques et lignes de commande pour PostgreSQL
 ---
 
 # Clients graphiques et ligne de commande

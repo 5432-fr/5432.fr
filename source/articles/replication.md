@@ -1,5 +1,6 @@
 ---
 title: Articles autour des opérations de la réplication de PostgreSQL
+description: Cette page regroupe des séries d'article sur PostgreSQL en français concernant la réplication de la base de données
 head:
   - - meta
     - name: 'keyword'

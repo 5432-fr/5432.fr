@@ -1,18 +1,29 @@
 ---
+title: Programmation PostgreSQL en langage C
+description: Programmation PostgreSQL avec le langage C
 head:
   - - meta
+    - name: 'keyword'
+      content: postgresql c libpq pqexec ecpg
+    - name: 'author'
+      content: Christophe Chauvet
+    - name: 'copyright'
+      content: CC BY-SA 4.0
     - property: 'og:title'
       content: "Programmation langage C"
     - property: 'og:description'
       content: " Programmation PostgreSQL en langage C"
     - property: 'og:type'
       content: "article"
+    - property: 'twitter:title'
+      content: "Programmation PostgreSQL en langage C"
+    - property: 'twitter:description'
+      content: "Programmation PostgreSQL avec le langage C"
 ---
 
 # Langage C {#langage_c}
 
-PostgreSQL étant écrit en **C**, il existe par conséquent une
-bibliothèque native qui se nomme
+PostgreSQL étant écrit en **C**, il existe par conséquent une bibliothèque native qui se nomme
 [libpq](https://docs.postgresql.fr/current/libpq.html)
 
 ## Bibliothèque libpq {#language_c_libpq}

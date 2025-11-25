@@ -1,5 +1,6 @@
 ---
 title: Logiciel basé sur PostgreSQL
+description: Liste de logiciels utilisant PostgreSQL comme base de données
 head:
   - - meta
     - name: 'keyword'
