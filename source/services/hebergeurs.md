@@ -1,12 +1,27 @@
 ---
+title: Hebergeurs PostgreSQL
+description: Liste d'hébergeur proposant la solution PostgreSQL
 head:
   - - meta
-    - property: 'og:title'
-      content: Hebergeur PostgreSQL
+    - name: 'keyword'
+      content: postgresql hebergement
   - - meta
+    - property: 'og:title'
+      content: Hebergeurs PostgreSQL
+  - - meta      
     - property: 'og:description'
-      content: Liste d'hébergeur proposant la solution PostgreSQL     
+      content: Liste d'hébergeur proposant la solution PostgreSQL
+  - - meta      
+    - property: 'og:type'
+      content: 'article'
+  - - meta
+    - property: 'twitter:title'
+      content: Hebergeurs PostgreSQL
+  - - meta      
+    - property: 'twitter:description'
+      content: Liste d'hébergeur proposant la solution PostgreSQL   
 ---
+
 
 # Hebergeurs PostgreSQL {#hosting}
 
