@@ -1,6 +1,6 @@
 ---
 title: Programmation en langage PHP avec PostgreSQL
-description: tablissement d'une connexion à PostgreSQL en PHP et PDO
+description: Etablissement d'une connexion à PostgreSQL en PHP et le driver PDO PgSQL
 head:
   - - meta
     - name: 'author'

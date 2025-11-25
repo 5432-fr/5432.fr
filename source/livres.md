@@ -1,6 +1,6 @@
 ---
 title: Sélection de livre traitant de PostgreSQL en français
-description: Liste de livres traitant de la base de données PostgreSQL
+description: Liste de livres français traitant du serveur de base de données PostgreSQL
 head:
   - - meta
     - property: 'og:title'
@@ -40,7 +40,7 @@ Lien vers [PostgreSQL - Architecture et notions avancées
 
 ### Présentation
 
-![image](/postgresql-architecture-et-notions-avancees-5ed.png){.align-right}
+![image](/postgresql-architecture-et-notions-avancees-5ed.png "PostgreSQL - Architecture et notions avancées"){.align-right}
 
 Pour maîtriser PostgreSQL, rien de mieux que de comprendre son
 fonctionnement interne. C'est ce que vous proposent **Guillaume
@@ -98,7 +98,7 @@ Lien vers [PostgreSQL - Administration et exploitation de vos bases de données]
 
 ### Présentation
 
-![image](/administration-exploit-bases-de-donnes.jpg){.align-right}
+![image](/administration-exploit-bases-de-donnes.jpg "PostgreSQL - Administration et exploitation de vos bases de données"){.align-right}
 
 L'administrateur de bases de données, le technicien d'exploitation et
 le développeur trouveront dans ce livre les informations indispensables
@@ -143,7 +143,7 @@ Lien vers [PostgreSQL - Entraînez-vous à créer et programmer une base de donn
 
 ### Présentation
 
-![image](/creer-programmer-base-de-donnes-relationnelle.jpg){.align-right}
+![image](/creer-programmer-base-de-donnes-relationnelle.jpg "PostgreSQL - Entraînez-vous à créer et programmer une base de données relationnelle"){.align-right}
 
 Conçu par un formateur, ce livre sur PostgreSQL est destiné à un public
 de lecteurs débutants ou initiés, déjà familiers de l\'utilisation
