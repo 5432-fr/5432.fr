@@ -3,6 +3,12 @@ title: Programmation en langage PHP avec PostgreSQL
 description: tablissement d'une connexion à PostgreSQL en PHP et PDO
 head:
   - - meta
+    - name: 'author'
+      content: Christophe Chauvet
+  - - meta
+    - name: 'copyright'
+      content: CC BY-SA 4.0
+  - - meta
     - name: 'keyword'
       content: php postgresql pdo
   - - meta
@@ -94,8 +100,6 @@ try {
 }
 ?>
 ```
-
----
 
 ## Exécution de requêtes
 

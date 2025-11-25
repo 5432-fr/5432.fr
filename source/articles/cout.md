@@ -1,5 +1,6 @@
 ---
 title: Coût d'acquisition de PostgreSQL
+description: Cette page décrit les couts d'acquisition de PostgreSQL quelle que soit le mode d'hébergement
 head:
   - - meta
     - name: 'keyword'

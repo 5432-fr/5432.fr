@@ -1,5 +1,6 @@
 ---
 title: Cookbook - Modelisation
+description: Livre de recettes sur la modélisation sous POstgreSQL
 head:
   - - meta
     - name: 'keyword'

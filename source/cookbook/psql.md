@@ -1,5 +1,6 @@
 ---
 title: Cookbook - psql
+description: Livre de recette sur l'utilisation de psql le client PostgreSQL
 head:
   - - meta
     - name: 'keyword'

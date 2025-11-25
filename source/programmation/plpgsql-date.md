@@ -1,4 +1,6 @@
 ---
+title: PL/pgSQL et les dates
+description: Traitement sur les dates en PL/pgSQL
 head:
   - - meta
     - property: 'og:title'

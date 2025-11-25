@@ -1,5 +1,6 @@
 ---
 title: Extensions pour PostgreSQL
+description: Diverses exetnsions pour PostgreSQL
 head:
   - - meta
     - property: 'og:title'

@@ -1,5 +1,6 @@
 ---
 title: Article sur la sauvegarde et restauration de PostgreSQL
+description: Cette page regroupe des séries d'article sur PostgreSQL en français concernant la sauvegarde et la restauration de la base de données
 head:
   - - meta
     - name: 'keyword'

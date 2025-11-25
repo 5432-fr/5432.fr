@@ -1,5 +1,6 @@
 ---
 title: Les différents types de données de PostgreSQL
+description: Descriptif des types de données géré par de PostgreSQL
 head:
   - - meta
     - name: 'keyword'

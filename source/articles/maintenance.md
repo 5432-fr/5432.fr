@@ -1,5 +1,6 @@
 ---
 title: Articles autour des opérations de maintenance de PostgreSQL
+description: Cette page regroupe des séries d'article sur PostgreSQL en français concernant les opérations de maintenance de la base de données
 head:
   - - meta
     - name: 'keyword'

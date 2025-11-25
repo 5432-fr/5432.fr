@@ -1,5 +1,10 @@
 ---
 title: Cookbook - index
+description: Liste de recette PostgreSQL
+head:
+  - - meta
+    - name: 'robots'
+      content: noindex
 ---
 
 # Cookbook

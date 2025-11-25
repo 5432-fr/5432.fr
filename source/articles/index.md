@@ -1,4 +1,6 @@
 ---
+title: Articles sur PostgreSQL
+description: Articles divers sur PostgreSQL
 head:
   - - meta
     - property: 'og:title'
@@ -11,6 +13,9 @@ head:
   - - meta        
     - property: 'og:type'
       content: 'article'
+  - - meta
+    - name: 'robots'
+      content: noindex
 ---
 
 # Articles sur PostgreSQL
