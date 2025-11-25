@@ -1,6 +1,6 @@
 ---
-title: Programmation PostgreSQL en langage C
-description: Programmation PostgreSQL avec le langage C
+title: Programmation PostgreSQL en langage C et la bibliothèque libpq
+description: Programmation PostgreSQL avec le langage C en utilisant la libpq et ecpg
 head:
   - - meta
     - name: 'keyword'
