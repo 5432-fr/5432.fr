@@ -26,10 +26,11 @@ Lorsque que pour un langage, aucune interface native n'est disponible,
 il est parfois possible de s\'y connecter avec un driver ODBC.
 
 * [Language C](./c.md)
+* [C# DotNet](./csharp.md)
 * [Java](./java.md)
 * [Python](./python.md)
 * [PHP](./php.md)
-* [PlPgSQL](./plpgsql.md)
+* [PLPgSQL](./plpgsql.md)
 * [PowerShell](./powershell.md)
 * [Rust](./rust.md)
 

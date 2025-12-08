@@ -82,6 +82,7 @@ export default defineConfig({
         text: 'Programmation',
         items: [
           { text: 'Langage C', link: '/programmation/c' },
+          { text: 'C# Dotnet', link: '/programmation/csharp' },
           { text: 'Rust', link: '/programmation/rust' },
           { text: 'Java', link: '/programmation/java' },
           { text: 'PHP', link: '/programmation/php' },
@@ -100,7 +101,7 @@ export default defineConfig({
     ],
     footer: {
       message: 'Publier sous <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.fr">CC BY-SA 4.0</a>.',
-      copyright: `Copyright © 2016-${new Date().getUTCFullYear()} Christophe Chauvet`
+      copyright: `Copyright © 2016-${new Date().getUTCFullYear()} Christophe CHAUVET`
     },
     outline: {
       label: "Sommaire"
