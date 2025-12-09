@@ -3,8 +3,8 @@ title: Les coûts d'acquisitions d'un serveur PostgreSQL
 description: Cette page décrit les couts d'acquisition de PostgreSQL quelle que soit le mode d'hébergement
 head:
   - - meta
-    - name: 'keyword'
-      content: cout acquisition hébergement auto-hebergement PostgreSQL ovh aws 
+    - name: 'keywords'
+      content: 'cout, acquisition, hébergement, auto-hebergement, PostgreSQL, ovh, aws'
   - - meta
     - name: 'author'
       content: Christophe Chauvet

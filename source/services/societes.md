@@ -3,8 +3,8 @@ title: Société proposant des services autour de PostgreSQL
 description: Société proposant des services et prestations autour de PostgreSQL
 head:
   - - meta
-    - name: 'keyword'
-      content: postgresql société services
+    - name: 'keywords'
+      content: 'postgresql, société, services'
   - - meta
     - property: 'og:title'
       content: Société proposant des services autour de PostgreSQL

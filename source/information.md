@@ -3,6 +3,9 @@ title: Politique de versionnement de PostgreSQL
 description: Informations sur la politique de versionnement, les mises à jours et du cycle de vie
 head:
   - - meta
+    - name: 'keywords'
+      content: 'politique, versionnement, postgresql, fin de vie'
+  - - meta
     - property: 'og:title'
       content: Politique de versionnement de PostgreSQL
   - - meta      

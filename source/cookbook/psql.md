@@ -3,8 +3,8 @@ title: Cookbook - psql
 description: Livre de recette sur l'utilisation de psql le client PostgreSQL
 head:
   - - meta
-    - name: 'keyword'
-      content:  psql postgresql pg
+    - name: 'keywords'
+      content:  'psql, postgresql, pager, pg, pspg'
   - - meta
     - name: 'author'
       content: Christophe Chauvet

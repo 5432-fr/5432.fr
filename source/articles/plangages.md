@@ -3,8 +3,8 @@ title: Descriptif des langages de procédures sous PostgreSQL
 description: Listes des langages procéduraux utilisables avec la base de données PostgreSQL
 head:
   - - meta
-    - name: 'keyword'
-      content: PL PL/PgSQL PL/Perl PL/Python PL/Rust PL/Lua PL/R
+    - name: 'keywords'
+      content: 'PL, PL/PgSQL, PL/Perl, PL/Python, PL/Rust, PL/Lua, PL/R'
   - - meta
     - name: 'author'
       content: Christophe Chauvet

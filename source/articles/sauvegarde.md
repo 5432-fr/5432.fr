@@ -3,8 +3,8 @@ title: Article sur la sauvegarde et restauration de PostgreSQL
 description: Cette page regroupe des séries d'article sur PostgreSQL en français concernant la sauvegarde et la restauration de la base de données
 head:
   - - meta
-    - name: 'keyword'
-      content: sauvegarde restauration PostgreSQL pg_dump pg_restore, pgbackrest, psql
+    - name: 'keywords'
+      content: 'sauvegarde, restauration, PostgreSQL, pg_dump, pg_restore, pgbackrest, psql'
   - - meta
     - name: 'author'
       content: Christophe Chauvet

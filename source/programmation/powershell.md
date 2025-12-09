@@ -3,8 +3,8 @@ title: Connexion à PostgreSQL en powershell
 description: Connexion à une base de données PostgreSQL en powershell
 head:
   - - meta
-    - name: 'keyword'
-      content: powershell dotnet postgresql npgsql windows forms datagridview pgpass posh
+    - name: 'keywords'
+      content: 'powershell, dotnet, postgresql, npgsql, windows, forms, datagridview, pgpass, posh'
   - - meta
     - name: 'author'
       content: Christophe Chauvet

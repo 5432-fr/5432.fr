@@ -3,8 +3,8 @@ title: Installation PostgreSQL 18 sous environnement Windows
 description: Installation de la version 18 de PostgreSQL sous Windows Server et Desktop
 head:
   - - meta
-    - name: 'keyword'
-      content:  windows postgresql pg windowsserver2025 parefeu windows10 windows11
+    - name: 'keywords'
+      content:  'windows, postgresql, pg, windowsserver2025, parefeu, windows10, windows11'
   - - meta
     - name: 'author'
       content: Christophe Chauvet
