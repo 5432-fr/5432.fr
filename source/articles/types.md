@@ -3,8 +3,8 @@ title: Les différents types de données de PostgreSQL
 description: Descriptif des types de données géré par de PostgreSQL
 head:
   - - meta
-    - name: 'keyword'
-      content: types datatypes PostgreSQL varchar enum datetime uuid composite
+    - name: 'keywords'
+      content: 'types, datatypes, PostgreSQL, varchar, enum, datetime, uuid, composite'
   - - meta
     - property: 'og:title'
       content: Les différents types de données de PostgreSQL

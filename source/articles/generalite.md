@@ -3,8 +3,8 @@ title:  Descriptif des principes généraux implémentés dans PostgreSQL
 description: Explication des clés primaires, clé étrangères, et contrainte unique dans PostgreSQL
 head:
   - - meta
-    - name: 'keyword'
-      content: primary foreign key constraint PostgreSQL identity serial bigserial
+    - name: 'keywords'
+      content: 'primary, foreign, key, constraint, PostgreSQL, identity, serial, bigserial'
   - - meta
     - property: 'og:title'
       content: Descriptif des primary key, foreign key contrainte unique sous PostgreSQL

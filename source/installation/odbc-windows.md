@@ -3,8 +3,8 @@ title: Installation des drivers ODBC sous environnement Windows
 description: Installation des drivers ANSI et Unicode sous Windows en version standard ou minimalloc
 head:
   - - meta
-    - name: 'keyword'
-      content: odbc windows postgresql
+    - name: 'keywords'
+      content: 'odbc, windows, postgresql, installation'
   - - meta
     - name: 'author'
       content: Christophe Chauvet

@@ -9,8 +9,8 @@ head:
     - name: 'copyright'
       content: CC BY-SA 4.0
   - - meta
-    - name: 'keyword'
-      content: php postgresql pdo
+    - name: 'keywords'
+      content: 'php, postgresql, pdo, pdo_pgsql'
   - - meta
     - property: 'og:title'
       content: Programmation en langage PHP avec PostgreSQL

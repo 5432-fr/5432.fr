@@ -3,8 +3,8 @@ title: Programmation en langage Java avec JDBC
 description: Utilisation de Java pour se connecter à une base de données PostgreSQL
 head:
   - - meta
-    - name: 'keyword'
-      content: java jdbc postgresql HikariCP jvm
+    - name: 'keywords'
+      content: 'java, jdbc, postgresql, HikariCP, jvm'
   - - meta
     - name: 'author'
       content: Christophe Chauvet

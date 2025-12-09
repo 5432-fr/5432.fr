@@ -3,8 +3,8 @@ title: article sur la fonction generate_series sous PostgreSQL
 description: Différentes cas d'utilisations de la fonction generate_series avec nombre, date, date heure
 head:
   - - meta
-    - name: 'keyword'
-      content: generate_series date datetime PostgreSQL coalesce
+    - name: 'keywords'
+      content: 'generate_series, date, datetime, PostgreSQL, coalesce'
   - - meta
     - name: 'author'
       content: Christophe Chauvet

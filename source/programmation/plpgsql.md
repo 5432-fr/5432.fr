@@ -9,8 +9,8 @@ head:
     - name: 'copyright'
       content: CC BY-SA 4.0
   - - meta
-    - name: 'keyword'
-      content: plpgsql postgresql procedural
+    - name: 'keywords'
+      content: 'plpgsql, postgresql, procedural'
   - - meta
     - property: 'og:title'
       content: Programmation langage PLpgSQL

@@ -9,8 +9,8 @@ head:
     - name: 'copyright'
       content: CC BY-SA 4.0
   - - meta
-    - name: 'keyword'
-      content: python postgresql psycopg2 psycopg3 asyncpg
+    - name: 'keywords'
+      content: 'python, postgresql, psycopg2, psycopg3, asyncpg'
   - - meta
     - property: 'og:title'
       content: Programmation en langage Python

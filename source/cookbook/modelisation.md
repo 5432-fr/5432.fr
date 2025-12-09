@@ -3,8 +3,8 @@ title: Cookbook - Modelisation
 description: Livre de recettes sur la modélisation sous POstgreSQL
 head:
   - - meta
-    - name: 'keyword'
-      content:  modelisation clé primaire postgresql primary key uuidv7
+    - name: 'keywords'
+      content:  'modelisation, clé primaire, postgresql, primary, key, uuidv7'
   - - meta
     - name: 'author'
       content: Christophe Chauvet

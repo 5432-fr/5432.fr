@@ -3,20 +3,27 @@ title: Programmation PostgreSQL en langage C# et la bibliothèque Npgsql
 description: Programmation PostgreSQL avec le langage C# en utilisant la Npgsql 
 head:
   - - meta
-    - name: 'keyword'
-      content: postgresql c# csharp npgsql entity framework
+    - name: 'keywords'
+      content: 'postgresql, c#, csharp, npgsql, entity framework'
+  - - meta
     - name: 'author'
       content: Christophe CHAUVET
+  - - meta
     - name: 'copyright'
       content: CC BY-SA 4.0
+  - - meta
     - property: 'og:title'
       content: "Programmation langage C#"
+  - - meta
     - property: 'og:description'
       content: " Programmation PostgreSQL en langage C#"
+  - - meta
     - property: 'og:type'
       content: "article"
+  - - meta
     - property: 'twitter:title'
       content: "Programmation PostgreSQL en langage C#"
+  - - meta
     - property: 'twitter:description'
       content: "Programmation PostgreSQL avec le langage C#"
 ---

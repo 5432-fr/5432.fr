@@ -3,8 +3,8 @@ title: Hebergeurs PostgreSQL
 description: Liste d'hébergeur proposant la solution PostgreSQL
 head:
   - - meta
-    - name: 'keyword'
-      content: postgresql hebergement
+    - name: 'keywords'
+      content: 'postgresql, hebergement, saas, ovh, ionos, clever cloud'
   - - meta
     - property: 'og:title'
       content: Hebergeurs PostgreSQL
