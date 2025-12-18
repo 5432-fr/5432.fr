@@ -6,6 +6,12 @@ head:
     - name: 'keywords'
       content: 'IvorySQL, PostgreSQL, oracle, to_date, compatible'
   - - meta
+    - name: 'author'
+      content: Christophe Chauvet
+  - - meta
+    - name: 'copyright'
+      content: CC BY-SA 4.0  
+  - - meta
     - property: 'og:title'
       content: IvorySQL base PostgreSQL compatible oracle
   - - meta      

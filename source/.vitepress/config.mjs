@@ -28,6 +28,7 @@ export default defineConfig({
         { text: 'Extensions', link: '/extensions', activeMatch: '^/extensions/' },
         { text: 'Livres', link: '/livres', activeMatch: '^/livres/' },
         { text: 'Logiciels', link: '/logiciels', activeMatch: '^/logiciels/' },
+        { text: 'Migrations', link: '/migrations', activeMatch: '^/migrations/' },
         { text: 'Programmation', link: '/programmation', activeMatch: '^/programmation/' },
         { text: 'Services', link: '/services', activeMatch: '^/services/' },
       ]},
@@ -77,6 +78,13 @@ export default defineConfig({
             ],
           },
           { text: 'IvorySQL', link: '/articles/ivorysql' },
+        ]
+      },
+      {
+        text: 'Migrations',
+        items: [
+          { text: 'MySQL', link: '/migrations/mysql' },
+          { text: 'Oracle', link: '/migrations/oracle' },
         ]
       },
       {
