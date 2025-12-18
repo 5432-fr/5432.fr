@@ -6,6 +6,8 @@ RewriteRule ^(.*)$ https://5432.fr/$1 [L,R=301]
 RewriteCond %{SERVER_PORT} 80
 RewriteRule ^(.*)$ https://5432.fr/$1 [R,L]
 
+ErrorDocument 404 /404
+
 AddDefaultCharset UTF-8
 
 <IfModule mod_headers.c>
