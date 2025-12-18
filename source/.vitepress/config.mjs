@@ -76,6 +76,7 @@ export default defineConfig({
               { text: 'generate_series', link: '/articles/fonction-gs' },
             ],
           },
+          { text: 'IvorySQL', link: '/articles/ivorysql' },
         ]
       },
       {
