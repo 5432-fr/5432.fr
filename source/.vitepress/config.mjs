@@ -193,6 +193,15 @@ export default defineConfig({
 			{ name: "twitter:image", content: 'https://5432.fr/postgresql-200x200.png' },
     ]);
 
+    pageData.frontmatter.head.push([
+			"meta",
+			{ name: "tdm-reservation", content: '1' },
+    ]);
+    pageData.frontmatter.head.push([
+			"meta",
+			{ name: "tdm-policy", content: 'https://mirounga.fr/tdm-policy' },
+    ]);
+
     if (pageData.filePath === "index.md") {
       pageData.frontmatter.head.push([
         'script',
