@@ -18,7 +18,7 @@ AddDefaultCharset UTF-8
     Header always unset X-Powered-By
 
 	Header always set tdm-reservation "1"
-	Header always set tdm-policy "https://mirounga.fr/tdm-policy"
+	Header always set tdm-policy "https://5432.fr/tdm-policy"
 
     <FilesMatch "\\.(ico|jpe?g|png|gif|swf)$">
     Header set Cache-Control "max-age=2592000, public"
