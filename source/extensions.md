@@ -1,16 +1,6 @@
 ---
 title: Extensions pour PostgreSQL
-description: Diverses exetnsions pour PostgreSQL
-head:
-  - - meta
-    - property: 'og:title'
-      content: Extensions pour PostgreSQL
-  - - meta
-    - property: 'og:description'
-      content: Liste d'extensions pour les base de données PostgreSQL
-  - - meta
-    - property: 'og:type'
-      content: article           
+description: Diverses exetnsions pour PostgreSQL        
 ---
 # Extensions
 

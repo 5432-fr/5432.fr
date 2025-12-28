@@ -1,16 +1,6 @@
 ---
 title: PL/pgSQL et les dates
 description: Traitement sur les dates en PL/pgSQL
-head:
-  - - meta
-    - property: 'og:title'
-      content: PL/pgSQL et les dates
-  - - meta      
-    - property: 'og:description'
-      content: Traitement sur les dates en PL/pgSQL
-  - - meta      
-    - property: 'og:type'
-      content: 'article'
 ---
 
 # Traitement sur les dates {#plpgsql_date_converter}

@@ -5,21 +5,6 @@ head:
   - - meta
     - name: 'keywords'
       content: 'politique, versionnement, postgresql, fin de vie'
-  - - meta
-    - property: 'og:title'
-      content: Politique de versionnement de PostgreSQL
-  - - meta      
-    - property: 'og:description'
-      content: Informations sur la politique de versionnement, les mises à jours et du cycle de vie
-  - - meta      
-    - property: 'og:type'
-      content: 'article'
-  - - meta
-    - name: 'twitter:title'
-      content: Politique de versionnement de PostgreSQL
-  - - meta      
-    - name: 'twitter:description'
-      content: Informations sur la politique de versionnement, les mises à jours et du cycle de vie
 ---
 
 # Informations

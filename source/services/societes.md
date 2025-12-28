@@ -6,21 +6,6 @@ head:
     - name: 'keywords'
       content: 'postgresql, société, services'
   - - meta
-    - property: 'og:title'
-      content: Société proposant des services autour de PostgreSQL
-  - - meta      
-    - property: 'og:description'
-      content: Société proposant des services et prestations autour de PostgreSQL
-  - - meta      
-    - property: 'og:type'
-      content: 'article'
-  - - meta
-    - property: 'twitter:title'
-      content: Société proposant des services autour de PostgreSQL
-  - - meta      
-    - property: 'twitter:description'
-      content: Société proposant des services et prestations autour de PostgreSQL
-  - - meta
     - name: 'robots'
       content: noindex
 ---

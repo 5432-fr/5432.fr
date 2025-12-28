@@ -10,22 +10,7 @@ head:
       content: Christophe Chauvet
   - - meta
     - name: 'copyright'
-      content: CC BY-SA 4.0      
-  - - meta
-    - property: 'og:title'
-      content: Article décrivant les possibilités des opérations de sauvegarde et de restauration de la base de données PostgreSQL
-  - - meta      
-    - property: 'og:description'
-      content: Cette page regroupe des séries d'article sur PostgreSQL en français concernant la sauvegarde et la restauration de la base de données
-  - - meta      
-    - property: 'og:type'
-      content: 'article'
-  - - meta
-    - name: 'twitter:title'
-      content: Article décrivant les possibilités des opérations de sauvegarde et de restauration de la base de données PostgreSQL
-  - - meta      
-    - name: 'twitter:description'
-      content: Cette page regroupe des séries d'article sur PostgreSQL en français concernant la sauvegarde et la restauration de la base de données      
+      content: CC BY-SA 4.0          
 ---
 
 # Sauvegarde et restauration

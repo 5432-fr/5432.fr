@@ -11,21 +11,6 @@ head:
   - - meta
     - name: 'copyright'
       content: CC BY-SA 4.0      
-  - - meta
-    - property: 'og:title'
-      content: Installation des drivers ODBC sous environnement Windows
-  - - meta      
-    - property: 'og:description'
-      content: Installation des drivers ANSI et Unicode sous Windows en version standard ou minimalloc
-  - - meta      
-    - property: 'og:type'
-      content: 'article'
-  - - meta
-    - property: 'twitter:title'
-      content: Installation des drivers ODBC sous environnement Windows
-  - - meta      
-    - property: 'twitter:description'
-      content: Installation des drivers ANSI et Unicode sous Windows en version standard ou minimalloc
 ---
 
 # Installation driver ODBC sous Windows

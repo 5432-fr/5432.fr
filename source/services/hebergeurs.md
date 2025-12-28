@@ -5,21 +5,6 @@ head:
   - - meta
     - name: 'keywords'
       content: 'postgresql, hebergement, saas, ovh, ionos, clever cloud'
-  - - meta
-    - property: 'og:title'
-      content: Hebergeurs PostgreSQL
-  - - meta      
-    - property: 'og:description'
-      content: Liste d'hébergeur proposant la solution PostgreSQL
-  - - meta      
-    - property: 'og:type'
-      content: 'article'
-  - - meta
-    - property: 'twitter:title'
-      content: Hebergeurs PostgreSQL
-  - - meta      
-    - property: 'twitter:description'
-      content: Liste d'hébergeur proposant la solution PostgreSQL   
 ---
 
 

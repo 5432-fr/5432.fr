@@ -10,22 +10,7 @@ head:
       content: Christophe Chauvet
   - - meta
     - name: 'copyright'
-      content: CC BY-SA 4.0      
-  - - meta
-    - property: 'og:title'
-      content: Les différents coûts pour l'acquisition de PostgreSQL
-  - - meta      
-    - property: 'og:description'
-      content: Cette page décrit les couts d'acquisition de PostgreSQL quelle que soit le mode d'hébergement.
-  - - meta      
-    - property: 'og:type'
-      content: 'article'
-  - - meta
-    - property: 'twitter:title'
-      content: Les différents coûts pour l'acquisition de PostgreSQL
-  - - meta      
-    - property: 'twitter:description'
-      content: Cette page décrit les couts d'acquisition de PostgreSQL quelle que soit le mode d'hébergement.      
+      content: 'CC BY-SA 4.0'    
 ---
 # Coûts
 

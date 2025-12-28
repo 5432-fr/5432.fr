@@ -11,21 +11,6 @@ head:
   - - meta
     - name: 'copyright'
       content: CC BY-SA 4.0      
-  - - meta
-    - property: 'og:title'
-      content: Descriptif des langages de procédures sous PostgreSQL
-  - - meta      
-    - property: 'og:description'
-      content: Listes des langages procéduraux utilisables avec la base de données PostgreSQL
-  - - meta      
-    - property: 'og:type'
-      content: 'article'
-  - - meta
-    - property: 'twitter:title'
-      content: Descriptif des langages de procédures sous PostgreSQL
-  - - meta      
-    - property: 'twitter:description'
-      content: Listes des langages procéduraux utilisables avec la base de données PostgreSQL
 ---
 
 # Langages de procédures

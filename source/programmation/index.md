@@ -1,15 +1,7 @@
 ---
 title: Programmation
+description: Article sur la programmation
 head:
-  - - meta
-    - property: 'og:title'
-      content: Programmation
-  - - meta      
-    - property: 'og:description'
-      content: Programmation avec PostgreSQL
-  - - meta        
-    - property: 'og:type'
-      content: 'article'
   - - meta
     - name: 'robots'
       content: noindex      

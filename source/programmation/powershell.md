@@ -7,25 +7,10 @@ head:
       content: 'powershell, dotnet, postgresql, npgsql, windows, forms, datagridview, pgpass, posh'
   - - meta
     - name: 'author'
-      content: Christophe Chauvet
+      content: 'Christophe Chauvet'
   - - meta
     - name: 'copyright'
-      content: CC BY-SA 4.0          
-  - - meta
-    - property: 'og:title'
-      content: Connexion à PostgreSQL en powershell en ODBC ou Npgsql
-  - - meta      
-    - property: 'og:description'
-      content: Etablissement d'une connexion à PostgreSQL en Powershell
-  - - meta      
-    - property: 'og:type'
-      content: 'article'
-  - - meta
-    - property: 'twitter:title'
-      content: Connexion à PostgreSQL en powershell en ODBC ou Npgsql
-  - - meta      
-    - property: 'twitter:description'
-      content: Etablissement d'une connexion à PostgreSQL en Powershell     
+      content: 'CC BY-SA 4.0'  
 ---
 
 # Powershell avec PostgreSQL

@@ -10,22 +10,7 @@ head:
       content: Christophe Chauvet
   - - meta
     - name: 'copyright'
-      content: CC BY-SA 4.0          
-  - - meta
-    - property: 'og:title'
-      content: Utilisation des différents types d'index sous PostgreSQL
-  - - meta      
-    - property: 'og:description'
-      content: Cette page décrit l'utilisation des index dans PostgreSQL en français
-  - - meta      
-    - property: 'og:type'
-      content: 'article'
-  - - meta
-    - property: 'twitter:title'
-      content: Utilisation des différents types d'index sous PostgreSQL
-  - - meta      
-    - property: 'twitter:description'
-      content: Cette page décrit l'utilisation des index dans PostgreSQL en français      
+      content: CC BY-SA 4.0              
 ---
 
 # Les Index

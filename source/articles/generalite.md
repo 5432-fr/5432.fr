@@ -4,22 +4,7 @@ description: Explication des clés primaires, clé étrangères, et contrainte u
 head:
   - - meta
     - name: 'keywords'
-      content: 'primary, foreign, key, constraint, PostgreSQL, identity, serial, bigserial'
-  - - meta
-    - property: 'og:title'
-      content: Descriptif des primary key, foreign key contrainte unique sous PostgreSQL
-  - - meta      
-    - property: 'og:description'
-      content: Explication des clés primaires, clé étrangères, et contrainte unique dans PostgreSQL
-  - - meta      
-    - property: 'og:type'
-      content: 'article'
-  - - meta
-    - property: 'twitter:title'
-      content: Descriptif des primary key, foreign key contrainte unique sous PostgreSQL
-  - - meta      
-    - property: 'twitter:description'
-      content: Explication des clés primaires, clé étrangères, et contrainte unique dans PostgreSQL   
+      content: 'primary, foreign, key, constraint, PostgreSQL, identity, serial, bigserial' 
 ---
 
 # Généralité 

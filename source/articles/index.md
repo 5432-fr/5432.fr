@@ -3,17 +3,6 @@ title: Articles sur PostgreSQL
 description: Articles divers sur PostgreSQL
 head:
   - - meta
-    - property: 'og:title'
-      content: Liste d'articles autour de la base de données PostgreSQL
-  - - meta      
-    - property: 'og:description'
-      content: Cette page regroupe des séries d'article sur
-        PostgreSQL en français, cela couvre les différentes thématiques comme la
-        replication, sauvegarde, restauration, les indexes
-  - - meta        
-    - property: 'og:type'
-      content: 'article'
-  - - meta
     - name: 'robots'
       content: noindex
 ---

@@ -5,15 +5,6 @@ head:
   - - meta
     - name: 'keywords'
       content: 'replication, slony, Londiste, Bucardo, wal, PostgreSQL'
-  - - meta
-    - property: 'og:title'
-      content: Liste d'articles autour des opérations de la réplication de la base de données PostgreSQL
-  - - meta      
-    - property: 'og:description'
-      content: Cette page regroupe des séries d'article sur PostgreSQL en français concernant la réplication de la base de données
-  - - meta      
-    - property: 'og:type'
-      content: 'article'
 ---
 # Réplication
 
