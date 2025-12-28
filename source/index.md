@@ -1,7 +1,7 @@
 ---
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
-title: PostgreSQL liste de ressources Francophones
+title: PostgreSQL, liste de ressources Francophones
 description: Ensemble de ressources francophones autour de la base de données PostgreSQL
 head:
   - - meta

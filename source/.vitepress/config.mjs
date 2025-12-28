@@ -59,9 +59,8 @@ export default defineConfig({
           ]}
       ]}
     ],
-
-    sidebar: [
-      {
+    sidebar: {
+      "/articles/": [{
         text: 'Articles',
         items: [
           { text: 'Coût', link: '/articles/cout' },
@@ -79,15 +78,16 @@ export default defineConfig({
           },
           { text: 'IvorySQL', link: '/articles/ivorysql' },
         ]
-      },
-      {
+      }],
+      "/migrations/": [{
         text: 'Migrations',
         items: [
           { text: 'MySQL', link: '/migrations/mysql' },
           { text: 'Oracle', link: '/migrations/oracle' },
+          { text: 'SQL Server', link: '/migrations/sql-server' },
         ]
-      },
-      {
+      }],
+      "/programmation/": [{
         text: 'Programmation',
         items: [
           { text: 'Langage C', link: '/programmation/c' },
@@ -99,9 +99,8 @@ export default defineConfig({
           { text: 'PLpgSQL', link: '/programmation/plpgsql' },
           { text: 'Powershell', link: '/programmation/powershell' },
         ]
-      }
-    ],
-
+      }]
+    },
     socialLinks: [
       { icon: 'discord', link: 'https://discord.gg/ypY23QFEcn'},
       { icon: 'linkedin', link: 'https://www.linkedin.com/groups/13044096/' },
@@ -172,6 +171,20 @@ export default defineConfig({
 			"link",
 			{ rel: "canonical", href: canonicalUrl },
 		]);
+
+    // Social OpenGraph
+    pageData.frontmatter.head.push([
+			"meta",
+			{ property: "og:title", content: pageData.frontmatter.title },
+		]);
+		pageData.frontmatter.head.push([
+			"meta",
+			{ property: "og:description", content: pageData.frontmatter.description },
+		]);
+		pageData.frontmatter.head.push([
+			"meta",
+			{ property: "og:type", content: 'article' },
+		]);
 		pageData.frontmatter.head.push([
 			"meta",
 			{ property: "og:url", content: canonicalUrl },
@@ -180,6 +193,12 @@ export default defineConfig({
 			"meta",
 			{ property: "og:image", content: 'https://5432.fr/postgresql-200x200.png' },
 		]);
+    pageData.frontmatter.head.push([
+			"meta",
+			{ property: "og:locale", content: 'fr_FR' },
+		]);
+
+    // Twitter Card
     pageData.frontmatter.head.push([
 			"meta",
 			{ name: "twitter:card", content: 'summary' },
@@ -192,6 +211,15 @@ export default defineConfig({
 			"meta",
 			{ name: "twitter:image", content: 'https://5432.fr/postgresql-200x200.png' },
     ]);
+		pageData.frontmatter.head.push([
+			"meta",
+			{ property: "twitter:title", content: pageData.frontmatter.title },
+		]);
+		pageData.frontmatter.head.push([
+			"meta",
+			{ property: "twitter:description", content: pageData.frontmatter.description },
+		]);
+
 
     pageData.frontmatter.head.push([
 			"meta",

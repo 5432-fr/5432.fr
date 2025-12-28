@@ -10,22 +10,7 @@ head:
       content: Christophe Chauvet
   - - meta
     - name: 'copyright'
-      content: CC BY-SA 4.0          
-  - - meta
-    - property: 'og:title'
-      content: article sur la fonction generate_series sous PostgreSQL
-  - - meta      
-    - property: 'og:description'
-      content: Différentes cas d'utilisations de la fonction generate_series avec nombre, date, date heure
-  - - meta      
-    - property: 'og:type'
-      content: 'article'
-  - - meta
-    - property: 'twitter:title'
-      content: article sur la fonction generate_series sous PostgreSQL
-  - - meta      
-    - property: 'twitter:description'
-      content: Différentes cas d'utilisations de la fonction generate_series avec nombre, date, date heure     
+      content: 'CC BY-SA 4.0'  
 ---
 
 # Fonction generate_series

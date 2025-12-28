@@ -10,22 +10,7 @@ head:
       content: CC BY-SA 4.0
   - - meta
     - name: 'keywords'
-      content: 'php, postgresql, pdo, pdo_pgsql'
-  - - meta
-    - property: 'og:title'
-      content: Programmation en langage PHP avec PostgreSQL
-  - - meta      
-    - property: 'og:description'
-      content: Etablissement d'une connexion à PostgreSQL en PHP et PDO
-  - - meta      
-    - property: 'og:type'
-      content: 'article'
-  - - meta
-    - property: 'twitter:title'
-      content: Programmation en langage PHP avec PostgreSQL
-  - - meta      
-    - property: 'twitter:description'
-      content: Etablissement d'une connexion à PostgreSQL en PHP et PDO   
+      content: 'php, postgresql, pdo, pdo_pgsql' 
 ---
 
 # Langage PHP

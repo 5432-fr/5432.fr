@@ -3,22 +3,7 @@ title: Connexion à PostgreSQL en rust avec tokio-postgres
 head:
   - - meta
     - name: 'keywords'
-      content: 'rust, postgresql, tokio, cargo.toml, crate'
-  - - meta
-    - property: 'og:title'
-      content: Connexion à PostgreSQL en rust avec tokio-postgres
-  - - meta      
-    - property: 'og:description'
-      content: Etablissement d'une connexion à PostgreSQL en Rust
-  - - meta      
-    - property: 'og:type'
-      content: 'article'
-  - - meta
-    - property: 'twitter:title'
-      content: Connexion à PostgreSQL en rust avec tokio-postgres
-  - - meta      
-    - property: 'twitter:description'
-      content: Etablissement d'une connexion à PostgreSQL en Rust    
+      content: 'rust, postgresql, tokio, cargo.toml, crate'  
 ---
 
 # Rust et PostgreSQL

@@ -11,21 +11,6 @@ head:
   - - meta
     - name: 'keywords'
       content: 'plpgsql, postgresql, procedural'
-  - - meta
-    - property: 'og:title'
-      content: Programmation langage PLpgSQL
-  - - meta      
-    - property: 'og:description'
-      content: Programmation en langage procédural avec PLpgSQL
-  - - meta      
-    - property: 'og:type'
-      content: 'article'
-  - - meta
-    - property: 'twitter:title'
-      content: Programmation langage PLpgSQL
-  - - meta      
-    - property: 'twitter:description'
-      content: Programmation en langage procédural avec PLpgSQL 
 ---
 
 # Langage PLpgSQL {#langage_plpgsql}

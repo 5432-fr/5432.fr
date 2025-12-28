@@ -10,22 +10,7 @@ head:
       content: Christophe Chauvet
   - - meta
     - name: 'copyright'
-      content: CC BY-SA 4.0       
-  - - meta
-    - property: 'og:title'
-      content: Installation PostgreSQL 18 sous environnement Windows
-  - - meta      
-    - property: 'og:description'
-      content: Documentation d'installation de PostgreSQL 18 sous Windows
-  - - meta      
-    - property: 'og:type'
-      content: 'article'
-  - - meta
-    - name: 'twitter:title'
-      content: Installation PostgreSQL 18 sous environnement Windows
-  - - meta      
-    - name: 'twitter:description'
-      content: Documentation d'installation de PostgreSQL 17 sous Windows      
+      content: CC BY-SA 4.0          
 ---
 
 # Installation PostgreSQL 18 sous Windows

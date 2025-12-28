@@ -7,25 +7,10 @@ head:
       content: 'MySQL, PostgreSQL, pgloader, migration, mariadb, myisam, innodb'
   - - meta
     - name: 'author'
-      content: Christophe Chauvet
+      content: 'Christophe Chauvet'
   - - meta
     - name: 'copyright'
-      content: CC BY-SA 4.0          
-  - - meta
-    - property: 'og:title'
-      content: "Migration de MySQL vers PostgreSQL avec pgLoader"
-  - - meta      
-    - property: 'og:description'
-      content: "Article sur les possibilités de migration de MySQL vers une base PostgreSQL"
-  - - meta      
-    - property: 'og:type'
-      content: 'article'
-  - - meta
-    - property: 'twitter:title'
-      content: "Migration de MySQL vers PostgreSQL avec pgLoader"
-  - - meta      
-    - property: 'twitter:description'
-      content: "Article sur les possibilités de migration de MySQL vers une base PostgreSQL"     
+      content: 'CC BY-SA 4.0'
 ---
 
 # Migration de MySQL vers PostgreSQL

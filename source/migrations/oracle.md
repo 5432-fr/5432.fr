@@ -7,25 +7,10 @@ head:
       content: 'Oracle, PostgreSQL, Ora2Pg, migration, ivorysql'
   - - meta
     - name: 'author'
-      content: Christophe Chauvet
+      content: 'Christophe Chauvet'
   - - meta
     - name: 'copyright'
-      content: CC BY-SA 4.0          
-  - - meta
-    - property: 'og:title'
-      content: "Migration d'Oracle vers PostgreSQL avec Ora2Pg ou IvorySQL"
-  - - meta      
-    - property: 'og:description'
-      content: "Article sur les possibilités de migration de Oracle vers une base PostgreSQL"
-  - - meta      
-    - property: 'og:type'
-      content: 'article'
-  - - meta
-    - property: 'twitter:title'
-      content: "Migration d'Oracle vers PostgreSQL avec Ora2Pg ou IvorySQL"
-  - - meta      
-    - property: 'twitter:description'
-      content: "Article sur les possibilités de migration de Oracle vers une base PostgreSQL"      
+      content: 'CC BY-SA 4.0'           
 ---
 
 # Migration de Oracle vers PostgreSQL

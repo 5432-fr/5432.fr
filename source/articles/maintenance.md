@@ -5,15 +5,6 @@ head:
   - - meta
     - name: 'keywords'
       content: 'vacuum, maintenance, PostgreSQL, reindex, cluster, wal, analyze'
-  - - meta
-    - property: 'og:title'
-      content: Liste d'articles autour des opérations de maintenance de la base de données PostgreSQL
-  - - meta      
-    - property: 'og:description'
-      content: Cette page regroupe des séries d\'article sur PostgreSQL en français concernant les opérations de maintenance de la base de données
-  - - meta      
-    - property: 'og:type'
-      content: 'article'
 ---
 
 # Maintenance

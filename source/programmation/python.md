@@ -11,21 +11,6 @@ head:
   - - meta
     - name: 'keywords'
       content: 'python, postgresql, psycopg2, psycopg3, asyncpg'
-  - - meta
-    - property: 'og:title'
-      content: Programmation en langage Python
-  - - meta      
-    - property: 'og:description'
-      content: Programmation en langage python avec diverses bibliothèques
-  - - meta      
-    - property: 'og:type'
-      content: 'article'
-  - - meta
-    - property: 'twitter:title'
-      content: Programmation en langage Python
-  - - meta      
-    - property: 'twitter:description'
-      content: Programmation en langage python avec diverses bibliothèques  
 ---
 
 # Langage Python {#langage_python}

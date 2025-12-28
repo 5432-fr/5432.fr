@@ -10,22 +10,7 @@ head:
       content: Christophe Chauvet
   - - meta
     - name: 'copyright'
-      content: CC BY-SA 4.0  
-  - - meta
-    - property: 'og:title'
-      content: IvorySQL base PostgreSQL compatible oracle
-  - - meta      
-    - property: 'og:description'
-      content: 'IvorySQL, une base de données open source compatible Oracle basée sur PostgreSQL'
-  - - meta      
-    - property: 'og:type'
-      content: 'article'
-  - - meta
-    - property: 'twitter:title'
-      content: IvorySQL base PostgreSQL compatible oracle
-  - - meta      
-    - property: 'twitter:description'
-      content: 'IvorySQL, une base de données open source compatible Oracle basée sur PostgreSQL'    
+      content: CC BY-SA 4.0   
 ---
 
 ### Qu'est-ce qu'IvorySQL ?

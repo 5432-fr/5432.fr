@@ -4,22 +4,7 @@ description: Descriptif des types de données géré par de PostgreSQL
 head:
   - - meta
     - name: 'keywords'
-      content: 'types, datatypes, PostgreSQL, varchar, enum, datetime, uuid, composite'
-  - - meta
-    - property: 'og:title'
-      content: Les différents types de données de PostgreSQL
-  - - meta      
-    - property: 'og:description'
-      content: Descriptif des types de données géré par de PostgreSQL
-  - - meta      
-    - property: 'og:type'
-      content: 'article'
-  - - meta
-    - property: 'twitter:title'
-      content: Les différents types de données de PostgreSQL
-  - - meta      
-    - property: 'twitter:description'
-      content: Descriptif des types de données géré par de PostgreSQL      
+      content: 'types, datatypes, PostgreSQL, varchar, enum, datetime, uuid, composite'  
 ---
 
 # Types de données PostgreSQL

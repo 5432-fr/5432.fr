@@ -4,22 +4,7 @@ description: Liste de logiciels utilisant PostgreSQL comme base de données
 head:
   - - meta
     - name: 'keywords'
-      content: 'dolibarr, odoo, erpnext, tryton, xtuple'
-  - - meta
-    - property: 'og:title'
-      content: Liste de logiciels utilisant PostgreSQL comme base de données
-  - - meta      
-    - property: 'og:description'
-      content: Liste de logiciels utilisant PostgreSQL comme base de données 
-  - - meta      
-    - property: 'og:type'
-      content: 'article'
-  - - meta
-    - property: 'twitter:title'
-      content: Liste de logiciels utilisant PostgreSQL comme base de données
-  - - meta      
-    - property: 'twitter:description'
-      content: Liste de logiciels utilisant PostgreSQL comme base de données         
+      content: 'dolibarr, odoo, erpnext, tryton, xtuple'       
 ---
 
 # Logiciels

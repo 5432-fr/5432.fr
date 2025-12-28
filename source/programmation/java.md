@@ -11,21 +11,6 @@ head:
   - - meta
     - name: 'copyright'
       content: CC BY-SA 4.0          
-  - - meta
-    - property: 'og:title'
-      content: Programmation en langage Java avec JDBC
-  - - meta      
-    - property: 'og:description'
-      content: Utilisation de Java pour se connecter à une base de données PostgreSQL
-  - - meta      
-    - property: 'og:type'
-      content: 'article'
-  - - meta
-    - property: 'twitter:title'
-      content: Programmation en langage Java avec JDBC
-  - - meta      
-    - property: 'twitter:description'
-      content: Utilisation de Java pour se connecter à une base de données PostgreSQL
 ---
 
 # Langage Java
