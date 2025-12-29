@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "markdownlint-cli2": "^0.20.0",
-    "vitepress-plugin-llms": "^1.9.3"
+    "vitepress-plugin-llms": "^1.10.0"
   },
   "5432_fr": {
     "social": {
