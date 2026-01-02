@@ -99,7 +99,15 @@ export default defineConfig({
           { text: 'PLpgSQL', link: '/programmation/plpgsql' },
           { text: 'Powershell', link: '/programmation/powershell' },
         ]
-      }]
+      }],
+      "/installation/": [{
+        text: 'Installation',
+        items: [
+          { text: 'PG 18 Windows', link: '/installation/pg-18-windows' },
+          { text: 'PG 17 Windows', link: '/installation/pg-17-windows' },
+          { text: 'ODBC sous Windows', link: '/installation/odbc-windows' }
+        ]
+      }],
     },
     socialLinks: [
       { icon: 'discord', link: 'https://discord.gg/ypY23QFEcn'},
