@@ -6,4 +6,4 @@ head:
       content: noindex
 ---
 
-[Rubrique déplacée](../logiciels.md)
+[Rubrique déplacée](../logiciels/index.md)

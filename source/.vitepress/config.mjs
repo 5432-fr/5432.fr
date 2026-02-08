@@ -27,7 +27,7 @@ export default defineConfig({
         { text: 'Articles', link: '/articles/', activeMatch: '^/articles/' },
         { text: 'Extensions', link: '/extensions', activeMatch: '^/extensions/' },
         { text: 'Livres', link: '/livres', activeMatch: '^/livres/' },
-        { text: 'Logiciels', link: '/logiciels', activeMatch: '^/logiciels/' },
+        { text: 'Logiciels', link: '/logiciels/', activeMatch: '^/logiciels/' },
         { text: 'Migrations', link: '/migrations', activeMatch: '^/migrations/' },
         { text: 'Programmation', link: '/programmation', activeMatch: '^/programmation/' },
         { text: 'Services', link: '/services', activeMatch: '^/services/' },
@@ -106,6 +106,16 @@ export default defineConfig({
           { text: 'PG 18 Windows', link: '/installation/pg-18-windows' },
           { text: 'PG 17 Windows', link: '/installation/pg-17-windows' },
           { text: 'ODBC sous Windows', link: '/installation/odbc-windows' }
+        ]
+      }],
+      "/logiciels/": [{
+        text: 'Logiciels',
+        items: [
+          { text: 'Dolibarr', link: '/logiciels/dolibarr' },
+          { text: 'Odoo', link: '/logiciels/odoo' },
+          { text: 'ErpNext', link: '/logiciels/erpnext' },
+          { text: 'Tryton', link: '/logiciels/tryton' },
+          { text: 'xTuple', link: '/logiciels/xtuple'},
         ]
       }],
     },
