@@ -39,7 +39,7 @@ La première étape consite à télécharger le driver `ODBC`.
 
 ### Téléchargement
 
-Pour télécharger l'installeur, rendez vous sur [la page de téléchargement(https://www.postgresql.org/ftp/odbc/releases/ "Téléchargement driver Windows")] du driver `ODBC` pour windows, cliquer sur la denrière version contenant **mimalloc** dans le nom de dossier, puis sélectionner la version 64 bits au format **MSI**
+Pour télécharger l'installeur, rendez vous sur [la page de téléchargement](https://www.postgresql.org/ftp/odbc/releases/ "Téléchargement driver Windows") du driver `ODBC` pour windows, cliquer sur la denrière version contenant **mimalloc** dans le nom de dossier, puis sélectionner la version 64 bits au format **MSI**
 
 ![Téléchargement](odbc-17-download-step_1.png "Téléchargement fichier d'installation Windows")
 
