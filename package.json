@@ -14,7 +14,7 @@
     "vitepress": "2.0.0-alpha.17"
   },
   "devDependencies": {
-    "markdownlint-cli2": "^0.21.0",
+    "markdownlint-cli2": "^0.22.0",
     "vitepress-plugin-llms": "^1.11.1"
   },
   "5432_fr": {
