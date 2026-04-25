@@ -6,6 +6,10 @@ RewriteRule ^(.*)$ https://5432.fr/$1 [L,R=301]
 RewriteCond %{SERVER_PORT} 80
 RewriteRule ^(.*)$ https://5432.fr/$1 [R,L]
 
+RewriteCond %{REQUEST_URI} ^/$
+RewriteCond %{HTTP:Accept} text/markdown [NC]
+RewriteRule ^$ /llms.txt [L,T=text/markdown]
+
 ErrorDocument 404 /404
 
 AddDefaultCharset UTF-8
@@ -32,9 +36,17 @@ AddDefaultCharset UTF-8
     Header set Cache-Control "max-age=216000, private"
     </FilesMatch>
 
-    <FilesMatch "\\.(x?html?|php)$">
+    <FilesMatch "\\.(x?html?|php|md)$">
     Header set Cache-Control "max-age=600, private, must-revalidate"
     </FilesMatch>
+	
+	<Files "llms.txt">
+		ForceType text/markdown
+	</Files>
+
+	<Files "llms-full.txt">
+		ForceType text/markdown
+	</Files>	
 </IfModule>
 
 ## contrôle du cache navigateur - Expire headers
@@ -53,6 +65,7 @@ AddDefaultCharset UTF-8
 	ExpiresByType text/css 				"access plus 1 week"
 	ExpiresByType text/javascript 		"access plus 1 week"
 	ExpiresByType text/html 			"access plus 600 seconds"
+	ExpiresByType text/markdown 		"access plus 600 seconds"
 	ExpiresByType application/xhtml+xml 	"access plus 7200 seconds"
 	ExpiresByType application/javascript 	"access plus 1 week"
 	ExpiresByType application/x-javascript 	"access plus 1 week"
