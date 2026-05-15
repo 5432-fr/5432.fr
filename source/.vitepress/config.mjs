@@ -154,6 +154,10 @@ export default defineConfig({
     lineNumbers: true,
     image: {
       lazyLoading: true
+    },
+    externalLinks: {
+      target: '_blank',
+      rel: ''
     }
   },
   cleanUrls: true,
