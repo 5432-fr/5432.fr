@@ -1,3 +1,7 @@
+User-Agent: *
+Content-Signal: ai-train=no, search=yes, ai-input=yes
+Allow: /
+
 User-agent: *
 Disallow: 
 Disallow: /cgi-bin/
