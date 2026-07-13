@@ -16,8 +16,8 @@ importers:
         specifier: ^0.23.0
         version: 0.23.0
       vitepress-plugin-llms:
-        specifier: ^1.13.2
-        version: 1.13.2
+        specifier: ^1.13.3
+        version: 1.13.3
 
 packages:
 
@@ -540,8 +540,8 @@ packages:
   birpc@2.9.0:
     resolution: {integrity: sha512-KrayHS5pBi69Xi9JmvoqrIgYGDkD6mcSe/i6YKi3w5kekCLzrX4+nawcXqrj2tIp50Kw/mT/s3p+GVK0A0sKxw==}
 
-  brace-expansion@5.0.6:
-    resolution: {integrity: sha512-kLpxurY4Z4r9sgMsyG0Z9uzsBlgiU/EFKhj/h91/8yHu0edo7XuixOIH3VcJ8kkxs6/jPzoI6U9Vj3WqbMQ94g==}
+  brace-expansion@5.0.7:
+    resolution: {integrity: sha512-7oFy703dxfY3/NLxC1fh2SUCQ0H9rmAY+5EpDVfXjUTTs+HEwR2nYaqLv+GWcTsumwxPfiz6CzCNkwXwBUwqCA==}
     engines: {node: 18 || 20 || >=22}
 
   braces@3.0.3:
@@ -864,6 +864,10 @@ packages:
 
   markdown-it@14.2.0:
     resolution: {integrity: sha512-1TGiQiJVRQ3NPmZH6sx5Cfnmg6GQm9jvC1ch4TK511NjSJvjzKLzn5pPfZRNZkRPZP0HqCioSndqH8v2nRaWVQ==}
+    hasBin: true
+
+  markdown-it@14.3.0:
+    resolution: {integrity: sha512-RCEsPjR+sr0x+AuYp601tKTkgFG4YEPLCzHST3cQ/fhlJkqAkz1L2/Qbp1j9qw5SBwQHFBoW8+hoN5xssOF0Tw==}
     hasBin: true
 
   markdown-title@1.0.2:
@@ -1243,8 +1247,8 @@ packages:
       yaml:
         optional: true
 
-  vitepress-plugin-llms@1.13.2:
-    resolution: {integrity: sha512-2O4s0I5pjEZzgnoWgBPCZCyhah9FH5uQB6lGADazMoyF1URJshtG04ZnmX+cbmQmniN3T5JzdJO9B4q8JHDKOQ==}
+  vitepress-plugin-llms@1.13.3:
+    resolution: {integrity: sha512-C6bygRzuVp54kveM6pngVNg4H9sKMx7K67iwoO4PUzBK22NiXF9SoFm/WdjKp2fJrMcOabKtQMuyNFF20c2Anw==}
     engines: {node: '>=18'}
 
   vitepress@2.0.0-alpha.18:
@@ -1680,7 +1684,7 @@ snapshots:
 
   birpc@2.9.0: {}
 
-  brace-expansion@5.0.6:
+  brace-expansion@5.0.7:
     dependencies:
       balanced-match: 4.0.4
 
@@ -1971,6 +1975,15 @@ snapshots:
   mark.js@8.11.1: {}
 
   markdown-it@14.2.0:
+    dependencies:
+      argparse: 2.0.1
+      entities: 4.5.0
+      linkify-it: 5.0.2
+      mdurl: 2.0.0
+      punycode.js: 2.3.1
+      uc.micro: 2.1.0
+
+  markdown-it@14.3.0:
     dependencies:
       argparse: 2.0.1
       entities: 4.5.0
@@ -2275,7 +2288,7 @@ snapshots:
 
   minimatch@10.2.5:
     dependencies:
-      brace-expansion: 5.0.6
+      brace-expansion: 5.0.7
 
   minisearch@7.2.0: {}
 
@@ -2533,10 +2546,10 @@ snapshots:
       esbuild: 0.27.4
       fsevents: 2.3.3
 
-  vitepress-plugin-llms@1.13.2:
+  vitepress-plugin-llms@1.13.3:
     dependencies:
       gray-matter: 4.0.3
-      markdown-it: 14.2.0
+      markdown-it: 14.3.0
       markdown-title: 1.0.2
       mdast-util-from-markdown: 2.0.3
       millify: 6.1.0
