@@ -11,7 +11,7 @@
   },
   "packageManager": "pnpm@11.28.8",
   "dependencies": {
-    "vitepress": "2.0.0-alpha.20"
+    "vitepress": "2.0.0-alpha.21"
   },
   "devDependencies": {
     "markdownlint-cli2": "^0.24.0",
