@@ -17,6 +17,11 @@
     "markdownlint-cli2": "^0.24.0",
     "vitepress-plugin-llms": "^1.14.0"
   },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  },
   "5432_fr": {
     "social": {
       "github": "https://github.com/5432-fr/5432.fr",
