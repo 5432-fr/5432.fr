@@ -82,11 +82,12 @@ mineure actuelle associée à leur version majeure.
 
 |  Version  | Supportée | Date apparition | Fin de vie |
 | :-------: | :-------: | :-------------: | :--------: |
+| PostgreSQL 19  | ... | ../20.. | ../20.. |
 | PostgreSQL 18  | Oui | 09/2025 | 11/2030 |
 | PostgreSQL 17  | Oui | 09/2024 | 11/2029 |
 | PostgreSQL 16  | Oui | 09/2023 | 11/2028 |
 | PostgreSQL 15  | Oui | 10/2022 | 11/2027 |
-| PostgreSQL 14  | Oui | 09/2021 | 11/2026 |
+| PostgreSQL 14  | Non | 09/2021 | 11/2026 |
 | PostgreSQL 13  | Non | 09/2020 | 11/2025 |
 | PostgreSQL 12  | Non | 10/2019 | 11/2024 |
 | PostgreSQL 11  | Non | 10/2017 | 11/2023 |
